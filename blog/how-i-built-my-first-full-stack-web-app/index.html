@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How I Built My First Full-Stack Web App: Challenges & Learnings - SyedShahab</title>
+  <meta name="description" content="UI/UX Designer & Full-Stack Developer with 1.5 years of experience creating designs and responsive web apps. Skilled in Figma, Framer, Adobe XD, Illustrator, Miro, Notion, ReactJS, HTML, CSS & JavaScript. Passionate about seamless user experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="How I Built My First Full-Stack Web App: Challenges & Learnings - SyedShahab">
+  <meta property="og:description" content="UI/UX Designer & Full-Stack Developer with 1.5 years of experience creating designs and responsive web apps. Skilled in Figma, Framer, Adobe XD, Illustrator, Miro, Notion, ReactJS, HTML, CSS & JavaScript. Passionate about seamless user experiences.">
+  <meta property="og:image" content="../../assets/images/blog-fullstack.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How I Built My First Full-Stack Web App: Challenges & Learnings - SyedShahab">
+  <meta name="twitter:description" content="UI/UX Designer & Full-Stack Developer with 1.5 years of experience creating designs and responsive web apps. Skilled in Figma, Framer, Adobe XD, Illustrator, Miro, Notion, ReactJS, HTML, CSS & JavaScript. Passionate about seamless user experiences.">
+  <meta name="twitter:image" content="../../assets/images/blog-fullstack.png">
+  <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="../../assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="page-blog-post">
+  <div class="page-shell">
+  <header class="site-nav-wrapper">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="nav-item" href="../../" aria-label="Home">
+        <span class="nav-item__tooltip" aria-hidden="true">Home</span>
+        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5.5v-6.5h-5V21H4a1 1 0 0 1-1-1V9.5z"/></svg></span>
+      </a>
+      <a class="nav-item" href="../../projects/" aria-label="Projects">
+        <span class="nav-item__tooltip" aria-hidden="true">Projects</span>
+        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
+      </a>
+      <a class="nav-item" href="../../experience/" aria-label="Experience">
+        <span class="nav-item__tooltip" aria-hidden="true">Experience</span>
+        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+      </a>
+      <a class="nav-item" href="../../tools/" aria-label="Tools">
+        <span class="nav-item__tooltip" aria-hidden="true">Tools</span>
+        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+      </a>
+      <a class="nav-item is-active" href="../../blog/" aria-label="Thoughts" aria-current="page">
+        <span class="nav-item__tooltip" aria-hidden="true">Thoughts</span>
+        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
+      </a>
+    </nav>
+  </header>
+
+    <div class="layout-wrapper">
+      <div class="layout-container">
+      <aside class="left-column appear-left" aria-label="Profile card">
+        <div class="profile-card">
+          <div class="profile-card__shape-top" aria-hidden="true">
+            <img src="../../assets/svg/profile-curve-top.svg" alt="" width="194" height="100">
+          </div>
+
+          <div class="profile-card__photo">
+            <img src="../../assets/images/profile-syed.jpg" alt="Syed Shahabuddin" width="240" height="284" fetchpriority="high">
+          </div>
+
+          <div class="profile-card__bio">
+            <p class="profile-card__name">Syed Shahabuddin</p>
+            <div class="profile-card__bottom">
+              <p class="profile-card__desc">A Software Engineer with a track record of developing numerous innovative solutions.</p>
+              <div class="profile-card__socials" aria-label="Social links">
+                <a class="social-btn" href="https://www.linkedin.com/in/syed-shahabuddin-1b209721b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a class="social-btn" href="https://github.com/Marburg7" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a class="social-btn" href="mailto:syedshafaiz76@gmail.com" aria-label="Email Syed Shahabuddin">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-card__shape-bottom" aria-hidden="true">
+            <img src="../../assets/svg/profile-curve-bottom.svg" alt="" width="333" height="205">
+          </div>
+        </div>
+      </aside>
+
+        <main class="right-column">
+          <article class="article-main appear-right">
+            <a class="article-back-link" href="../">&larr; Back to Thoughts</a>
+
+            <div class="article-hero-img">
+              <img src="../../assets/images/blog-fullstack.png" alt="How I Built My First Full-Stack Web App: Challenges & Learnings" fetchpriority="high">
+            </div>
+
+            <div class="article-meta">
+              <time>Dec 25, 2024</time>
+              
+            </div>
+
+            <h1 class="article-title">How I Built My First Full-Stack Web App: Challenges & Learnings</h1>
+
+            <div class="article-prose">
+<p>From my early engineering days to my current role as a Full-Stack Developer, my journey has been filled with learning, challenges, and growth. My first full-stack web app was a significant milestone, combining my knowledge of UI/UX design, frontend and backend development, and cloud technologies. In this blog, I'll share the phases of my journey, including my education, internships, and the process of building my first full-stack project.</p>
+
+            <h2>Engineering and Early Internships</h2>
+            <p>My journey began with a B.E. in Computer Science and Engineering at KNS Institute of Technology, under Visvesvaraya Technological University (VTU). During my studies, I explored various technologies and took on multiple internships to gain real-world experience.</p>
+
+            <h3>Internships and Hands-on Experience</h3>
+            <ul>
+              <li><strong>Superior Codelabs (Frontend Web Development Intern)</strong> – Created a professional self-portfolio using HTML, CSS, and JavaScript.</li>
+              <li><strong>Progton Software Pvt Ltd (Web Development Intern)</strong> – Built a responsive weather website showcasing my skills in JavaScript, jQuery, and frontend technologies.</li>
+              <li><strong>ARM Infoserve India Pvt Ltd (Full Stack Web Developer Intern)</strong> – Designed and implemented a company website using Core Java, HTML, CSS, JavaScript, and PHP.</li>
+            </ul>
+            <p>Each of these internships helped me refine my skills and understand the importance of UI/UX in web development.</p>
+
+            <h2>Conceptualizing My First Full-Stack Web App</h2>
+            <p>Before diving into coding, I first designed the project using UI/UX tools such as <strong>Figma, Adobe XD, and Balsamiq</strong> to create wireframes and prototypes. This phase was crucial in planning the user interface and ensuring a seamless user experience. The design process helped me identify key features, layouts, and workflows before moving into development.</p>
+
+            <h2>Development Process</h2>
+
+            <h4>Frontend Development</h4>
+            <p>Using <strong>ReactJS, HTML5, CSS3, JavaScript, and Bootstrap</strong>, I built an interactive and responsive frontend, ensuring a clean UI with an intuitive user experience.</p>
+
+            <h4>Backend Development</h4>
+            <p>For the backend, I leveraged <strong>Node.js and PHP</strong>, handling API requests, database interactions, and business logic.</p>
+
+            <h4>Database Management</h4>
+            <p>I used <strong>MySQL</strong> for data storage, designing a structured schema to efficiently manage user and application data.</p>
+
+            <h4>Cloud and Deployment</h4>
+            <p>The web app was deployed using <strong>AWS Console</strong>, ensuring scalability and availability. I also managed domain acquisition, hosting, and server setup for seamless deployment.</p>
+
+            <h2>Challenges Faced and Learnings</h2>
+            <ol>
+              <li><strong>Balancing UI/UX and Development:</strong> Initially, translating UI designs into functional frontend components was challenging, but learning tools like Tailwind CSS improved efficiency.</li>
+              <li><strong>Backend Optimization:</strong> Managing server-side operations efficiently was a learning curve, but working with SQL databases helped me optimize queries.</li>
+              <li><strong>Deployment Issues:</strong> Hosting and domain management required troubleshooting, but AWS services made it more manageable over time.</li>
+            </ol>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+              <li><strong>Importance of UI/UX Design:</strong> Planning the user experience before coding saves time and effort.</li>
+              <li><strong>End-to-End Development Knowledge:</strong> Working across frontend, backend, and deployment broadened my expertise.</li>
+              <li><strong>Continuous Learning:</strong> Each challenge provided an opportunity to enhance my skills in full-stack development.</li>
+            </ul>
+
+            <p>Building my first full-stack web app was a transformative experience, combining my engineering education, internships, and practical development knowledge. Today, as a <strong>Program Lead at Eduleem India Pvt Ltd</strong>, I continue to apply these learnings, managing web development, digital marketing, and cloud-based solutions. This journey has reinforced my passion for full-stack development, and I look forward to tackling more ambitious projects in the future!</p>
+            </div>
+          </article>
+
+      <section class="content-section content-section--contact reveal-on-scroll" id="contact" aria-labelledby="contact-heading">
+        <h2 class="display-h2" id="contact-heading">LET'S WORK <span class="heading-ghost">TOGETHER</span></h2>
+        <form class="contact-form" novalidate>
+          <div class="form-row-2">
+            <label class="form-field">
+              <span class="form-label">Name</span>
+              <input class="form-control" type="text" name="Name" placeholder="Your Name" required autocomplete="name">
+            </label>
+            <label class="form-field">
+              <span class="form-label">Email</span>
+              <input class="form-control" type="email" name="Email" placeholder="Your@email.com" required autocomplete="email">
+            </label>
+          </div>
+
+          <label class="form-field">
+            <span class="form-label form-label--ui">Service Looking For</span>
+            <div class="select-wrap">
+              <select class="form-control is-placeholder" name="Service">
+                <option value="" selected disabled>Select…</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Marketing">Marketing</option>
+                <option value="UI UX Design">UI UX Design</option>
+                <option value="Web Design">Web Design</option>
+              </select>
+              <span class="select-wrap__chevron" aria-hidden="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6L8 10.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </label>
+
+          <label class="form-field">
+            <span class="form-label form-label--muted">Message</span>
+            <textarea class="form-control" name="Message" placeholder="Message" rows="4"></textarea>
+          </label>
+
+          <button class="form-submit" type="submit">Submit</button>
+          <div class="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+        </main>
+      </div>
+    </div>
+
+  <footer class="site-footer">
+    <p class="site-footer__text">
+      Made by <a href="../../">Syed Shahabuddin</a> | Powered by <a href="../../">Syed Shahabuddin</a>
+    </p>
+  </footer>
+  </div>
+
+  <script src="../../js/script.js" defer></script>
+</body>
+</html>

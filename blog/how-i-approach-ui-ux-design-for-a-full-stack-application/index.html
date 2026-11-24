@@ -3,202 +3,164 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How I Approach UI/UX Design for a Full-Stack Application - SyedShahab</title>
-  <meta name="description" content="UI/UX Designer & Full-Stack Developer with 1.5 years of experience creating designs and responsive web apps. Skilled in Figma, Framer, Adobe XD, Illustrator, Miro, Notion, ReactJS, HTML, CSS & JavaScript. Passionate about seamless user experiences.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="How I Approach UI/UX Design for a Full-Stack Application - SyedShahab">
-  <meta property="og:description" content="UI/UX Designer & Full-Stack Developer with 1.5 years of experience creating designs and responsive web apps. Skilled in Figma, Framer, Adobe XD, Illustrator, Miro, Notion, ReactJS, HTML, CSS & JavaScript. Passionate about seamless user experiences.">
+  <title>How I Approach UI/UX Design for a Full-Stack Application — Syed Shahabuddin</title>
+  <meta name="description" content="My structured approach to designing a seamless and engaging user experience for full-stack applications.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How I Approach UI/UX Design for a Full-Stack Application — Syed Shahabuddin">
   <meta property="og:image" content="../../assets/images/blog-uiux.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="How I Approach UI/UX Design for a Full-Stack Application - SyedShahab">
-  <meta name="twitter:description" content="UI/UX Designer & Full-Stack Developer with 1.5 years of experience creating designs and responsive web apps. Skilled in Figma, Framer, Adobe XD, Illustrator, Miro, Notion, ReactJS, HTML, CSS & JavaScript. Passionate about seamless user experiences.">
-  <meta name="twitter:image" content="../../assets/images/blog-uiux.png">
   <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
   <link rel="apple-touch-icon" href="../../assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/style.css">
 </head>
-<body class="page-blog-post">
-  <div class="page-shell">
-  <header class="site-nav-wrapper">
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a class="nav-item" href="../../" aria-label="Home">
-        <span class="nav-item__tooltip" aria-hidden="true">Home</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5.5v-6.5h-5V21H4a1 1 0 0 1-1-1V9.5z"/></svg></span>
-      </a>
-      <a class="nav-item" href="../../projects/" aria-label="Projects">
-        <span class="nav-item__tooltip" aria-hidden="true">Projects</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
-      </a>
-      <a class="nav-item" href="../../experience/" aria-label="Experience">
-        <span class="nav-item__tooltip" aria-hidden="true">Experience</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
-      </a>
-      <a class="nav-item" href="../../tools/" aria-label="Tools">
-        <span class="nav-item__tooltip" aria-hidden="true">Tools</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
-      </a>
-      <a class="nav-item is-active" href="../../blog/" aria-label="Thoughts" aria-current="page">
-        <span class="nav-item__tooltip" aria-hidden="true">Thoughts</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
-      </a>
-    </nav>
-  </header>
+<body data-root="../../">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <div class="layout-wrapper">
-      <div class="layout-container">
-      <aside class="left-column appear-left" aria-label="Profile card">
-        <div class="profile-card">
-          <div class="profile-card__shape-top" aria-hidden="true">
-            <img src="../../assets/svg/profile-curve-top.svg" alt="" width="194" height="100">
+  <canvas id="ambient-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-orbs" aria-hidden="true"><div class="ambient-orb ambient-orb--1"></div></div>
+  <div class="noise-layer" aria-hidden="true"></div>
+  <div class="glow-rail-top" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav-bar" aria-label="Primary navigation">
+          <a class="brand-link" href="../../" aria-label="Syed Shahabuddin Home">
+            <span class="brand-monogram" aria-hidden="true">SS<span class="brand-monogram__echo"></span></span>
+            <span class="brand-wordmark">
+              <span class="brand-wordmark__name">Syed Shahabuddin</span>
+              <span class="brand-wordmark__role">Engineer // Designer</span>
+            </span>
+          </a>
+          <ul class="nav-pill">
+            <li><a class="nav-link" href="../../">Home</a></li>
+            <li><a class="nav-link" href="../../projects/">Projects</a></li>
+            <li><a class="nav-link" href="../../experience/">Experience</a></li>
+            <li><a class="nav-link" href="../../tools/">Tools</a></li>
+            <li><a class="nav-link is-active" href="../../blog/" aria-current="page">Thoughts</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a class="roll-btn roll-btn--primary roll-btn--nav" href="../../#contact" data-roll data-magnetic>
+              <span class="roll-btn__text">Let's Talk</span>
+              <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+            <button id="menu-trigger" class="menu-trigger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+              <span class="menu-trigger__line menu-trigger__line--top"></span>
+              <span class="menu-trigger__line menu-trigger__line--bottom"></span>
+            </button>
           </div>
-
-          <div class="profile-card__photo">
-            <img src="../../assets/images/profile-syed.jpg" alt="Syed Shahabuddin" width="240" height="284" fetchpriority="high">
-          </div>
-
-          <div class="profile-card__bio">
-            <p class="profile-card__name">Syed Shahabuddin</p>
-            <div class="profile-card__bottom">
-              <p class="profile-card__desc">A Software Engineer with a track record of developing numerous innovative solutions.</p>
-              <div class="profile-card__socials" aria-label="Social links">
-                <a class="social-btn" href="https://www.linkedin.com/in/syed-shahabuddin-1b209721b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
-                <a class="social-btn" href="https://github.com/Marburg7" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-                <a class="social-btn" href="mailto:syedshafaiz76@gmail.com" aria-label="Email Syed Shahabuddin">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="profile-card__shape-bottom" aria-hidden="true">
-            <img src="../../assets/svg/profile-curve-bottom.svg" alt="" width="333" height="205">
-          </div>
-        </div>
-      </aside>
-
-        <main class="right-column">
-          <article class="article-main appear-right">
-            <a class="article-back-link" href="../">&larr; Back to Thoughts</a>
-
-            <div class="article-hero-img">
-              <img src="../../assets/images/blog-uiux.png" alt="How I Approach UI/UX Design for a Full-Stack Application" fetchpriority="high">
-            </div>
-
-            <div class="article-meta">
-              <time>Jan 24, 2025</time>
-              
-            </div>
-
-            <h1 class="article-title">How I Approach UI/UX Design for a Full-Stack Application</h1>
-
-            <div class="article-prose">
-<p>Designing a full-stack application requires balancing aesthetics with functionality. A great UI/UX design ensures that users not only enjoy the visual appeal but also navigate the application intuitively. In this blog, I’ll share my structured approach to designing a seamless and engaging user experience for full-stack applications.</p>
-
-            <h4>1. Understanding User Needs</h4>
-            <p>Before jumping into design, I conduct user research to identify pain points, preferences, and expectations. Key methods include:</p>
-            <ul>
-              <li><strong>User Personas:</strong> Defining target users based on demographics, behaviors, and goals.</li>
-              <li><strong>User Journeys:</strong> Mapping out user interactions to create smooth workflows.</li>
-              <li><strong>Competitor Analysis:</strong> Studying similar applications to identify gaps and improvements.</li>
-            </ul>
-
-            <h4>2. Wireframing &amp; Prototyping</h4>
-            <p>Once user needs are clear, I create low-fidelity wireframes using <strong>Figma</strong> or <strong>Adobe XD</strong>. This helps outline the structure and layout of the application before investing in detailed UI elements. Steps include:</p>
-            <ul>
-              <li>Sketching rough layouts for different screens.</li>
-              <li>Defining navigation flow for an intuitive experience.</li>
-              <li>Creating interactive prototypes to test user interactions.</li>
-            </ul>
-
-            <h4>3. UI Design – Bringing Ideas to Life</h4>
-            <p>With wireframes validated, I move to high-fidelity UI design, focusing on:</p>
-            <ul>
-              <li><strong>Visual Consistency:</strong> Using a unified design system with colors, typography, and spacing.</li>
-              <li><strong>Responsive Design:</strong> Ensuring compatibility across desktops, tablets, and mobile devices.</li>
-              <li><strong>Accessibility:</strong> Implementing contrast, readable fonts, and keyboard-friendly navigation.</li>
-            </ul>
-
-            <h4>4. Frontend Development – Implementing the UI</h4>
-            <p>After finalizing the UI, I transition into frontend development using:</p>
-            <ul>
-              <li><strong>ReactJS &amp; Tailwind CSS</strong> for a modern, component-based design.</li>
-              <li><strong>JavaScript &amp; jQuery</strong> to enhance interactivity.</li>
-              <li><strong>Performance Optimization</strong> through lazy loading and code splitting.</li>
-            </ul>
-
-            <h4>5. Backend Development – Making the UI Functional</h4>
-            <p>A well-designed UI must be backed by a robust backend. My approach includes:</p>
-            <ul>
-              <li><strong>Node.js &amp; Express.js</strong> for efficient API development.</li>
-              <li><strong>MySQL &amp; MongoDB</strong> for structured and unstructured data management.</li>
-              <li><strong>Authentication &amp; Security</strong> using JWT, OAuth, and role-based access control.</li>
-            </ul>
-
-            <h4>6. Testing &amp; Iteration</h4>
-            <p>User feedback is crucial to refining the experience. I implement:</p>
-            <ul>
-              <li><strong>Usability Testing:</strong> Observing how users interact with the application.</li>
-              <li><strong>A/B Testing:</strong> Comparing different UI variations for better engagement.</li>
-              <li><strong>Bug Fixing &amp; Performance Tuning:</strong> Ensuring a smooth, error-free experience.</li>
-            </ul>
-
-            <p>A great full-stack application isn’t just about clean code—it’s about an intuitive and engaging user experience. By focusing on UI/UX principles from the start, developers can create applications that are not only functional but also delightful to use.</p>
-            </div>
-          </article>
-
-      <section class="content-section content-section--contact reveal-on-scroll" id="contact" aria-labelledby="contact-heading">
-        <h2 class="display-h2" id="contact-heading">LET'S WORK <span class="heading-ghost">TOGETHER</span></h2>
-        <form class="contact-form" novalidate>
-          <div class="form-row-2">
-            <label class="form-field">
-              <span class="form-label">Name</span>
-              <input class="form-control" type="text" name="Name" placeholder="Your Name" required autocomplete="name">
-            </label>
-            <label class="form-field">
-              <span class="form-label">Email</span>
-              <input class="form-control" type="email" name="Email" placeholder="Your@email.com" required autocomplete="email">
-            </label>
-          </div>
-
-          <label class="form-field">
-            <span class="form-label form-label--ui">Service Looking For</span>
-            <div class="select-wrap">
-              <select class="form-control is-placeholder" name="Service">
-                <option value="" selected disabled>Select…</option>
-                <option value="Web Development">Web Development</option>
-                <option value="Marketing">Marketing</option>
-                <option value="UI UX Design">UI UX Design</option>
-                <option value="Web Design">Web Design</option>
-              </select>
-              <span class="select-wrap__chevron" aria-hidden="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6L8 10.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            </div>
-          </label>
-
-          <label class="form-field">
-            <span class="form-label form-label--muted">Message</span>
-            <textarea class="form-control" name="Message" placeholder="Message" rows="4"></textarea>
-          </label>
-
-          <button class="form-submit" type="submit">Submit</button>
-          <div class="form-status" role="status" aria-live="polite"></div>
-        </form>
-      </section>
-        </main>
+        </nav>
       </div>
+    </header>
+
+    <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+      <ul class="mobile-drawer__list">
+        <li><a class="mobile-drawer__link" href="../../"><span class="mobile-drawer__idx">01</span>Home</a></li>
+        <li><a class="mobile-drawer__link" href="../../projects/"><span class="mobile-drawer__idx">02</span>Projects</a></li>
+        <li><a class="mobile-drawer__link" href="../../experience/"><span class="mobile-drawer__idx">03</span>Experience</a></li>
+        <li><a class="mobile-drawer__link" href="../../tools/"><span class="mobile-drawer__idx">04</span>Tools</a></li>
+        <li><a class="mobile-drawer__link is-active" href="../../blog/"><span class="mobile-drawer__idx">05</span>Thoughts</a></li>
+        <li><a class="mobile-drawer__link" href="../../#contact"><span class="mobile-drawer__idx">06</span>Contact</a></li>
+      </ul>
+      <div class="mobile-drawer__footer"><span>syedshafaiz76@gmail.com</span></div>
     </div>
 
-  <footer class="site-footer">
-    <p class="site-footer__text">
-      Made by <a href="../../">Syed Shahabuddin</a> | Powered by <a href="../../">Syed Shahabuddin</a>
-    </p>
-  </footer>
+    <main id="main-content" class="container">
+      <article class="article-shell">
+        <a class="article-back" href="../">← Back to All Thoughts</a>
+        <div class="article-meta-bar">
+          <time datetime="2025-01-24">Jan 24, 2025</time>
+          <span>·</span>
+          <span>UI/UX Process</span>
+          <span>·</span>
+          <span>5 min read</span>
+        </div>
+        <h1 class="article-heading">How I Approach UI/UX Design for a Full-Stack Application</h1>
+        <div class="article-cover">
+          <img src="../../assets/images/blog-uiux.png" alt="How I Approach UI/UX Design for a Full-Stack Application" fetchpriority="high">
+        </div>
+        <div class="article-prose">
+          <p>Designing a full-stack application requires balancing aesthetics with functionality. A great UI/UX design ensures that users not only enjoy the visual appeal but also navigate the application intuitively. In this blog, I’ll share my structured approach to designing a seamless and engaging user experience for full-stack applications.</p>
+
+          <h2>1. Understanding User Needs</h2>
+          <p>Before jumping into design, I conduct user research to identify pain points, preferences, and expectations. Key methods include:</p>
+          <ul>
+            <li><strong>User Personas:</strong> Defining target users based on demographics, behaviors, and goals.</li>
+            <li><strong>User Journeys:</strong> Mapping out user interactions to create smooth workflows.</li>
+            <li><strong>Competitor Analysis:</strong> Studying similar applications to identify gaps and improvements.</li>
+          </ul>
+
+          <h2>2. Wireframing &amp; Prototyping</h2>
+          <p>Once user needs are clear, I create low-fidelity wireframes using <strong>Figma</strong> or <strong>Adobe XD</strong>. This helps outline the structure and layout of the application before investing in detailed UI elements. Steps include:</p>
+          <ul>
+            <li>Sketching rough layouts for different screens.</li>
+            <li>Defining navigation flow for an intuitive experience.</li>
+            <li>Creating interactive prototypes to test user interactions.</li>
+          </ul>
+
+          <h2>3. UI Design — Bringing Ideas to Life</h2>
+          <p>With wireframes validated, I move to high-fidelity UI design, focusing on:</p>
+          <ul>
+            <li><strong>Visual Consistency:</strong> Using a unified design system with colors, typography, and spacing.</li>
+            <li><strong>Responsive Design:</strong> Ensuring compatibility across desktops, tablets, and mobile devices.</li>
+            <li><strong>Accessibility:</strong> Implementing contrast, readable fonts, and keyboard-friendly navigation.</li>
+          </ul>
+
+          <h2>4. Frontend Development — Implementing the UI</h2>
+          <p>After finalizing the UI, I transition into frontend development using:</p>
+          <ul>
+            <li><strong>ReactJS &amp; Tailwind CSS</strong> for a modern, component-based design.</li>
+            <li><strong>JavaScript &amp; jQuery</strong> to enhance interactivity.</li>
+            <li><strong>Performance Optimization</strong> through lazy loading and code splitting.</li>
+          </ul>
+
+          <h2>5. Backend Development — Making the UI Functional</h2>
+          <p>A well-designed UI must be backed by a robust backend. My approach includes:</p>
+          <ul>
+            <li><strong>Node.js &amp; Express.js</strong> for efficient API development.</li>
+            <li><strong>MySQL &amp; MongoDB</strong> for structured and unstructured data management.</li>
+            <li><strong>Authentication &amp; Security</strong> using JWT, OAuth, and role-based access control.</li>
+          </ul>
+
+          <h2>6. Testing &amp; Iteration</h2>
+          <p>User feedback is crucial to refining the experience. I implement:</p>
+          <ul>
+            <li><strong>Usability Testing:</strong> Observing how users interact with the application.</li>
+            <li><strong>A/B Testing:</strong> Comparing different UI variations for better engagement.</li>
+            <li><strong>Bug Fixing &amp; Performance Tuning:</strong> Ensuring a smooth, error-free experience.</li>
+          </ul>
+
+          <p>A great full-stack application isn’t just about clean code—it’s about an intuitive and engaging user experience. By focusing on UI/UX principles from the start, developers can create applications that are not only functional but also delightful to use.</p>
+        </div>
+
+        <div style="margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+          <a class="roll-btn roll-btn--ghost" href="../">← All Articles</a>
+          <a class="roll-btn roll-btn--primary" href="../how-i-built-my-first-full-stack-web-app/" data-roll>
+            <span class="roll-btn__text">Next Article</span>
+            <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="brand-wordmark"><span class="brand-wordmark__name">Syed Shahabuddin</span></div>
+          <ul class="footer-links">
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../projects/">Projects</a></li>
+            <li><a href="../../experience/">Experience</a></li>
+            <li><a href="../../tools/">Tools</a></li>
+            <li><a href="../../#contact">Contact</a></li>
+          </ul>
+          <p class="footer-copy">© 2026 Syed Shahabuddin</p>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <script src="../../js/script.js" defer></script>

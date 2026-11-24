@@ -3,176 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How Can Designers Prepare for the Future? - SyedShahab</title>
-  <meta name="description" content="UI/UX Designer & Full-Stack Developer with 1.5 years of experience creating designs and responsive web apps. Skilled in Figma, Framer, Adobe XD, Illustrator, Miro, Notion, ReactJS, HTML, CSS & JavaScript. Passionate about seamless user experiences.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="How Can Designers Prepare for the Future? - SyedShahab">
-  <meta property="og:description" content="UI/UX Designer & Full-Stack Developer with 1.5 years of experience creating designs and responsive web apps. Skilled in Figma, Framer, Adobe XD, Illustrator, Miro, Notion, ReactJS, HTML, CSS & JavaScript. Passionate about seamless user experiences.">
+  <title>How Can Designers Prepare for the Future? — Syed Shahabuddin</title>
+  <meta name="description" content="Thoughts on automation, AI, UX maturity, and understanding human psychology in modern product design.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How Can Designers Prepare for the Future? — Syed Shahabuddin">
   <meta property="og:image" content="../../assets/images/blog-future.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="How Can Designers Prepare for the Future? - SyedShahab">
-  <meta name="twitter:description" content="UI/UX Designer & Full-Stack Developer with 1.5 years of experience creating designs and responsive web apps. Skilled in Figma, Framer, Adobe XD, Illustrator, Miro, Notion, ReactJS, HTML, CSS & JavaScript. Passionate about seamless user experiences.">
-  <meta name="twitter:image" content="../../assets/images/blog-future.jpg">
   <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
   <link rel="apple-touch-icon" href="../../assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/style.css">
 </head>
-<body class="page-blog-post">
-  <div class="page-shell">
-  <header class="site-nav-wrapper">
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a class="nav-item" href="../../" aria-label="Home">
-        <span class="nav-item__tooltip" aria-hidden="true">Home</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5.5v-6.5h-5V21H4a1 1 0 0 1-1-1V9.5z"/></svg></span>
-      </a>
-      <a class="nav-item" href="../../projects/" aria-label="Projects">
-        <span class="nav-item__tooltip" aria-hidden="true">Projects</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
-      </a>
-      <a class="nav-item" href="../../experience/" aria-label="Experience">
-        <span class="nav-item__tooltip" aria-hidden="true">Experience</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
-      </a>
-      <a class="nav-item" href="../../tools/" aria-label="Tools">
-        <span class="nav-item__tooltip" aria-hidden="true">Tools</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
-      </a>
-      <a class="nav-item is-active" href="../../blog/" aria-label="Thoughts" aria-current="page">
-        <span class="nav-item__tooltip" aria-hidden="true">Thoughts</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
-      </a>
-    </nav>
-  </header>
+<body data-root="../../">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <div class="layout-wrapper">
-      <div class="layout-container">
-      <aside class="left-column appear-left" aria-label="Profile card">
-        <div class="profile-card">
-          <div class="profile-card__shape-top" aria-hidden="true">
-            <img src="../../assets/svg/profile-curve-top.svg" alt="" width="194" height="100">
+  <canvas id="ambient-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-orbs" aria-hidden="true"><div class="ambient-orb ambient-orb--1"></div></div>
+  <div class="noise-layer" aria-hidden="true"></div>
+  <div class="glow-rail-top" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav-bar" aria-label="Primary navigation">
+          <a class="brand-link" href="../../" aria-label="Syed Shahabuddin Home">
+            <span class="brand-monogram" aria-hidden="true">SS<span class="brand-monogram__echo"></span></span>
+            <span class="brand-wordmark">
+              <span class="brand-wordmark__name">Syed Shahabuddin</span>
+              <span class="brand-wordmark__role">Engineer // Designer</span>
+            </span>
+          </a>
+          <ul class="nav-pill">
+            <li><a class="nav-link" href="../../">Home</a></li>
+            <li><a class="nav-link" href="../../projects/">Projects</a></li>
+            <li><a class="nav-link" href="../../experience/">Experience</a></li>
+            <li><a class="nav-link" href="../../tools/">Tools</a></li>
+            <li><a class="nav-link is-active" href="../../blog/" aria-current="page">Thoughts</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a class="roll-btn roll-btn--primary roll-btn--nav" href="../../#contact" data-roll data-magnetic>
+              <span class="roll-btn__text">Let's Talk</span>
+              <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+            <button id="menu-trigger" class="menu-trigger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+              <span class="menu-trigger__line menu-trigger__line--top"></span>
+              <span class="menu-trigger__line menu-trigger__line--bottom"></span>
+            </button>
           </div>
-
-          <div class="profile-card__photo">
-            <img src="../../assets/images/profile-syed.jpg" alt="Syed Shahabuddin" width="240" height="284" fetchpriority="high">
-          </div>
-
-          <div class="profile-card__bio">
-            <p class="profile-card__name">Syed Shahabuddin</p>
-            <div class="profile-card__bottom">
-              <p class="profile-card__desc">A Software Engineer with a track record of developing numerous innovative solutions.</p>
-              <div class="profile-card__socials" aria-label="Social links">
-                <a class="social-btn" href="https://www.linkedin.com/in/syed-shahabuddin-1b209721b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
-                <a class="social-btn" href="https://github.com/Marburg7" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-                <a class="social-btn" href="mailto:syedshafaiz76@gmail.com" aria-label="Email Syed Shahabuddin">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="profile-card__shape-bottom" aria-hidden="true">
-            <img src="../../assets/svg/profile-curve-bottom.svg" alt="" width="333" height="205">
-          </div>
-        </div>
-      </aside>
-
-        <main class="right-column">
-          <article class="article-main appear-right">
-            <a class="article-back-link" href="../">&larr; Back to Thoughts</a>
-
-            <div class="article-hero-img">
-              <img src="../../assets/images/blog-future.jpg" alt="How Can Designers Prepare for the Future?" fetchpriority="high">
-            </div>
-
-            <div class="article-meta">
-              <time>Oct 28, 2024</time>
-              <span>6min read</span>
-            </div>
-
-            <h1 class="article-title">How Can Designers Prepare for the Future?</h1>
-
-            <div class="article-prose">
-<p>Last month, I had the chance to attend CSS Day in Amsterdam, a two day event split between a “UI day” focusing on the intersection of design and development and a “CSS day”, with speakers who covered more in-depth, technical CSS subjects. The talks were as diverse as the background of the speakers themselves, but there was one common thread: In this era of rapid change, are we, as product people, equipped to design for automation, machine learning, and AI?</p>
-
-            <h2>What does automation mean for designers?</h2>
-            <p>It's hard to work on a product team that hasn’t automated some part of their workflow in the name of productivity. If machines can take care of the repeatable tasks and heavy lifting, designers can focus on doing more meaningful work. But how does this affect the way we use the work being created by machines?</p>
-            <p>Josh Clark, founder of design studio Big Medium, provoked the audience with this very question during his talk, ‘A.I. is your New Design Material’. Some of the most impressive advancements in recent technology are things like facial recognition, predictive text, and image search, all powered by machine learning. But it's important to remember—all of these technologies are still built on code. The upside is less room for error. No real emotions, expectations, or feelings get in the way of the job it was designed to do.</p>
-            <p>Yet, as humans, we assume that when facial recognition fails, the whole process is inherently flawed. But was it really?</p>
-            <p>According to Josh, that is the most fundamental thing to understand when it comes to machines. Not meeting our human expectations, doesn’t automatically make the technology itself a failure. These things were, by definition, built on logic, which begs the question: Can a robot's solution actually be wrong?</p>
-            <p>The point of introducing machine learning into our products was never to have them do all the work. Instead, algorithms and logic-based solutions ought only provide humans with better insight so as to empower us to arrive at better solutions, faster.</p>
-            <p>This fundamental understanding our users that really helps us make better products. This might be a simple example, but if a computer can figure out how to walk on it's own, maybe it's time to start investigating why and how these solutions were formed.</p>
-
-            <h2>How do we design for the unknown future?</h2>
-            <p>Jared Spool, Co-Founder of UIE asks, “What was the most important thing you learned yesterday, and how will it impact what you do in the future?”</p>
-            <p>As designers and researchers, we essentially always need to think about how we design products for the future, even as we’re meeting the demands of present day design. A tall order, especially when things move as fast as they have been over the last decade.</p>
-            <p>To start, Jared advocates for looking back at the ways in which our design processes have already changed.</p>
-            <p>Remember when UX/UI wasn't a priority for many companies? As a consultant during a time when the Internet had yet to hit mass market appeal, Jared was able to steer many companies into a mindset that considered the user experience of a product.</p>
-            <p>But this also lets us gain input into how UX and UI has looked over the years, which might give us a better idea of what these concepts will look like moving forward. Jared describes a term called "The UX Tipping Point", with great actionable steps on how to get there.</p>
-            <p>In the past, designers had to fight for a seat at the table. If today you’re not starting from a place of advocating for user experience (like they were 10 years ago), they’re likely not starting at that tipping point. As a result, designers still have to ensure that the role of UX matures within the company, as well as the understanding of what makes UX important. When an organization hits the last stage, and fully embraces UX design from everything the company does, they fully hit The UX Tipping Point.</p>
-
-            <h2>Are we designing for users or ourselves?</h2>
-            <p>People don't always know what they want, even if they think the do. As Joe Leech, a UX psychologist says, "People want more choices, but can't deal with them.”</p>
-            <p>So how do we design for our users, if our users aren’t always telling us the truth? This is one of the most important questions, and something that extensive UX research helps us accomplish.</p>
-            <p>Back in the 2000s, psychologists Sheena Iyengar and Mark Lepper ran a study regarding consumer choices. They went to a local supermarket, and instructed the store to only sell 6 varieties of jam one week, followed by 30 varieties the following week.</p>
-            <p>They ran a study on how much jam was sold, and to everyone's surprise, more jam was sold on the week with only 6 choices. But interestingly enough, when the consumers were asked which week they preferred more, they responded with the week that had 30 choices.</p>
-            <p>Using this analogy, Joe makes a point that is hard to argue with, “A designer who doesn't understand psychology is going to be more successful than an architect who doesn't understand physics".</p>
-            <p>User research, and a wide variety of it, helps teams get as close as possible to the root of a user’s needs, over their wants. Studying responses on a larger scale is more work, but it helps form the foundation for true UX.</p>
-            </div>
-          </article>
-
-      <section class="content-section content-section--contact reveal-on-scroll" id="contact" aria-labelledby="contact-heading">
-        <h2 class="display-h2" id="contact-heading">LET'S WORK <span class="heading-ghost">TOGETHER</span></h2>
-        <form class="contact-form" novalidate>
-          <div class="form-row-2">
-            <label class="form-field">
-              <span class="form-label">Name</span>
-              <input class="form-control" type="text" name="Name" placeholder="Your Name" required autocomplete="name">
-            </label>
-            <label class="form-field">
-              <span class="form-label">Email</span>
-              <input class="form-control" type="email" name="Email" placeholder="Your@email.com" required autocomplete="email">
-            </label>
-          </div>
-
-          <label class="form-field">
-            <span class="form-label form-label--ui">Service Looking For</span>
-            <div class="select-wrap">
-              <select class="form-control is-placeholder" name="Service">
-                <option value="" selected disabled>Select…</option>
-                <option value="Web Development">Web Development</option>
-                <option value="Marketing">Marketing</option>
-                <option value="UI UX Design">UI UX Design</option>
-                <option value="Web Design">Web Design</option>
-              </select>
-              <span class="select-wrap__chevron" aria-hidden="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6L8 10.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            </div>
-          </label>
-
-          <label class="form-field">
-            <span class="form-label form-label--muted">Message</span>
-            <textarea class="form-control" name="Message" placeholder="Message" rows="4"></textarea>
-          </label>
-
-          <button class="form-submit" type="submit">Submit</button>
-          <div class="form-status" role="status" aria-live="polite"></div>
-        </form>
-      </section>
-        </main>
+        </nav>
       </div>
+    </header>
+
+    <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+      <ul class="mobile-drawer__list">
+        <li><a class="mobile-drawer__link" href="../../"><span class="mobile-drawer__idx">01</span>Home</a></li>
+        <li><a class="mobile-drawer__link" href="../../projects/"><span class="mobile-drawer__idx">02</span>Projects</a></li>
+        <li><a class="mobile-drawer__link" href="../../experience/"><span class="mobile-drawer__idx">03</span>Experience</a></li>
+        <li><a class="mobile-drawer__link" href="../../tools/"><span class="mobile-drawer__idx">04</span>Tools</a></li>
+        <li><a class="mobile-drawer__link is-active" href="../../blog/"><span class="mobile-drawer__idx">05</span>Thoughts</a></li>
+        <li><a class="mobile-drawer__link" href="../../#contact"><span class="mobile-drawer__idx">06</span>Contact</a></li>
+      </ul>
+      <div class="mobile-drawer__footer"><span>syedshafaiz76@gmail.com</span></div>
     </div>
 
-  <footer class="site-footer">
-    <p class="site-footer__text">
-      Made by <a href="../../">Syed Shahabuddin</a> | Powered by <a href="../../">Syed Shahabuddin</a>
-    </p>
-  </footer>
+    <main id="main-content" class="container">
+      <article class="article-shell">
+        <a class="article-back" href="../">← Back to All Thoughts</a>
+        <div class="article-meta-bar">
+          <time datetime="2024-10-28">Oct 28, 2024</time>
+          <span>·</span>
+          <span>Design Strategy</span>
+          <span>·</span>
+          <span>6 min read</span>
+        </div>
+        <h1 class="article-heading">How Can Designers Prepare for the Future?</h1>
+        <div class="article-cover">
+          <img src="../../assets/images/blog-future.jpg" alt="How Can Designers Prepare for the Future?" fetchpriority="high">
+        </div>
+        <div class="article-prose">
+          <p>Last month, I had the chance to attend CSS Day in Amsterdam, a two day event split between a “UI day” focusing on the intersection of design and development and a “CSS day”, with speakers who covered more in-depth, technical CSS subjects. The talks were as diverse as the background of the speakers themselves, but there was one common thread: In this era of rapid change, are we, as product people, equipped to design for automation, machine learning, and AI?</p>
+
+          <h2>What does automation mean for designers?</h2>
+          <p>It's hard to work on a product team that hasn’t automated some part of their workflow in the name of productivity. If machines can take care of the repeatable tasks and heavy lifting, designers can focus on doing more meaningful work. But how does this affect the way we use the work being created by machines?</p>
+          <p>Josh Clark, founder of design studio Big Medium, provoked the audience with this very question during his talk, ‘A.I. is your New Design Material’. Some of the most impressive advancements in recent technology are things like facial recognition, predictive text, and image search, all powered by machine learning. But it's important to remember—all of these technologies are still built on code. The upside is less room for error. No real emotions, expectations, or feelings get in the way of the job it was designed to do.</p>
+          <p>Yet, as humans, we assume that when facial recognition fails, the whole process is inherently flawed. But was it really?</p>
+          <p>According to Josh, that is the most fundamental thing to understand when it comes to machines. Not meeting our human expectations doesn’t automatically make the technology itself a failure. These things were, by definition, built on logic, which begs the question: Can a robot's solution actually be wrong?</p>
+          <p>The point of introducing machine learning into our products was never to have them do all the work. Instead, algorithms and logic-based solutions ought only provide humans with better insight so as to empower us to arrive at better solutions, faster.</p>
+          <p>This fundamental understanding of our users is what really helps us make better products. If a computer can figure out how to walk on its own, maybe it's time to start investigating why and how these solutions were formed.</p>
+
+          <h2>How do we design for the unknown future?</h2>
+          <p>Jared Spool, Co-Founder of UIE asks, “What was the most important thing you learned yesterday, and how will it impact what you do in the future?”</p>
+          <p>As designers and researchers, we essentially always need to think about how we design products for the future, even as we’re meeting the demands of present day design. A tall order, especially when things move as fast as they have been over the last decade.</p>
+          <p>To start, Jared advocates for looking back at the ways in which our design processes have already changed. Remember when UX/UI wasn't a priority for many companies? Studying how UX and UI evolved gives us a clearer signal for where these disciplines are headed—toward what Jared describes as "The UX Tipping Point," where an organization fully embraces user experience across everything it builds.</p>
+
+          <h2>Are we designing for users or ourselves?</h2>
+          <p>People don't always know what they want, even if they think they do. As Joe Leech, a UX psychologist says, "People want more choices, but can't deal with them.”</p>
+          <p>So how do we design for our users, if our users aren’t always telling us the truth? Back in the 2000s, psychologists Sheena Iyengar and Mark Lepper ran a study regarding consumer choices at a supermarket offering 6 varieties of jam one week and 30 varieties the next. More jam was sold during the week with only 6 choices—even though shoppers said they preferred the week with 30.</p>
+          <p>Using this analogy, Joe makes a compelling point: understanding psychology is foundational to great design. User research across diverse contexts helps teams get close to the root of users' real needs over their stated wants—forming the foundation for true UX.</p>
+        </div>
+
+        <div style="margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+          <a class="roll-btn roll-btn--ghost" href="../">← All Articles</a>
+          <a class="roll-btn roll-btn--primary" href="../how-i-approach-ui-ux-design-for-a-full-stack-application/" data-roll>
+            <span class="roll-btn__text">Read First Article</span>
+            <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="brand-wordmark"><span class="brand-wordmark__name">Syed Shahabuddin</span></div>
+          <ul class="footer-links">
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../projects/">Projects</a></li>
+            <li><a href="../../experience/">Experience</a></li>
+            <li><a href="../../tools/">Tools</a></li>
+            <li><a href="../../#contact">Contact</a></li>
+          </ul>
+          <p class="footer-copy">© 2026 Syed Shahabuddin</p>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <script src="../../js/script.js" defer></script>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="tbg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0b0d14"/>
+      <stop offset="100%" stop-color="#131624"/>
+    </linearGradient>
+    <radialGradient id="tglow" cx="24%" cy="20%" r="55%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="tglow2" cx="84%" cy="80%" r="48%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#tbg)"/>
+  <rect width="800" height="500" fill="url(#tglow)"/>
+  <rect width="800" height="500" fill="url(#tglow2)"/>
+
+  <!-- Editorial Reference Card Shell -->
+  <rect x="44" y="68" width="712" height="390" rx="18" fill="#0f121b" stroke="#ffffff" stroke-opacity="0.1"/>
+
+  <!-- Top Header Strip -->
+  <text x="72" y="114" fill="#ff8c42" font-family="monospace" font-size="11" font-weight="600">SOVOS // TAX-COMPLIANCE REFERENCE HUB</text>
+  <text x="72" y="152" fill="#f5f3ef" font-family="sans-serif" font-size="30" font-weight="700">Taxapedia</text>
+  <text x="72" y="176" fill="#a8a49c" font-family="sans-serif" font-size="13">Structured for Technical SEO, Canonical Authority &amp; AI Agent Citations</text>
+
+  <!-- AI Citation / Schema Pills -->
+  <g transform="translate(72, 198)">
+    <rect width="128" height="26" rx="13" fill="#d4ff3f" fill-opacity="0.12" stroke="#d4ff3f" stroke-opacity="0.4"/>
+    <text x="14" y="17" fill="#d4ff3f" font-family="monospace" font-size="10">ChatGPT Ready ✓</text>
+    <rect x="138" width="122" height="26" rx="13" fill="#d4ff3f" fill-opacity="0.12" stroke="#d4ff3f" stroke-opacity="0.4"/>
+    <text x="152" y="17" fill="#d4ff3f" font-family="monospace" font-size="10">Claude Ready ✓</text>
+    <rect x="270" width="136" height="26" rx="13" fill="#f97316" fill-opacity="0.14" stroke="#f97316" stroke-opacity="0.4"/>
+    <text x="284" y="17" fill="#ff8c42" font-family="monospace" font-size="10">Schema + Canonical</text>
+    <rect x="416" width="112" height="26" rx="13" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="430" y="17" fill="#f5f3ef" font-family="monospace" font-size="10">Cited Sources</text>
+  </g>
+
+  <!-- 3 Knowledge Hub Cards -->
+  <g transform="translate(72, 248)">
+    <rect width="206" height="176" rx="14" fill="#151926" stroke="#ffffff" stroke-opacity="0.09"/>
+    <text x="18" y="30" fill="#ff8c42" font-family="monospace" font-size="10">HUB 01 · VAT &amp; E-INVOICING</text>
+    <text x="18" y="58" fill="#f5f3ef" font-family="sans-serif" font-size="15" font-weight="700">Global Mandates</text>
+    <rect x="18" y="74" width="166" height="8" rx="4" fill="#ffffff" fill-opacity="0.14"/>
+    <rect x="18" y="90" width="140" height="8" rx="4" fill="#ffffff" fill-opacity="0.09"/>
+    <rect x="18" y="106" width="154" height="8" rx="4" fill="#ffffff" fill-opacity="0.09"/>
+    <text x="18" y="148" fill="#a8a49c" font-family="monospace" font-size="9">AUTHORED · DATED · CITED</text>
+
+    <rect x="224" width="206" height="176" rx="14" fill="#151926" stroke="#f97316" stroke-opacity="0.35"/>
+    <text x="242" y="30" fill="#d4ff3f" font-family="monospace" font-size="10">HUB 02 · IRS REPORTING</text>
+    <text x="242" y="58" fill="#f5f3ef" font-family="sans-serif" font-size="15" font-weight="700">1099 / W-2 / ACA</text>
+    <rect x="242" y="74" width="166" height="8" rx="4" fill="#ffffff" fill-opacity="0.16"/>
+    <rect x="242" y="90" width="150" height="8" rx="4" fill="#ffffff" fill-opacity="0.1"/>
+    <rect x="242" y="106" width="128" height="8" rx="4" fill="#ffffff" fill-opacity="0.1"/>
+    <text x="242" y="148" fill="#d4ff3f" font-family="monospace" font-size="9">JSON-LD · CLEAN HIERARCHY</text>
+
+    <rect x="448" width="206" height="176" rx="14" fill="#151926" stroke="#ffffff" stroke-opacity="0.09"/>
+    <text x="466" y="30" fill="#38bdf8" font-family="monospace" font-size="10">HUB 03 · SECURITY &amp; SEO</text>
+    <text x="466" y="58" fill="#f5f3ef" font-family="sans-serif" font-size="15" font-weight="700">Core Web Vitals</text>
+    <rect x="466" y="74" width="166" height="8" rx="4" fill="#ffffff" fill-opacity="0.14"/>
+    <rect x="466" y="90" width="136" height="8" rx="4" fill="#ffffff" fill-opacity="0.09"/>
+    <rect x="466" y="106" width="158" height="8" rx="4" fill="#ffffff" fill-opacity="0.09"/>
+    <text x="466" y="148" fill="#a8a49c" font-family="monospace" font-size="9">WORDPRESS · ELEMENTOR</text>
+  </g>
+</svg>
+

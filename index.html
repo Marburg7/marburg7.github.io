@@ -3,422 +3,1123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SyedShahab</title>
-  <meta name="description" content="UI/UX Designer & Full-Stack Developer with 1.5 years of experience creating designs and responsive web apps. Skilled in Figma, Framer, Adobe XD, Illustrator, Miro, Notion, ReactJS, HTML, CSS & JavaScript. Passionate about seamless user experiences.">
+  <title>Syed Shahabuddin — React.js &amp; Full Stack Web Developer</title>
+  <meta name="description" content="React.js and Full Stack Web Developer with 3+ years of experience building scalable web applications, enterprise eCommerce multisites, component UI systems, and AI-powered tools.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="SyedShahab">
-  <meta property="og:description" content="UI/UX Designer & Full-Stack Developer with 1.5 years of experience creating designs and responsive web apps. Skilled in Figma, Framer, Adobe XD, Illustrator, Miro, Notion, ReactJS, HTML, CSS & JavaScript. Passionate about seamless user experiences.">
+  <meta property="og:title" content="Syed Shahabuddin — React.js &amp; Full Stack Web Developer">
+  <meta property="og:description" content="React.js & Full Stack Web Developer (3+ years) specializing in TypeScript, Storybook, Tailwind CSS, Node.js, PHP, Python/FastAPI, WordPress/WooCommerce, Docker, AWS/Azure, and Technical SEO.">
   <meta property="og:image" content="./assets/images/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SyedShahab">
-  <meta name="twitter:description" content="UI/UX Designer & Full-Stack Developer with 1.5 years of experience creating designs and responsive web apps. Skilled in Figma, Framer, Adobe XD, Illustrator, Miro, Notion, ReactJS, HTML, CSS & JavaScript. Passionate about seamless user experiences.">
+  <meta name="twitter:title" content="Syed Shahabuddin — React.js &amp; Full Stack Web Developer">
+  <meta name="twitter:description" content="React.js & Full Stack Web Developer with 3+ years of experience shipping enterprise multisites, eCommerce ecosystems, and open-source AI tools.">
   <meta name="twitter:image" content="./assets/images/og-image.png">
   <link rel="icon" type="image/png" href="./assets/images/favicon.png">
   <link rel="apple-touch-icon" href="./assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-  <div class="page-shell">
-  <header class="site-nav-wrapper">
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a class="nav-item is-active" href="./" aria-label="Home" aria-current="page">
-        <span class="nav-item__tooltip" aria-hidden="true">Home</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5.5v-6.5h-5V21H4a1 1 0 0 1-1-1V9.5z"/></svg></span>
-      </a>
-      <a class="nav-item" href="./projects/" aria-label="Projects">
-        <span class="nav-item__tooltip" aria-hidden="true">Projects</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
-      </a>
-      <a class="nav-item" href="./experience/" aria-label="Experience">
-        <span class="nav-item__tooltip" aria-hidden="true">Experience</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
-      </a>
-      <a class="nav-item" href="./tools/" aria-label="Tools">
-        <span class="nav-item__tooltip" aria-hidden="true">Tools</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
-      </a>
-      <a class="nav-item" href="./blog/" aria-label="Thoughts">
-        <span class="nav-item__tooltip" aria-hidden="true">Thoughts</span>
-        <span class="nav-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
-      </a>
-    </nav>
-  </header>
+<body class="is-preloading" data-root="./">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <div class="layout-wrapper">
-      <div class="layout-container">
-      <aside class="left-column appear-left" aria-label="Profile card">
-        <div class="profile-card">
-          <div class="profile-card__shape-top" aria-hidden="true">
-            <img src="./assets/svg/profile-curve-top.svg" alt="" width="194" height="100">
-          </div>
+  <!-- Preloader Curtain -->
+  <div id="site-preloader" class="preloader" aria-hidden="true">
+    <div class="preloader__mark">
+      <svg class="preloader__svg" viewBox="0 0 80 80" aria-hidden="true">
+        <rect class="preloader__path" x="6" y="6" width="68" height="68" rx="18"/>
+        <path class="preloader__path" d="M35 28c-5.5 0-9.5 2.5-9.5 6.5 0 4 3.5 5.5 9 7s9 3 9 7.5c0 4.2-4 7-9.8 7-5 0-8.7-2.2-9.7-5.5"/>
+        <path class="preloader__path" d="M56 28c-5.5 0-9.5 2.5-9.5 6.5 0 4 3.5 5.5 9 7s9 3 9 7.5c0 4.2-4 7-9.8 7-5 0-8.7-2.2-9.7-5.5"/>
+      </svg>
+    </div>
+    <div class="preloader__meta">
+      <span>SYED SHAHABUDDIN</span>
+      <div class="preloader__bar"><div class="preloader__bar-fill"></div></div>
+      <span data-preloader-count>00</span>
+    </div>
+  </div>
 
-          <div class="profile-card__photo">
-            <img src="./assets/images/profile-syed.jpg" alt="Syed Shahabuddin" width="240" height="284" fetchpriority="high">
-          </div>
+  <!-- Ambient Atmospheric Layers -->
+  <canvas id="ambient-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-orbs" aria-hidden="true">
+    <div class="ambient-orb ambient-orb--1"></div>
+    <div class="ambient-orb ambient-orb--2"></div>
+    <div class="ambient-orb ambient-orb--3"></div>
+  </div>
+  <div class="noise-layer" aria-hidden="true"></div>
+  <div class="glow-rail-top" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
-          <div class="profile-card__bio">
-            <p class="profile-card__name">Syed Shahabuddin</p>
-            <div class="profile-card__bottom">
-              <p class="profile-card__desc">A Software Engineer with a track record of developing numerous innovative solutions.</p>
-              <div class="profile-card__socials" aria-label="Social links">
-                <a class="social-btn" href="https://www.linkedin.com/in/syed-shahabuddin-1b209721b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
-                <a class="social-btn" href="https://github.com/Marburg7" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-                <a class="social-btn" href="mailto:syedshafaiz76@gmail.com" aria-label="Email Syed Shahabuddin">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
+  <div class="site-shell">
+    <!-- Scroll-Aware Morphing Header -->
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav-bar" aria-label="Primary navigation">
+          <a class="brand-link" href="./" aria-label="Syed Shahabuddin Home">
+            <span class="brand-monogram" aria-hidden="true">
+              SS
+              <span class="brand-monogram__echo"></span>
+            </span>
+            <span class="brand-wordmark">
+              <span class="brand-wordmark__name">Syed Shahabuddin</span>
+              <span class="brand-wordmark__role">React.js // Full Stack</span>
+            </span>
+          </a>
 
-          <div class="profile-card__shape-bottom" aria-hidden="true">
-            <img src="./assets/svg/profile-curve-bottom.svg" alt="" width="333" height="205">
+          <ul class="nav-pill">
+            <li><a class="nav-link is-active" href="./" aria-current="page">Home</a></li>
+            <li><a class="nav-link" href="./projects/">Projects</a></li>
+            <li><a class="nav-link" href="./experience/">Experience</a></li>
+            <li><a class="nav-link" href="./tools/">Tools</a></li>
+            <li><a class="nav-link" href="./blog/">Thoughts</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <a class="roll-btn roll-btn--primary roll-btn--nav" href="#contact" data-roll data-magnetic>
+              <span class="roll-btn__text">Let's Talk</span>
+              <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+            <button id="menu-trigger" class="menu-trigger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+              <span class="menu-trigger__line menu-trigger__line--top"></span>
+              <span class="menu-trigger__line menu-trigger__line--bottom"></span>
+            </button>
           </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Full-Screen Mobile Editorial Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+      <ul class="mobile-drawer__list">
+        <li><a class="mobile-drawer__link is-active" href="./"><span class="mobile-drawer__idx">01</span>Home</a></li>
+        <li><a class="mobile-drawer__link" href="./projects/"><span class="mobile-drawer__idx">02</span>Projects</a></li>
+        <li><a class="mobile-drawer__link" href="./experience/"><span class="mobile-drawer__idx">03</span>Experience</a></li>
+        <li><a class="mobile-drawer__link" href="./tools/"><span class="mobile-drawer__idx">04</span>Tools</a></li>
+        <li><a class="mobile-drawer__link" href="./blog/"><span class="mobile-drawer__idx">05</span>Thoughts</a></li>
+        <li><a class="mobile-drawer__link" href="#contact"><span class="mobile-drawer__idx">06</span>Contact</a></li>
+      </ul>
+      <div class="mobile-drawer__footer">
+        <span>syedshafaiz76@gmail.com · +91 7019487141</span>
+        <div class="mobile-drawer__socials">
+          <a href="https://www.linkedin.com/in/syed-shahabuddin-1b209721b/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/Marburg7" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         </div>
-      </aside>
-
-        <main class="right-column">
-          <section class="hero-section appear-right" aria-label="Introduction">
-            <div class="hero-info">
-              <h1 class="display-h1">SOFTWARE<br>ENGINEER</h1>
-              <p class="body-lg hero-bio">
-                Passionate about creating intuitive and engaging user experiences with <strong>1.5 years of experience</strong> in <strong>UI/UX design and full-stack development</strong>. Specialize in transforming ideas into <strong>beautifully crafted web and mobile applications</strong>. Proficient in <strong>Figma, Framer, Adobe XD, Illustrator, Blender, Miro, and Notion</strong>, with expertise in <strong>ReactJS, HTML, CSS, and JavaScript</strong>. Have worked on <strong>multiple projects, including website redesigns, interactive prototypes, and responsive web apps</strong>, while also taking on <strong>freelance projects</strong> to deliver user-centric digital solutions.
-              </p>
-            </div>
-
-            <div class="stats-row" aria-label="Career metrics">
-              <div class="stat-item">
-                <p class="stat-value">2.6</p>
-                <p class="stat-label">YEARS OF<br>EXPERIENCE</p>
-              </div>
-              <div class="stat-item">
-                <p class="stat-value">+5</p>
-                <p class="stat-label">PROJECTS<br>COMPLETED</p>
-              </div>
-              <div class="stat-item">
-                <p class="stat-value">6</p>
-                <p class="stat-label">WORLDWIDE<br>CLIENTS</p>
-              </div>
-            </div>
-
-            <div class="skill-cards-row">
-              <div class="skill-card skill-card--orange">
-                <div class="skill-card__bg-top" aria-hidden="true">
-                  <img src="./assets/svg/card-orange-waves.svg" alt="" width="388" height="155">
-                </div>
-                <div class="skill-card__bg-bottom" aria-hidden="true">
-                  <img src="./assets/svg/card-orange-waves.svg" alt="" width="388" height="155">
-                </div>
-                <div class="skill-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-                <div class="skill-card__body">
-                  <p class="skill-card__text">Dynamic Websites, Animated Designs, Blender CGI</p>
-                  <a class="skill-arrow-btn" href="./experience/" aria-label="Explore experience">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"/></svg>
-                  </a>
-                </div>
-              </div>
-
-              <div class="skill-card skill-card--lime">
-                <div class="skill-card__bg-top" aria-hidden="true">
-                  <img src="./assets/svg/card-lime-zigzag.svg" alt="" width="422" height="284">
-                </div>
-                <div class="skill-card__bg-bottom" aria-hidden="true">
-                  <img src="./assets/svg/card-lime-zigzag.svg" alt="" width="422" height="284">
-                </div>
-                <div class="skill-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-                <div class="skill-card__body">
-                  <p class="skill-card__text">FRAMER, FIGMA, WORDPRESS, REACTJS, NodeJS, PHP, JavaScript, Adobe XD, Adobe Illustrator</p>
-                  <a class="skill-arrow-btn" href="./experience/" aria-label="Explore experience">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"/></svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="content-section content-section--projects-home reveal-on-scroll" id="projects" aria-labelledby="projects-heading">
-            <h2 class="display-h2" id="projects-heading">MY <span class="heading-ghost">PROJECTS</span></h2>
-        <div class="cards-stack">
-          <a class="project-card" href="https://sovos.com/" target="_blank" rel="noopener noreferrer">
-            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"/></svg></span>
-            <div class="project-card__content">
-              <div class="project-card__thumb">
-                <img src="./assets/images/project-sovos.png" alt="Sovos enterprise multisite preview" loading="lazy" decoding="async" width="130" height="135">
-              </div>
-              <div class="project-card__details">
-                <h3 class="card-h3">Sovos</h3>
-                <p class="body-md">This is an Multisite consisting for 7+ Region Webpages and is been built using Storybook, Tailwind, PHP, Javascript and many more.</p>
-              </div>
-            </div>
-          </a>
-          <a class="project-card" href="https://efilemyforms.com/" target="_blank" rel="noopener noreferrer">
-            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"/></svg></span>
-            <div class="project-card__content">
-              <div class="project-card__thumb">
-                <img src="./assets/images/project-efilemyform.png" alt="eFileMyForm tax e-filing platform preview" loading="lazy" decoding="async" width="130" height="135">
-              </div>
-              <div class="project-card__details">
-                <h3 class="card-h3">efileMyForm</h3>
-                <p class="body-md">Designed and developed eFileMyForm, a secure IRS-approved e-filing platform that simplifies online filing of 1099, W-2, and ACA forms. Built to support businesses, SMBs, and CPAs, the platform offers real-time IRS compliance validation, end-to-end filing workflows, and integrated print-and-mail services to ensure accurate, efficient, and hassle-free tax form submissions.</p>
-              </div>
-            </div>
-          </a>
-          <a class="project-card" href="https://1099pro.com/" target="_blank" rel="noopener noreferrer">
-            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"/></svg></span>
-            <div class="project-card__content">
-              <div class="project-card__thumb">
-                <img src="./assets/images/project-1099pro.png" alt="1099pro.com cloud eFiling platform preview" loading="lazy" decoding="async" width="130" height="135">
-              </div>
-              <div class="project-card__details">
-                <h3 class="card-h3">1099pro.com</h3>
-                <p class="body-md">I designed and developed 1099pro a IRS Compliant 1099 Cloud eFiling Platform.</p>
-              </div>
-            </div>
-          </a>
-          <a class="project-card" href="https://royaalmahaadevabuilders.com/" target="_blank" rel="noopener noreferrer">
-            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"/></svg></span>
-            <div class="project-card__content">
-              <div class="project-card__thumb">
-                <img src="./assets/images/project-royaal.png" alt="Royaal Mahaadeva Builders website preview" loading="lazy" decoding="async" width="130" height="135">
-              </div>
-              <div class="project-card__details">
-                <h3 class="card-h3">Royaalmahaadevabuilders</h3>
-                <p class="body-md">designed and developed Royaal Mahaadeva Builders, a trusted real estate developer delivering high-quality residential and commercial projects with innovative design and superior craftsmanship.</p>
-              </div>
-            </div>
-          </a>
-          <a class="project-card" href="https://eduleem.com/" target="_blank" rel="noopener noreferrer">
-            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"/></svg></span>
-            <div class="project-card__content">
-              <div class="project-card__thumb">
-                <img src="./assets/images/project-eduleem.png" alt="Eduleem Bangalore institute website preview" loading="lazy" decoding="async" width="130" height="135">
-              </div>
-              <div class="project-card__details">
-                <h3 class="card-h3">Eduleem</h3>
-                <p class="body-md">designed and developed Eduleem, a leading institute in Bangalore that offers career-focused courses in design, IT, and technology with hands-on training and placement support.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-          </section>
-
-          <section class="content-section reveal-on-scroll" id="experience" aria-labelledby="experience-heading">
-            <h2 class="display-h2" id="experience-heading">2.6 YEARS OF <span class="heading-ghost">EXPERIENCE</span></h2>
-        <div class="cards-stack">
-          <a class="experience-card" href="https://sovos.com/" target="_blank" rel="noopener noreferrer">
-            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"/></svg></span>
-            <div class="experience-card__details">
-              <h3 class="card-h3">Sovos</h3>
-              <p class="body-md experience-card__desc">Experienced Web Developer Specialist with expertise in full-stack web development, WordPress, ReactJS, TypeScript, and DevOps practices. Skilled in developing scalable applications, optimizing website performance, implementing automated deployment pipelines, and delivering conversion-focused digital experiences for enterprise and eCommerce businesses.</p>
-            </div>
-            <p class="experience-card__date">Aug 2025 - Present</p>
-          </a>
-          <a class="experience-card" href="https://eduleem.com/" target="_blank" rel="noopener noreferrer">
-            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"/></svg></span>
-            <div class="experience-card__details">
-              <h3 class="card-h3">Eduleem India Pvt Ltd</h3>
-              <p class="body-md experience-card__desc">Led the Design, Development and Marketing team in creating user-centric web applications, improving the user experience and increasing user engagement. Built eduleelm.com from sctratch from UX designing to deployment of the website everything was handled by sole developer.</p>
-            </div>
-            <p class="experience-card__date">Dec 2023 - Aug 2025</p>
-          </a>
-          <a class="experience-card" href="https://arminfoserve.com/" target="_blank" rel="noopener noreferrer">
-            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"/></svg></span>
-            <div class="experience-card__details">
-              <h3 class="card-h3">ARM Infoserve India Pvt Ltd</h3>
-              <p class="body-md experience-card__desc">Designed and Developed user interfaces and webiste for e-commerce platforms, focusing on enhancing usability and visual appeal. was a sole developer, made the designa and developed eveything from scratch</p>
-            </div>
-            <p class="experience-card__date">Sep 2023 - Nov 2023</p>
-          </a>
-        </div>
-          </section>
-
-          <section class="content-section reveal-on-scroll" id="tools" aria-labelledby="tools-heading">
-            <h2 class="display-h2" id="tools-heading">MY <span class="heading-ghost">TOOLS</span></h2>
-        <div class="tools-grid">
-          <div class="tool-card">
-            <div class="tool-card__icon">
-              <img src="./assets/images/tool-generic.png" alt="Server Management icon" loading="lazy" decoding="async" width="60" height="60">
-            </div>
-            <div class="tool-card__meta">
-              <h3 class="tool-h3">Server Management</h3>
-              <p class="body-md">Knowledge of configuring, maintaining, and optimizing servers to ensure secure and stable application hosting.</p>
-            </div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-card__icon">
-              <img src="./assets/images/tool-generic.png" alt="API Integrations icon" loading="lazy" decoding="async" width="60" height="60">
-            </div>
-            <div class="tool-card__meta">
-              <h3 class="tool-h3">API Integrations</h3>
-              <p class="body-md">Connecting applications with third-party services and platforms to automate workflows and enable seamless data exchange.</p>
-            </div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-card__icon">
-              <img src="./assets/images/tool-generic.png" alt="Node.js icon" loading="lazy" decoding="async" width="60" height="60">
-            </div>
-            <div class="tool-card__meta">
-              <h3 class="tool-h3">Node.js</h3>
-              <p class="body-md">JavaScript runtime for building fast, scalable, and event-driven backend applications and APIs.</p>
-            </div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-card__icon">
-              <img src="./assets/images/tool-generic.png" alt="Cloud Computing icon" loading="lazy" decoding="async" width="60" height="60">
-            </div>
-            <div class="tool-card__meta">
-              <h3 class="tool-h3">Cloud Computing</h3>
-              <p class="body-md">Experience deploying, managing, and scaling applications on cloud platforms for improved reliability and performance.</p>
-            </div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-card__icon">
-              <img src="./assets/images/tool-generic.png" alt="SQL icon" loading="lazy" decoding="async" width="60" height="60">
-            </div>
-            <div class="tool-card__meta">
-              <h3 class="tool-h3">SQL</h3>
-              <p class="body-md">Database query language used to design, manage, and retrieve data efficiently from relational databases.</p>
-            </div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-card__icon">
-              <img src="./assets/images/tool-storybook.png" alt="Storybook icon" loading="lazy" decoding="async" width="60" height="60">
-            </div>
-            <div class="tool-card__meta">
-              <h3 class="tool-h3">Storybook</h3>
-            </div>
-          </div>
-          <a class="tool-card" href="https://wordpress.com/" target="_blank" rel="noopener noreferrer">
-            <div class="tool-card__icon">
-              <img src="./assets/images/tool-wordpress.png" alt="Wordpress icon" loading="lazy" decoding="async" width="60" height="60">
-            </div>
-            <div class="tool-card__meta">
-              <h3 class="tool-h3">Wordpress</h3>
-              <p class="body-md">CMR Used to design and develop responsive and dynamic websites for clients</p>
-            </div>
-          </a>
-          <a class="tool-card" href="https://react.dev/" target="_blank" rel="noopener noreferrer">
-            <div class="tool-card__icon">
-              <img src="./assets/images/tool-reactjs.png" alt="ReactJS icon" loading="lazy" decoding="async" width="60" height="60">
-            </div>
-            <div class="tool-card__meta">
-              <h3 class="tool-h3">ReactJS</h3>
-              <p class="body-md">Development tool for responsive and fast websites</p>
-            </div>
-          </a>
-          <a class="tool-card" href="https://framer.com?via=mejed_k" target="_blank" rel="noopener noreferrer">
-            <div class="tool-card__icon">
-              <img src="./assets/images/tool-framer.png" alt="Framer icon" loading="lazy" decoding="async" width="60" height="60">
-            </div>
-            <div class="tool-card__meta">
-              <h3 class="tool-h3">Framer</h3>
-              <p class="body-md">Website Builder</p>
-            </div>
-          </a>
-          <a class="tool-card" href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">
-            <div class="tool-card__icon">
-              <img src="./assets/images/tool-figma.png" alt="Figma icon" loading="lazy" decoding="async" width="60" height="60">
-            </div>
-            <div class="tool-card__meta">
-              <h3 class="tool-h3">Figma</h3>
-              <p class="body-md">Design Tool</p>
-            </div>
-          </a>
-        </div>
-          </section>
-
-          <section class="content-section reveal-on-scroll" id="thoughts" aria-labelledby="thoughts-heading">
-            <h2 class="display-h2" id="thoughts-heading">THOUGHTS</h2>
-        <div class="cards-stack">
-          <a class="blog-card" href="./blog/how-i-approach-ui-ux-design-for-a-full-stack-application/">
-            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"/></svg></span>
-            <div class="blog-card__details">
-              <h3 class="card-h3">How I Approach UI/UX Design for a Full-Stack Application</h3>
-              <p class="body-md">Designing a full-stack application requires a structured UI/UX approach, starting with user research, wireframing, and prototyping.</p>
-            </div>
-            <div class="blog-card__footer">
-              <span>Jan 24, 2025</span>
-              <span></span>
-            </div>
-          </a>
-          <a class="blog-card" href="./blog/how-i-built-my-first-full-stack-web-app/">
-            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"/></svg></span>
-            <div class="blog-card__details">
-              <h3 class="card-h3">How I Built My First Full-Stack Web App: Challenges & Learnings</h3>
-              <p class="body-md">From UI/UX design to full-stack development—my journey of building a web app from scratch.</p>
-            </div>
-            <div class="blog-card__footer">
-              <span>Dec 25, 2024</span>
-              <span></span>
-            </div>
-          </a>
-          <a class="blog-card" href="./blog/turning-a-boring-dashboard-into-an-engaging-user-interface/">
-            <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"/></svg></span>
-            <div class="blog-card__details">
-              <h3 class="card-h3">Turning a Boring Dashboard into an Engaging User Interface</h3>
-              <p class="body-md">Whether you work in marketing, sales, or product design, you understand the importance of a quality landing page. Landing pages are standalone websites used to generate leads or sales—in other words they help you increase your revenue.</p>
-            </div>
-            <div class="blog-card__footer">
-              <span>Nov 23, 2024</span>
-              <span></span>
-            </div>
-          </a>
-        </div>
-          </section>
-
-      <section class="content-section content-section--contact reveal-on-scroll" id="contact" aria-labelledby="contact-heading">
-        <h2 class="display-h2" id="contact-heading">LET'S WORK <span class="heading-ghost">TOGETHER</span></h2>
-        <form class="contact-form" novalidate>
-          <div class="form-row-2">
-            <label class="form-field">
-              <span class="form-label">Name</span>
-              <input class="form-control" type="text" name="Name" placeholder="Your Name" required autocomplete="name">
-            </label>
-            <label class="form-field">
-              <span class="form-label">Email</span>
-              <input class="form-control" type="email" name="Email" placeholder="Your@email.com" required autocomplete="email">
-            </label>
-          </div>
-
-          <label class="form-field">
-            <span class="form-label form-label--ui">Service Looking For</span>
-            <div class="select-wrap">
-              <select class="form-control is-placeholder" name="Service">
-                <option value="" selected disabled>Select…</option>
-                <option value="Web Development">Web Development</option>
-                <option value="Marketing">Marketing</option>
-                <option value="UI UX Design">UI UX Design</option>
-                <option value="Web Design">Web Design</option>
-              </select>
-              <span class="select-wrap__chevron" aria-hidden="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6L8 10.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            </div>
-          </label>
-
-          <label class="form-field">
-            <span class="form-label form-label--muted">Message</span>
-            <textarea class="form-control" name="Message" placeholder="Message" rows="4"></textarea>
-          </label>
-
-          <button class="form-submit" type="submit">Submit</button>
-          <div class="form-status" role="status" aria-live="polite"></div>
-        </form>
-      </section>
-        </main>
       </div>
     </div>
 
-  <footer class="site-footer">
-    <p class="site-footer__text">
-      Made by <a href="./">Syed Shahabuddin</a> | Powered by <a href="./">Syed Shahabuddin</a>
-    </p>
-  </footer>
+    <main id="main-content">
+      <!-- ================================================================
+           HERO EXPERIENCE
+           ================================================================ -->
+      <section class="hero" aria-label="Introduction">
+        <div class="container">
+          <div class="hero__grid">
+            <div class="hero__copy">
+              <div class="eyebrow-badge hero-stagger">
+                <span class="status-dot" aria-hidden="true"></span>
+                React.js Developer · Full Stack Web Developer · 3+ Yrs
+              </div>
+
+              <h1 class="hero__title">
+                <span class="hero__title-line"><span class="hero__title-inner">ENGINEERING</span></span>
+                <span class="hero__title-line"><span class="hero__title-inner">INTERFACES THAT</span></span>
+                <span class="hero__title-line"><span class="hero__title-inner"><span class="hero__accent">MOVE &amp; SCALE.</span></span></span>
+              </h1>
+
+              <p class="hero__lead hero-stagger">
+                I'm <strong>Syed Shahabuddin</strong> — a React.js &amp; Full Stack Web Developer with
+                <strong>3+ years of experience</strong> building scalable web apps, component UI libraries,
+                and enterprise eCommerce platforms. Skilled in <strong>React.js, TypeScript, Tailwind CSS, Storybook, Jest &amp; RTL</strong>
+                alongside <strong>PHP, MySQL, Node.js, Python/FastAPI, WordPress/WooCommerce, Docker, AWS/Azure</strong>,
+                and <strong>Technical SEO / Core Web Vitals</strong>.
+              </p>
+
+              <div class="hero__actions hero-stagger">
+                <a class="roll-btn roll-btn--primary roll-btn--down" href="#projects" data-roll data-magnetic>
+                  <span class="roll-btn__text">Explore Key Projects</span>
+                  <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                </a>
+                <a class="roll-btn roll-btn--ghost" href="#contact" data-roll data-magnetic>
+                  <span class="roll-btn__text">Start a Conversation</span>
+                  <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Interactive 3D-Tilt Editorial Portrait -->
+            <div class="hero__visual hero-stagger">
+              <div class="portrait-card" data-cursor="HELLO">
+                <div class="portrait-card__frame">
+                  <img src="./assets/images/profile-syed.jpg" alt="Portrait of Syed Shahabuddin" width="400" height="445" fetchpriority="high">
+                  <div class="portrait-card__overlay">
+                    <div>
+                      <p class="portrait-card__name">Syed Shahabuddin</p>
+                      <p class="portrait-card__subtitle">Full Stack Developer @ Sovos</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="portrait-card__footer">
+                  <div class="portrait-card__stats">
+                    <div class="mini-stat">
+                      <span class="mini-stat__val">3+</span>
+                      <span class="mini-stat__lbl">Years</span>
+                    </div>
+                    <div class="mini-stat">
+                      <span class="mini-stat__val">10+</span>
+                      <span class="mini-stat__lbl">eComm Sites</span>
+                    </div>
+                    <div class="mini-stat">
+                      <span class="mini-stat__val">70K+</span>
+                      <span class="mini-stat__lbl">Biweekly</span>
+                    </div>
+                  </div>
+                  <div class="social-row" aria-label="Social profiles">
+                    <a class="icon-btn" href="https://www.linkedin.com/in/syed-shahabuddin-1b209721b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a class="icon-btn" href="https://github.com/Marburg7" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </a>
+                    <a class="icon-btn" href="mailto:syedshafaiz76@gmail.com" aria-label="Email Syed Shahabuddin">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Telemetry & Scroll Cue -->
+          <div class="hero__footer hero-stagger">
+            <div class="telemetry-group">
+              <span>BASE // <strong>BENGALURU, INDIA</strong></span>
+              <span>LOCAL TIME // <strong data-live-clock>IST · UTC+5:30</strong></span>
+              <span>CERTIFIED // <strong>AWS SOLUTIONS ARCHITECT</strong></span>
+            </div>
+            <a class="scroll-cue" href="#capabilities">
+              <span class="scroll-cue__line" aria-hidden="true"></span>
+              <span>Scroll to Explore</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           KINETIC DISCIPLINE MARQUEE
+           ================================================================ -->
+      <div class="marquee-band" aria-hidden="true">
+        <div class="marquee-track">
+          <div class="marquee-item"><span>React.js &amp; TypeScript</span><span class="marquee-dot"></span><span>Storybook UI Systems</span><span class="marquee-dot"></span><span>Enterprise eCommerce</span><span class="marquee-dot"></span><span>Python &amp; FastAPI</span><span class="marquee-dot"></span><span>Docker · K8s · AWS · Azure</span><span class="marquee-dot"></span><span>Technical SEO &amp; Core Web Vitals</span><span class="marquee-dot"></span></div>
+          <div class="marquee-item"><span>React.js &amp; TypeScript</span><span class="marquee-dot"></span><span>Storybook UI Systems</span><span class="marquee-dot"></span><span>Enterprise eCommerce</span><span class="marquee-dot"></span><span>Python &amp; FastAPI</span><span class="marquee-dot"></span><span>Docker · K8s · AWS · Azure</span><span class="marquee-dot"></span><span>Technical SEO &amp; Core Web Vitals</span><span class="marquee-dot"></span></div>
+        </div>
+      </div>
+
+      <!-- ================================================================
+           01 // CAPABILITIES & METRICS BENTO
+           ================================================================ -->
+      <section id="capabilities" class="section" aria-labelledby="cap-heading">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div class="section-head__left">
+              <span class="section-index">01 // Craft &amp; Impact</span>
+              <h2 class="section-title" id="cap-heading">COMPONENT SYSTEMS <span class="section-title__ghost">TO CLOUD SCALE</span></h2>
+            </div>
+            <p class="section-desc">Experienced across the full software development lifecycle in Agile/Scrum teams—from tested React.js component libraries and CI/CD pipelines to enterprise WordPress/WooCommerce, AI automation, and Core Web Vitals.</p>
+          </div>
+
+          <div class="bento-grid">
+            <div class="spotlight-card bento-metric" data-reveal>
+              <span class="bento-metric__label">Full-Stack Experience</span>
+              <p class="bento-metric__num" data-count-to="3" data-suffix="+">3<span>+</span></p>
+            </div>
+            <div class="spotlight-card bento-metric" data-reveal style="--reveal-delay: 80ms">
+              <span class="bento-metric__label">eCommerce Sites Managed</span>
+              <p class="bento-metric__num" data-count-to="10" data-suffix="+">10<span>+</span></p>
+            </div>
+            <div class="spotlight-card bento-metric" data-reveal style="--reveal-delay: 160ms">
+              <span class="bento-metric__label">Landing Pages Shipped</span>
+              <p class="bento-metric__num" data-count-to="20" data-suffix="+">20<span>+</span></p>
+            </div>
+            <div class="spotlight-card bento-metric" data-reveal style="--reveal-delay: 240ms">
+              <span class="bento-metric__label">Technical SEO Fixes</span>
+              <p class="bento-metric__num" data-count-to="100" data-suffix="+">100<span>+</span></p>
+            </div>
+
+            <article class="spotlight-card bento-pillar bento-pillar--amber" data-reveal>
+              <div class="bento-pillar__top">
+                <div class="bento-pillar__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                </div>
+                <span class="bento-pillar__tag">Frontend &amp; UX Craft</span>
+              </div>
+              <div>
+                <h3 class="bento-pillar__title">Scalable React.js UI Systems, Testing &amp; Accessibility</h3>
+                <p class="bento-pillar__text">Reusable component libraries built with React hooks, TypeScript, Tailwind CSS, and Storybook—backed by Jest &amp; React Testing Library, Figma prototyping, A/B testing, and WCAG accessibility.</p>
+              </div>
+              <div class="bento-pillar__chips">
+                <span class="chip">React.js</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">Tailwind CSS</span>
+                <span class="chip">Storybook</span>
+                <span class="chip">Jest &amp; RTL</span>
+                <span class="chip">Figma &amp; Framer</span>
+              </div>
+            </article>
+
+            <article class="spotlight-card bento-pillar bento-pillar--lime" data-reveal style="--reveal-delay: 120ms">
+              <div class="bento-pillar__top">
+                <div class="bento-pillar__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                </div>
+                <span class="bento-pillar__tag">Backend, Cloud &amp; Growth</span>
+              </div>
+              <div>
+                <h3 class="bento-pillar__title">Full-Stack APIs, Enterprise CMS, DevOps &amp; Technical SEO</h3>
+                <p class="bento-pillar__text">RESTful APIs in PHP, Node.js, and Python/FastAPI with MySQL &amp; Alembic; containerized deployments on Docker, Kubernetes, AWS &amp; Azure; plus WordPress/WooCommerce, Marketo, Smartling, GA4, and Schema SEO.</p>
+              </div>
+              <div class="bento-pillar__chips">
+                <span class="chip">Node.js &amp; PHP</span>
+                <span class="chip">Python &amp; FastAPI</span>
+                <span class="chip">MySQL &amp; Alembic</span>
+                <span class="chip">Docker &amp; K8s</span>
+                <span class="chip">AWS &amp; Azure</span>
+                <span class="chip">CI/CD &amp; YAML</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           02 // KEY PROJECTS SHOWCASE (ALL 7 CV PROJECTS)
+           ================================================================ -->
+      <section id="projects" class="section" aria-labelledby="projects-heading">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div class="section-head__left">
+              <span class="section-index">02 // Key Projects</span>
+              <h2 class="section-title" id="projects-heading">SHIPPED <span class="section-title__ghost">PLATFORMS</span></h2>
+            </div>
+
+            <div class="filter-bar" role="group" aria-label="Filter projects by domain" data-filter-group="projects">
+              <button class="filter-pill is-active" type="button" data-filter="all" aria-pressed="true">All (7)</button>
+              <button class="filter-pill" type="button" data-filter="ai" aria-pressed="false">AI &amp; Open Source</button>
+              <button class="filter-pill" type="button" data-filter="enterprise" aria-pressed="false">Enterprise &amp; TaxTech</button>
+              <button class="filter-pill" type="button" data-filter="web" aria-pressed="false">EdTech &amp; Real Estate</button>
+            </div>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Featured Project 1: NovaCut Studio -->
+            <article class="spotlight-card work-card work-card--featured" data-filter-item="projects" data-category="ai" data-reveal>
+              <div class="work-card__media" data-cursor="INSPECT">
+                <div class="work-card__browser-bar" aria-hidden="true">
+                  <div class="browser-dots"><span></span><span></span><span></span></div>
+                  <span class="browser-url">github.com/Marburg7/NovaCut</span>
+                </div>
+                <img src="./assets/svg/project-novacut.svg" alt="NovaCut Studio dark-mode AI clip maker dashboard preview" loading="lazy" decoding="async" width="800" height="500">
+              </div>
+              <div class="work-card__body">
+                <div>
+                  <div class="work-card__meta">
+                    <span>01 · Featured Open-Source AI Tool</span>
+                    <span>Local NLP + LLMs</span>
+                  </div>
+                  <h3 class="work-card__title">NovaCut Studio</h3>
+                  <p class="work-card__desc">Free, open-source AI clip maker turning YouTube, Twitch, and Kick streams into captioned 9:16 vertical clips for Shorts, Reels, and TikTok—featuring local transcription, real-time live clipping, per-creator workspaces, scheduled auto-posting, optional Gemini/OpenAI/Claude/Ollama integrations, and a dark-mode video scrubber &amp; caption designer.</p>
+                </div>
+                <div class="work-card__tags">
+                  <span class="chip">Python &amp; FastAPI</span>
+                  <span class="chip">React.js</span>
+                  <span class="chip">Local Transcription</span>
+                  <span class="chip">NLP Engine</span>
+                  <span class="chip">Gemini / Claude / Ollama</span>
+                </div>
+                <div class="work-card__actions">
+                  <button class="text-action" type="button" data-open-case="novacut">
+                    Inspect Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                  <a class="text-action" href="https://github.com/Marburg7/NovaCut" target="_blank" rel="noopener noreferrer" data-cursor="GITHUB ↗">
+                    View on GitHub
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2: Sovos Multisite Platform -->
+            <article class="spotlight-card work-card" data-filter-item="projects" data-category="enterprise" data-reveal>
+              <div class="work-card__media" data-cursor="INSPECT">
+                <div class="work-card__browser-bar" aria-hidden="true">
+                  <div class="browser-dots"><span></span><span></span><span></span></div>
+                  <span class="browser-url">sovos.com</span>
+                </div>
+                <img src="./assets/images/project-sovos.png" alt="Sovos enterprise multisite platform preview" loading="lazy" decoding="async" width="600" height="375">
+              </div>
+              <div class="work-card__body">
+                <div>
+                  <div class="work-card__meta">
+                    <span>02 · Enterprise Multisite</span>
+                    <span>7+ Regions · 10+ eComm</span>
+                  </div>
+                  <h3 class="work-card__title">Sovos Multisite Platform</h3>
+                  <p class="work-card__desc">End-to-end enterprise multisite spanning 7+ regional webpages and 10+ eCommerce properties using React.js, TypeScript, Storybook, Tailwind CSS, PHP, Marketo, Smartling, and Infogram.</p>
+                </div>
+                <div class="work-card__tags">
+                  <span class="chip">React.js &amp; TS</span>
+                  <span class="chip">Storybook</span>
+                  <span class="chip">Tailwind CSS</span>
+                  <span class="chip">PHP / WP</span>
+                </div>
+                <div class="work-card__actions">
+                  <button class="text-action" type="button" data-open-case="sovos">
+                    Inspect Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                  <a class="text-action" href="https://sovos.com/" target="_blank" rel="noopener noreferrer" data-cursor="LIVE ↗">
+                    Visit Live
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3: Taxapedia -->
+            <article class="spotlight-card work-card" data-filter-item="projects" data-category="enterprise ai" data-reveal style="--reveal-delay: 90ms">
+              <div class="work-card__media" data-cursor="INSPECT">
+                <div class="work-card__browser-bar" aria-hidden="true">
+                  <div class="browser-dots"><span></span><span></span><span></span></div>
+                  <span class="browser-url">sovos.com/taxapedia</span>
+                </div>
+                <img src="./assets/svg/project-taxapedia.svg" alt="Taxapedia tax-compliance knowledge hub preview" loading="lazy" decoding="async" width="800" height="500">
+              </div>
+              <div class="work-card__body">
+                <div>
+                  <div class="work-card__meta">
+                    <span>03 · Knowledge Hub &amp; AI-SEO</span>
+                    <span>ChatGPT &amp; Claude Ready</span>
+                  </div>
+                  <h3 class="work-card__title">Taxapedia</h3>
+                  <p class="work-card__desc">Tax-compliance reference site built on WordPress/Elementor with security best practices, canonical technical SEO, and clean cited structures optimized for AI agents like ChatGPT and Claude.</p>
+                </div>
+                <div class="work-card__tags">
+                  <span class="chip">WordPress</span>
+                  <span class="chip">Elementor</span>
+                  <span class="chip">Technical SEO</span>
+                  <span class="chip">AI Agent Optimization</span>
+                </div>
+                <div class="work-card__actions">
+                  <button class="text-action" type="button" data-open-case="taxapedia">
+                    Inspect Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                  <a class="text-action" href="https://sovos.com/taxapedia" target="_blank" rel="noopener noreferrer" data-cursor="LIVE ↗">
+                    Visit Live
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 4: eFileMyForm -->
+            <article class="spotlight-card work-card" data-filter-item="projects" data-category="enterprise" data-reveal>
+              <div class="work-card__media" data-cursor="INSPECT">
+                <div class="work-card__browser-bar" aria-hidden="true">
+                  <div class="browser-dots"><span></span><span></span><span></span></div>
+                  <span class="browser-url">efilemyforms.com</span>
+                </div>
+                <img src="./assets/images/project-efilemyform.png" alt="eFileMyForm IRS-approved tax e-filing platform preview" loading="lazy" decoding="async" width="600" height="375">
+              </div>
+              <div class="work-card__body">
+                <div>
+                  <div class="work-card__meta">
+                    <span>04 · IRS-Approved eFiling</span>
+                    <span>Frontend + Backend/API</span>
+                  </div>
+                  <h3 class="work-card__title">eFileMyForm</h3>
+                  <p class="work-card__desc">IRS-compliant cloud e-filing platform for 1099, W-2, and ACA forms—handling frontend and backend/API logic with real-time compliance validation and integrated print-and-mail services.</p>
+                </div>
+                <div class="work-card__tags">
+                  <span class="chip">React.js</span>
+                  <span class="chip">REST APIs</span>
+                  <span class="chip">Compliance Workflows</span>
+                </div>
+                <div class="work-card__actions">
+                  <button class="text-action" type="button" data-open-case="efilemyform">
+                    Inspect Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                  <a class="text-action" href="https://efilemyforms.com/" target="_blank" rel="noopener noreferrer" data-cursor="LIVE ↗">
+                    Visit Live
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 5: 1099pro.com -->
+            <article class="spotlight-card work-card" data-filter-item="projects" data-category="enterprise" data-reveal style="--reveal-delay: 90ms">
+              <div class="work-card__media" data-cursor="INSPECT">
+                <div class="work-card__browser-bar" aria-hidden="true">
+                  <div class="browser-dots"><span></span><span></span><span></span></div>
+                  <span class="browser-url">1099pro.com</span>
+                </div>
+                <img src="./assets/images/project-1099pro.png" alt="1099pro.com cloud eFiling platform preview" loading="lazy" decoding="async" width="600" height="375">
+              </div>
+              <div class="work-card__body">
+                <div>
+                  <div class="work-card__meta">
+                    <span>05 · IRS-Approved eFiling</span>
+                    <span>Cloud SaaS</span>
+                  </div>
+                  <h3 class="work-card__title">1099pro.com</h3>
+                  <p class="work-card__desc">End-to-end IRS-compliant 1099, W-2, and ACA cloud e-filing platform built for businesses, SMBs, and CPAs with real-time validation and seamless print-and-mail fulfillment.</p>
+                </div>
+                <div class="work-card__tags">
+                  <span class="chip">Frontend &amp; API</span>
+                  <span class="chip">JavaScript</span>
+                  <span class="chip">WCAG UI</span>
+                </div>
+                <div class="work-card__actions">
+                  <button class="text-action" type="button" data-open-case="1099pro">
+                    Inspect Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                  <a class="text-action" href="https://1099pro.com/" target="_blank" rel="noopener noreferrer" data-cursor="LIVE ↗">
+                    Visit Live
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 6: Eduleem.com -->
+            <article class="spotlight-card work-card" data-filter-item="projects" data-category="web" data-reveal>
+              <div class="work-card__media" data-cursor="INSPECT">
+                <div class="work-card__browser-bar" aria-hidden="true">
+                  <div class="browser-dots"><span></span><span></span><span></span></div>
+                  <span class="browser-url">eduleem.com</span>
+                </div>
+                <img src="./assets/images/project-eduleem.png" alt="Eduleem Bangalore institute website preview" loading="lazy" decoding="async" width="600" height="375">
+              </div>
+              <div class="work-card__body">
+                <div>
+                  <div class="work-card__meta">
+                    <span>06 · EdTech Platform</span>
+                    <span>70K+ Biweekly Visitors</span>
+                  </div>
+                  <h3 class="work-card__title">Eduleem.com</h3>
+                  <p class="work-card__desc">Designed and built end-to-end as sole developer—from UX design through deployment and technical SEO—for a Bangalore institute offering career-focused design, IT, and technology courses.</p>
+                </div>
+                <div class="work-card__tags">
+                  <span class="chip">React.js &amp; Node.js</span>
+                  <span class="chip">WordPress</span>
+                  <span class="chip">Technical SEO</span>
+                </div>
+                <div class="work-card__actions">
+                  <button class="text-action" type="button" data-open-case="eduleem">
+                    Inspect Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                  <a class="text-action" href="https://eduleem.com/" target="_blank" rel="noopener noreferrer" data-cursor="LIVE ↗">
+                    Visit Live
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 7: Royaal Mahaadeva Builders -->
+            <article class="spotlight-card work-card" data-filter-item="projects" data-category="web" data-reveal style="--reveal-delay: 90ms">
+              <div class="work-card__media" data-cursor="INSPECT">
+                <div class="work-card__browser-bar" aria-hidden="true">
+                  <div class="browser-dots"><span></span><span></span><span></span></div>
+                  <span class="browser-url">royaalmahaadevabuilders.com</span>
+                </div>
+                <img src="./assets/images/project-royaal.png" alt="Royaal Mahaadeva Builders website preview" loading="lazy" decoding="async" width="600" height="375">
+              </div>
+              <div class="work-card__body">
+                <div>
+                  <div class="work-card__meta">
+                    <span>07 · Real Estate Flagship</span>
+                    <span>High Traffic</span>
+                  </div>
+                  <h3 class="work-card__title">Royaal Mahaadeva Builders</h3>
+                  <p class="work-card__desc">Designed and developed a real estate developer's website showcasing residential and commercial property listings, architectural portfolio, and high-converting inquiry funnels.</p>
+                </div>
+                <div class="work-card__tags">
+                  <span class="chip">UI/UX</span>
+                  <span class="chip">WordPress</span>
+                  <span class="chip">SEO &amp; Performance</span>
+                </div>
+                <div class="work-card__actions">
+                  <button class="text-action" type="button" data-open-case="royaal">
+                    Inspect Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                  <a class="text-action" href="https://royaalmahaadevabuilders.com/" target="_blank" rel="noopener noreferrer" data-cursor="LIVE ↗">
+                    Visit Live
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           03 // WORK EXPERIENCE TIMELINE
+           ================================================================ -->
+      <section id="experience" class="section" aria-labelledby="experience-heading">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div class="section-head__left">
+              <span class="section-index">03 // Work Experience</span>
+              <h2 class="section-title" id="experience-heading">3+ YEARS OF <span class="section-title__ghost">EXPERIENCE</span></h2>
+            </div>
+            <a class="roll-btn roll-btn--ghost" href="./experience/" data-roll>
+              <span class="roll-btn__text">Full CV Breakdown</span>
+              <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline__progress" aria-hidden="true"></div>
+
+            <article class="spotlight-card timeline-item" data-reveal>
+              <span class="timeline-item__node" aria-hidden="true"></span>
+              <div class="timeline-item__header">
+                <h3 class="timeline-item__company">Sovos</h3>
+                <span class="timeline-item__date">Aug 2025 — Present</span>
+              </div>
+              <p class="timeline-item__role">Full Stack Web Developer (Web Developer Specialist)</p>
+              <ul class="timeline-item__bullets">
+                <li>Design, develop, and maintain Sovos' enterprise multisite platform end-to-end using <strong>React.js, TypeScript, and ES6+</strong>, supporting multiple brands, regions, and business units.</li>
+                <li>Manage <strong>10+ eCommerce websites</strong> across the Sovos ecosystem, shipping reusable <strong>Tailwind CSS &amp; Storybook</strong> UI libraries backed by <strong>Jest and React Testing Library</strong>.</li>
+                <li>Integrate RESTful APIs and third-party tools (<strong>Marketo forms, Smartling translation, Infogram visualizations</strong>) alongside custom WordPress themes/plugins.</li>
+                <li>Orchestrate dev/staging/prod CI/CD pipelines, YAML workflows, <strong>Docker, Kubernetes, and Lando</strong> across <strong>AWS &amp; Azure</strong>, optimizing Core Web Vitals, technical SEO, and WCAG accessibility.</li>
+              </ul>
+              <div class="timeline-item__footer">
+                <div class="work-card__tags">
+                  <span class="chip">React.js</span>
+                  <span class="chip">TypeScript</span>
+                  <span class="chip">Storybook</span>
+                  <span class="chip">Jest &amp; RTL</span>
+                  <span class="chip">Docker / K8s</span>
+                  <span class="chip">AWS &amp; Azure</span>
+                </div>
+                <a class="text-action" href="https://sovos.com/" target="_blank" rel="noopener noreferrer">
+                  sovos.com ↗
+                </a>
+              </div>
+            </article>
+
+            <article class="spotlight-card timeline-item" data-reveal>
+              <span class="timeline-item__node" aria-hidden="true"></span>
+              <div class="timeline-item__header">
+                <h3 class="timeline-item__company">Eduleem India Pvt Ltd</h3>
+                <span class="timeline-item__date">Dec 2023 — Aug 2025</span>
+              </div>
+              <p class="timeline-item__role">Software Developer (UI/UX + Web Developer)</p>
+              <ul class="timeline-item__bullets">
+                <li>Led website renovations across multiple domains using <strong>React.js, Node.js, WordPress, and REST APIs</strong>, plus Amazon-style product showcase pages on <strong>WooCommerce</strong>.</li>
+                <li>Built and maintained <strong>20+ marketing-centric landing pages</strong> with SEO modules and HubSpot-style components, backed by user research, A/B testing, and usability analysis.</li>
+                <li>Resolved <strong>100+ technical SEO issues</strong> (broken links, crawl errors, alt tags) using Semrush and manual audits.</li>
+                <li>Delivered <strong>Eduleem.com, CubeDecors.com, Royaalmahaadevabuilders.com, Digileem.com, and Eduleem.org</strong>—each sustaining <strong>70,000+ visitors every 15 days</strong>.</li>
+              </ul>
+              <div class="timeline-item__footer">
+                <div class="work-card__tags">
+                  <span class="chip">React.js</span>
+                  <span class="chip">Node.js</span>
+                  <span class="chip">WordPress / WooCommerce</span>
+                  <span class="chip">Semrush &amp; SEO</span>
+                  <span class="chip">A/B Testing</span>
+                </div>
+                <a class="text-action" href="https://eduleem.com/" target="_blank" rel="noopener noreferrer">
+                  eduleem.com ↗
+                </a>
+              </div>
+            </article>
+
+            <article class="spotlight-card timeline-item" data-reveal>
+              <span class="timeline-item__node" aria-hidden="true"></span>
+              <div class="timeline-item__header">
+                <h3 class="timeline-item__company">ARM Infoserve India Pvt Ltd</h3>
+                <span class="timeline-item__date">Sep 2023 — Nov 2023</span>
+              </div>
+              <p class="timeline-item__role">Full Stack Web Developer Intern</p>
+              <ul class="timeline-item__bullets">
+                <li>Designed and built a responsive company website (<strong>arminfoserve.com</strong>) using <strong>WordPress, WooCommerce, Core Java, HTML, CSS, JavaScript, jQuery, and PHP</strong>.</li>
+                <li>Integrated user-friendly UI components focused on accessibility and cross-device responsiveness.</li>
+              </ul>
+              <div class="timeline-item__footer">
+                <div class="work-card__tags">
+                  <span class="chip">WordPress &amp; WooCommerce</span>
+                  <span class="chip">Core Java</span>
+                  <span class="chip">PHP &amp; jQuery</span>
+                  <span class="chip">Accessibility</span>
+                </div>
+                <a class="text-action" href="https://arminfoserve.com/" target="_blank" rel="noopener noreferrer">
+                  arminfoserve.com ↗
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           04 // EDUCATION & CERTIFICATIONS
+           ================================================================ -->
+      <section id="credentials" class="section" aria-labelledby="credentials-heading">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div class="section-head__left">
+              <span class="section-index">04 // Credentials</span>
+              <h2 class="section-title" id="credentials-heading">EDUCATION &amp; <span class="section-title__ghost">CERTIFICATIONS</span></h2>
+            </div>
+          </div>
+
+          <div class="credentials-grid">
+            <article class="spotlight-card credential-card" data-reveal>
+              <span class="section-index">Academic Background</span>
+              <div class="credential-list">
+                <div class="credential-row">
+                  <div class="credential-row__top">
+                    <h3 class="credential-row__title">Bachelor of Engineering</h3>
+                    <span class="credential-row__date">2023 · CGPA 7.5</span>
+                  </div>
+                  <p class="credential-row__meta">Visvesvaraya Technological University — KNS Institute of Technology</p>
+                </div>
+                <div class="credential-row">
+                  <div class="credential-row__top">
+                    <h3 class="credential-row__title">Pre-University Course (PUC)</h3>
+                    <span class="credential-row__date">2019 · 60%</span>
+                  </div>
+                  <p class="credential-row__meta">Department of Pre-University Education — Ramaiah Pre-University College</p>
+                </div>
+                <div class="credential-row">
+                  <div class="credential-row__top">
+                    <h3 class="credential-row__title">10th Standard (SSLC)</h3>
+                    <span class="credential-row__date">2017 · 78%</span>
+                  </div>
+                  <p class="credential-row__meta">Karnataka Secondary Education Examination Board — Sun Shine English School</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="spotlight-card credential-card" data-reveal style="--reveal-delay: 100ms">
+              <span class="section-index">Verified Certifications</span>
+              <div class="credential-list">
+                <div class="credential-row">
+                  <div class="credential-row__top">
+                    <h3 class="credential-row__title">AWS Solutions Architect Certificate</h3>
+                    <span class="credential-row__date">Oct 2024</span>
+                  </div>
+                  <p class="credential-row__meta">Eduleem · Cloud Architecture &amp; Infrastructure</p>
+                </div>
+                <div class="credential-row">
+                  <div class="credential-row__top">
+                    <h3 class="credential-row__title">Ethnus Special Training Program: Full Stack Developer</h3>
+                    <span class="credential-row__date">Aug 2024</span>
+                  </div>
+                  <p class="credential-row__meta">End-to-End Web Application Engineering</p>
+                </div>
+                <div class="credential-row">
+                  <div class="credential-row__top">
+                    <h3 class="credential-row__title">Accenture North America Coding Simulation</h3>
+                    <span class="credential-row__date">Mar 2024</span>
+                  </div>
+                  <p class="credential-row__meta">Development &amp; Advanced Engineering Job Simulation</p>
+                </div>
+                <div class="credential-row">
+                  <div class="credential-row__top">
+                    <h3 class="credential-row__title">Accenture Nordics Developer Job Simulation</h3>
+                    <span class="credential-row__date">Mar 2024</span>
+                  </div>
+                  <p class="credential-row__meta">Software Architecture, Security &amp; Engineering Workflow</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           05 // TECHNICAL STACK MATRIX
+           ================================================================ -->
+      <section id="tools" class="section" aria-labelledby="tools-heading">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div class="section-head__left">
+              <span class="section-index">05 // Technical Skills</span>
+              <h2 class="section-title" id="tools-heading">TOOLS &amp; <span class="section-title__ghost">STACK</span></h2>
+            </div>
+
+            <div class="filter-bar" role="group" aria-label="Filter tools by category" data-filter-group="tools">
+              <button class="filter-pill is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter-pill" type="button" data-filter="frontend" aria-pressed="false">Frontend &amp; CMS</button>
+              <button class="filter-pill" type="button" data-filter="backend" aria-pressed="false">Backend &amp; Cloud</button>
+              <button class="filter-pill" type="button" data-filter="design" aria-pressed="false">UX, SEO &amp; Growth</button>
+            </div>
+          </div>
+
+          <div class="tools-matrix">
+            <a class="spotlight-card tool-tile" href="https://react.dev/" target="_blank" rel="noopener noreferrer" data-filter-item="tools" data-category="frontend" data-reveal>
+              <div class="tool-tile__icon"><img src="./assets/images/tool-reactjs.png" alt="React.js" loading="lazy" width="44" height="44"></div>
+              <div>
+                <h3 class="tool-tile__name">React.js &amp; TypeScript</h3>
+                <p class="tool-tile__cat">Frontend Architecture</p>
+                <p class="tool-tile__desc">Hooks, reusable component libraries, ES6+, Tailwind CSS, Jest &amp; React Testing Library.</p>
+              </div>
+            </a>
+
+            <div class="spotlight-card tool-tile" data-filter-item="tools" data-category="frontend" data-reveal>
+              <div class="tool-tile__icon"><img src="./assets/images/tool-storybook.png" alt="Storybook" loading="lazy" width="44" height="44"></div>
+              <div>
+                <h3 class="tool-tile__name">Storybook</h3>
+                <p class="tool-tile__cat">UI Systems</p>
+                <p class="tool-tile__desc">Isolated component documentation powering scalable multi-region enterprise brands.</p>
+              </div>
+            </div>
+
+            <a class="spotlight-card tool-tile" href="https://wordpress.com/" target="_blank" rel="noopener noreferrer" data-filter-item="tools" data-category="frontend" data-reveal>
+              <div class="tool-tile__icon"><img src="./assets/images/tool-wordpress.png" alt="WordPress" loading="lazy" width="44" height="44"></div>
+              <div>
+                <h3 class="tool-tile__name">WordPress &amp; eCommerce</h3>
+                <p class="tool-tile__cat">CMS &amp; Storefronts</p>
+                <p class="tool-tile__desc">Custom themes &amp; plugins, WooCommerce, Shopify, HubSpot CMS, and Pagely hosting.</p>
+              </div>
+            </a>
+
+            <div class="spotlight-card tool-tile" data-filter-item="tools" data-category="backend" data-reveal>
+              <div class="tool-tile__icon"><img src="./assets/images/tool-generic.png" alt="Backend APIs" loading="lazy" width="44" height="44"></div>
+              <div>
+                <h3 class="tool-tile__name">Node.js, PHP &amp; Python</h3>
+                <p class="tool-tile__cat">Backend &amp; Automation</p>
+                <p class="tool-tile__desc">FastAPI, RESTful API development &amp; integration, backend automation, and enterprise connectors.</p>
+              </div>
+            </div>
+
+            <div class="spotlight-card tool-tile" data-filter-item="tools" data-category="backend" data-reveal>
+              <div class="tool-tile__icon"><img src="./assets/images/tool-generic.png" alt="MySQL & Alembic" loading="lazy" width="44" height="44"></div>
+              <div>
+                <h3 class="tool-tile__name">MySQL &amp; Alembic</h3>
+                <p class="tool-tile__cat">Database &amp; Migrations</p>
+                <p class="tool-tile__desc">Relational modeling with MySQL, MySQL Workbench, and Alembic schema migrations.</p>
+              </div>
+            </div>
+
+            <div class="spotlight-card tool-tile" data-filter-item="tools" data-category="backend" data-reveal>
+              <div class="tool-tile__icon"><img src="./assets/images/tool-generic.png" alt="DevOps & Cloud" loading="lazy" width="44" height="44"></div>
+              <div>
+                <h3 class="tool-tile__name">Docker, K8s, AWS &amp; Azure</h3>
+                <p class="tool-tile__cat">DevOps &amp; Cloud</p>
+                <p class="tool-tile__desc">Lando, CI/CD pipelines, Git/GitHub workflows, YAML configs, NPM/Yarn, and Jira.</p>
+              </div>
+            </div>
+
+            <a class="spotlight-card tool-tile" href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" data-filter-item="tools" data-category="design" data-reveal>
+              <div class="tool-tile__icon"><img src="./assets/images/tool-figma.png" alt="Figma" loading="lazy" width="44" height="44"></div>
+              <div>
+                <h3 class="tool-tile__name">Figma, XD &amp; Framer</h3>
+                <p class="tool-tile__cat">UI/UX &amp; Prototyping</p>
+                <p class="tool-tile__desc">Wireframing, interactive prototypes, Adobe Illustrator, usability testing, and A/B testing.</p>
+              </div>
+            </a>
+
+            <div class="spotlight-card tool-tile" data-filter-item="tools" data-category="design" data-reveal>
+              <div class="tool-tile__icon"><img src="./assets/images/tool-generic.png" alt="Marketing & SEO" loading="lazy" width="44" height="44"></div>
+              <div>
+                <h3 class="tool-tile__name">Technical SEO &amp; MarTech</h3>
+                <p class="tool-tile__cat">Growth &amp; Localization</p>
+                <p class="tool-tile__desc">Schema Markup, GA4, GTM, Core Web Vitals, WCAG, Marketo Forms, Smartling, and Infogram.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 28px; display: flex; justify-content: flex-end;" data-reveal>
+            <a class="roll-btn roll-btn--ghost" href="./tools/" data-roll>
+              <span class="roll-btn__text">View Complete Skills Matrix</span>
+              <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           06 // JOURNAL & DESIGN THOUGHTS
+           ================================================================ -->
+      <section id="thoughts" class="section" aria-labelledby="thoughts-heading">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div class="section-head__left">
+              <span class="section-index">06 // Editorial Notes</span>
+              <h2 class="section-title" id="thoughts-heading">DESIGN <span class="section-title__ghost">THOUGHTS</span></h2>
+            </div>
+            <a class="roll-btn roll-btn--ghost" href="./blog/" data-roll>
+              <span class="roll-btn__text">All Articles</span>
+              <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+
+          <div class="journal-grid">
+            <a class="spotlight-card journal-card" href="./blog/how-i-approach-ui-ux-design-for-a-full-stack-application/" data-cursor="READ" data-reveal>
+              <div class="journal-card__thumb">
+                <img src="./assets/images/blog-uiux.png" alt="How I Approach UI/UX Design for a Full-Stack Application" loading="lazy" decoding="async" width="440" height="275">
+              </div>
+              <div class="journal-card__body">
+                <div>
+                  <div class="journal-card__meta"><span>Jan 24, 2025</span><span>UI/UX Process</span></div>
+                  <h3 class="journal-card__title">How I Approach UI/UX Design for a Full-Stack Application</h3>
+                  <p class="journal-card__excerpt">Balancing aesthetics and engineering—from user research and Figma wireframes to React, Node.js, and iterative usability testing.</p>
+                </div>
+                <span class="journal-card__read">Read Article →</span>
+              </div>
+            </a>
+
+            <a class="spotlight-card journal-card" href="./blog/how-i-built-my-first-full-stack-web-app/" data-cursor="READ" data-reveal style="--reveal-delay: 90ms">
+              <div class="journal-card__thumb">
+                <img src="./assets/images/blog-fullstack.png" alt="How I Built My First Full-Stack Web App" loading="lazy" decoding="async" width="440" height="275">
+              </div>
+              <div class="journal-card__body">
+                <div>
+                  <div class="journal-card__meta"><span>Dec 25, 2024</span><span>Engineering</span></div>
+                  <h3 class="journal-card__title">How I Built My First Full-Stack Web App: Challenges &amp; Learnings</h3>
+                  <p class="journal-card__excerpt">From early internships and Figma blueprints to shipping React, Node.js, MySQL, and AWS deployments from scratch.</p>
+                </div>
+                <span class="journal-card__read">Read Article →</span>
+              </div>
+            </a>
+
+            <a class="spotlight-card journal-card" href="./blog/turning-a-boring-dashboard-into-an-engaging-user-interface/" data-cursor="READ" data-reveal style="--reveal-delay: 180ms">
+              <div class="journal-card__thumb">
+                <img src="./assets/images/blog-dashboard.png" alt="Turning a Boring Dashboard into an Engaging User Interface" loading="lazy" decoding="async" width="440" height="275">
+              </div>
+              <div class="journal-card__body">
+                <div>
+                  <div class="journal-card__meta"><span>Nov 23, 2024</span><span>Product Design</span></div>
+                  <h3 class="journal-card__title">Turning a Boring Dashboard into an Engaging User Interface</h3>
+                  <p class="journal-card__excerpt">Transforming cluttered data tables into clear visual hierarchy, interactive analytics, dark mode, and effortless navigation.</p>
+                </div>
+                <span class="journal-card__read">Read Article →</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           07 // MULTI-STEP CONTACT CONCIERGE
+           ================================================================ -->
+      <section id="contact" class="section" aria-labelledby="contact-heading">
+        <div class="container">
+          <div class="contact-panel" data-reveal>
+            <div class="contact-info">
+              <div>
+                <span class="eyebrow-badge"><span class="status-dot" aria-hidden="true"></span>Bengaluru, India · Open to Opportunities</span>
+                <h2 class="section-title" id="contact-heading" style="margin-top: 18px;">LET'S BUILD <span class="section-title__ghost">TOGETHER</span></h2>
+                <p class="section-desc" style="margin-top: 16px;">Looking for a React.js / Full Stack Web Developer for your engineering team, enterprise web platform, or product launch? Start a brief or reach out directly.</p>
+              </div>
+
+              <div class="contact-direct">
+                <div class="contact-channel">
+                  <div>
+                    <p class="contact-channel__label">Direct Email</p>
+                    <a class="contact-channel__val" href="mailto:syedshafaiz76@gmail.com">syedshafaiz76@gmail.com</a>
+                  </div>
+                  <button class="copy-pill" type="button" data-copy-email="syedshafaiz76@gmail.com">Copy</button>
+                </div>
+
+                <div class="contact-channel">
+                  <div>
+                    <p class="contact-channel__label">Phone · Bengaluru, India</p>
+                    <a class="contact-channel__val" href="tel:+917019487141">+91 7019487141</a>
+                  </div>
+                  <button class="copy-pill" type="button" data-copy-email="+91 7019487141">Copy</button>
+                </div>
+
+                <div class="contact-channel">
+                  <div>
+                    <p class="contact-channel__label">Social Profiles</p>
+                    <p class="contact-channel__val">LinkedIn &amp; GitHub</p>
+                  </div>
+                  <div class="social-row">
+                    <a class="icon-btn" href="https://www.linkedin.com/in/syed-shahabuddin-1b209721b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a class="icon-btn" href="https://github.com/Marburg7" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <form class="wizard-form" novalidate>
+              <input type="hidden" name="Service" value="React.js / Full-Stack Engineering">
+              <input type="hidden" name="Timeline" value="Within 1–2 Months">
+
+              <div class="wizard-steps-bar" aria-label="Inquiry steps">
+                <span class="wizard-step-pill is-active">01 · Scope</span>
+                <span class="wizard-step-pill">02 · Details</span>
+              </div>
+
+              <!-- Step 1 -->
+              <div class="wizard-pane is-active">
+                <div>
+                  <span class="choice-group__label">How can Syed help?</span>
+                  <div class="choice-pills" data-choice-group="Service">
+                    <button class="choice-btn is-selected" type="button" data-value="React.js / Full-Stack Engineering" aria-pressed="true">React.js / Full-Stack</button>
+                    <button class="choice-btn" type="button" data-value="Enterprise WordPress / eCommerce" aria-pressed="false">Enterprise WP / eComm</button>
+                    <button class="choice-btn" type="button" data-value="UI/UX & Design Systems" aria-pressed="false">UI/UX &amp; Storybook</button>
+                    <button class="choice-btn" type="button" data-value="Technical SEO & Performance" aria-pressed="false">Technical SEO / CWV</button>
+                    <button class="choice-btn" type="button" data-value="AI & Python Automation" aria-pressed="false">AI / FastAPI Tooling</button>
+                  </div>
+                </div>
+
+                <div>
+                  <span class="choice-group__label">Target timeline</span>
+                  <div class="choice-pills" data-choice-group="Timeline">
+                    <button class="choice-btn" type="button" data-value="Immediate / Urgent" aria-pressed="false">Urgent</button>
+                    <button class="choice-btn is-selected" type="button" data-value="Within 1–2 Months" aria-pressed="true">1–2 Months</button>
+                    <button class="choice-btn" type="button" data-value="Full-Time Role / Flexible" aria-pressed="false">Full-Time / Flexible</button>
+                  </div>
+                </div>
+
+                <div class="wizard-nav">
+                  <span class="footer-copy">Step 1 of 2</span>
+                  <button class="roll-btn roll-btn--primary" type="button" data-wizard-next data-roll>
+                    <span class="roll-btn__text">Continue</span>
+                    <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="wizard-pane">
+                <div class="form-grid-2">
+                  <label class="field">
+                    <span class="field__label">Your Name *</span>
+                    <input class="field__input" type="text" name="Name" placeholder="Alex Mercer" required autocomplete="name">
+                  </label>
+                  <label class="field">
+                    <span class="field__label">Email Address *</span>
+                    <input class="field__input" type="email" name="Email" placeholder="alex@company.com" required autocomplete="email">
+                  </label>
+                </div>
+
+                <label class="field">
+                  <span class="field__label">Project Brief or Role Details</span>
+                  <textarea class="field__input" name="Message" placeholder="Tell me about your product, role, stack, or technical goals..."></textarea>
+                </label>
+
+                <div class="wizard-nav">
+                  <button class="roll-btn roll-btn--ghost" type="button" data-wizard-prev>← Back</button>
+                  <button class="roll-btn roll-btn--primary" type="submit" data-roll>
+                    <span class="roll-btn__text">Send Inquiry</span>
+                    <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-status" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="brand-wordmark">
+            <span class="brand-wordmark__name">Syed Shahabuddin</span>
+            <span class="brand-wordmark__role">React.js &amp; Full Stack Web Developer · Bengaluru, India</span>
+          </div>
+          <ul class="footer-links">
+            <li><a href="./projects/">Projects</a></li>
+            <li><a href="./experience/">Experience</a></li>
+            <li><a href="./tools/">Tools</a></li>
+            <li><a href="./blog/">Thoughts</a></li>
+            <li><a href="https://github.com/Marburg7" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/syed-shahabuddin-1b209721b/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          </ul>
+          <p class="footer-copy">© 2026 Syed Shahabuddin</p>
+        </div>
+      </div>
+    </footer>
   </div>
+
+  <!-- Case Study Slide-Over Drawer -->
+  <div id="case-backdrop" class="case-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="case-drawer-title">
+    <div class="case-drawer">
+      <div class="case-drawer__top">
+        <span class="section-index" data-case-cat>Case Study</span>
+        <button class="drawer-close" type="button" aria-label="Close case study drawer">✕</button>
+      </div>
+      <h2 id="case-drawer-title" class="case-drawer__title" data-case-title>Project Title</h2>
+      <div class="case-drawer__img">
+        <img src="./assets/svg/project-novacut.svg" alt="" data-case-img>
+      </div>
+      <div class="case-drawer__grid">
+        <div>
+          <p class="case-drawer__meta-label">Role</p>
+          <p class="case-drawer__meta-val" data-case-role>Engineer</p>
+        </div>
+        <div>
+          <p class="case-drawer__meta-label">Timeline</p>
+          <p class="case-drawer__meta-val" data-case-time>2025</p>
+        </div>
+      </div>
+      <p class="case-drawer__desc" data-case-desc></p>
+      <div>
+        <p class="choice-group__label">Key Highlights</p>
+        <ul class="case-drawer__highlights" data-case-highlights></ul>
+      </div>
+      <div>
+        <p class="choice-group__label">Technologies &amp; Craft</p>
+        <div class="work-card__tags" data-case-stack></div>
+      </div>
+      <div style="margin-top: auto; padding-top: 12px;">
+        <a class="roll-btn roll-btn--primary" href="#" target="_blank" rel="noopener noreferrer" data-case-link data-roll style="width: 100%;">
+          <span class="roll-btn__text">Launch Project</span>
+          <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Portfolio AI Agent -->
+  <button id="assistant-fab" class="assistant-fab" type="button" aria-expanded="false" aria-controls="assistant-panel" aria-label="Chat with Syed's Portfolio Agent">
+    <span class="status-dot" aria-hidden="true"></span>
+    <span class="assistant-fab__label">Ask Syed's Agent</span>
+  </button>
+
+  <aside id="assistant-panel" class="assistant-panel" aria-hidden="true" aria-label="Syed's Portfolio Agent">
+    <div class="assistant-panel__head">
+      <div class="assistant-panel__title-wrap">
+        <div class="assistant-panel__avatar" aria-hidden="true">AI</div>
+        <div class="assistant-panel__title">
+          <span>Syed's Portfolio Agent</span>
+          <span class="assistant-panel__status"><span class="status-dot" style="width:6px;height:6px;" aria-hidden="true"></span>CV Knowledge · Live Tools</span>
+        </div>
+      </div>
+      <div class="assistant-panel__head-actions">
+        <button class="assistant-icon-btn" type="button" data-assistant-reset title="Reset conversation" aria-label="Reset conversation">↺</button>
+        <button class="assistant-icon-btn" type="button" data-assistant-close title="Close agent" aria-label="Close agent">✕</button>
+      </div>
+    </div>
+    <div class="assistant-panel__messages" role="log" aria-live="polite"></div>
+    <div class="assistant-prompts"></div>
+    <form class="assistant-form">
+      <input type="text" placeholder="Ask a question, test role fit, or say 'open NovaCut'..." aria-label="Ask Syed's agent">
+      <button type="submit">Send</button>
+    </form>
+  </aside>
 
   <script src="./js/script.js" defer></script>
 </body>

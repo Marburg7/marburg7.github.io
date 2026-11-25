@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://syedshahbuddin.github.io/">
   <title>Syed Shahabuddin — React.js &amp; Full Stack Web Developer</title>
   <meta name="description" content="React.js and Full Stack Web Developer with 3+ years of experience building scalable web applications, enterprise eCommerce multisites, component UI systems, and AI-powered tools.">
   <meta property="og:type" content="website">
@@ -305,13 +308,51 @@
               <button class="filter-pill is-active" type="button" data-filter="all" aria-pressed="true">All (7)</button>
               <button class="filter-pill" type="button" data-filter="ai" aria-pressed="false">AI &amp; Open Source</button>
               <button class="filter-pill" type="button" data-filter="enterprise" aria-pressed="false">Enterprise &amp; TaxTech</button>
-              <button class="filter-pill" type="button" data-filter="web" aria-pressed="false">EdTech &amp; Real Estate</button>
+              <button class="filter-pill" type="button" data-filter="web" aria-pressed="false">EdTech</button>
             </div>
           </div>
 
           <div class="projects-grid">
-            <!-- Featured Project 1: NovaCut Studio -->
-            <article class="spotlight-card work-card work-card--featured" data-filter-item="projects" data-category="ai" data-reveal>
+            <!-- Featured Project 1: Sovos Studio -->
+            <article class="spotlight-card work-card work-card--featured" data-filter-item="projects" data-category="enterprise" data-reveal>
+              <div class="work-card__media" data-cursor="INSPECT">
+                <div class="work-card__browser-bar" aria-hidden="true">
+                  <div class="browser-dots"><span></span><span></span><span></span></div>
+                  <span class="browser-url">Sovos Studio · Next.js API</span>
+                </div>
+                <img src="./assets/images/project-sovos-studio-editor.jpg" alt="Sovos Studio interactive report canvas, USA choropleth map, and spreadsheet editor" loading="lazy" decoding="async" width="800" height="450">
+              </div>
+              <div class="work-card__body">
+                <div>
+                  <div class="work-card__meta">
+                    <span>01 · Featured Enterprise SaaS</span>
+                    <span>Next.js API · 3 Screens</span>
+                  </div>
+                  <h3 class="work-card__title">Sovos Studio</h3>
+                  <p class="work-card__desc">Interactive data visualization and multi-page report studio backed by a Next.js API—featuring USA choropleth &amp; marker maps with state hover tooltips, a live CSV/XLSX spreadsheet data editor, draft/publish workflows, version history, and RBAC Admin Panel with Audit Logs.</p>
+                </div>
+                <div class="work-card__tags">
+                  <span class="chip">Next.js API</span>
+                  <span class="chip">React.js &amp; TS</span>
+                  <span class="chip">USA Choropleth Maps</span>
+                  <span class="chip">Live Data Editor</span>
+                  <span class="chip">Admin &amp; Audit Log</span>
+                </div>
+                <div class="work-card__actions">
+                  <button class="text-action" type="button" data-open-case="sovos_studio">
+                    Inspect 3-Screen Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                  <a class="text-action" href="https://sovos.com/" target="_blank" rel="noopener noreferrer" data-cursor="SOVOS ↗">
+                    Sovos Ecosystem
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2: NovaCut Studio -->
+            <article class="spotlight-card work-card" data-filter-item="projects" data-category="ai" data-reveal>
               <div class="work-card__media" data-cursor="INSPECT">
                 <div class="work-card__browser-bar" aria-hidden="true">
                   <div class="browser-dots"><span></span><span></span><span></span></div>
@@ -322,7 +363,7 @@
               <div class="work-card__body">
                 <div>
                   <div class="work-card__meta">
-                    <span>01 · Featured Open-Source AI Tool</span>
+                    <span>02 · Open-Source AI Tool</span>
                     <span>Local NLP + LLMs</span>
                   </div>
                   <h3 class="work-card__title">NovaCut Studio</h3>
@@ -360,7 +401,7 @@
               <div class="work-card__body">
                 <div>
                   <div class="work-card__meta">
-                    <span>02 · Enterprise Multisite</span>
+                    <span>03 · Enterprise Multisite</span>
                     <span>7+ Regions · 10+ eComm</span>
                   </div>
                   <h3 class="work-card__title">Sovos Multisite Platform</h3>
@@ -397,7 +438,7 @@
               <div class="work-card__body">
                 <div>
                   <div class="work-card__meta">
-                    <span>03 · Knowledge Hub &amp; AI-SEO</span>
+                    <span>04 · Knowledge Hub &amp; AI-SEO</span>
                     <span>ChatGPT &amp; Claude Ready</span>
                   </div>
                   <h3 class="work-card__title">Taxapedia</h3>
@@ -434,7 +475,7 @@
               <div class="work-card__body">
                 <div>
                   <div class="work-card__meta">
-                    <span>04 · IRS-Approved eFiling</span>
+                    <span>05 · IRS-Approved eFiling</span>
                     <span>Frontend + Backend/API</span>
                   </div>
                   <h3 class="work-card__title">eFileMyForm</h3>
@@ -470,7 +511,7 @@
               <div class="work-card__body">
                 <div>
                   <div class="work-card__meta">
-                    <span>05 · IRS-Approved eFiling</span>
+                    <span>06 · IRS-Approved eFiling</span>
                     <span>Cloud SaaS</span>
                   </div>
                   <h3 class="work-card__title">1099pro.com</h3>
@@ -506,7 +547,7 @@
               <div class="work-card__body">
                 <div>
                   <div class="work-card__meta">
-                    <span>06 · EdTech Platform</span>
+                    <span>07 · EdTech Platform</span>
                     <span>70K+ Biweekly Visitors</span>
                   </div>
                   <h3 class="work-card__title">Eduleem.com</h3>
@@ -523,42 +564,6 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                   </button>
                   <a class="text-action" href="https://eduleem.com/" target="_blank" rel="noopener noreferrer" data-cursor="LIVE ↗">
-                    Visit Live
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                  </a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Project 7: Royaal Mahaadeva Builders -->
-            <article class="spotlight-card work-card" data-filter-item="projects" data-category="web" data-reveal style="--reveal-delay: 90ms">
-              <div class="work-card__media" data-cursor="INSPECT">
-                <div class="work-card__browser-bar" aria-hidden="true">
-                  <div class="browser-dots"><span></span><span></span><span></span></div>
-                  <span class="browser-url">royaalmahaadevabuilders.com</span>
-                </div>
-                <img src="./assets/images/project-royaal.png" alt="Royaal Mahaadeva Builders website preview" loading="lazy" decoding="async" width="600" height="375">
-              </div>
-              <div class="work-card__body">
-                <div>
-                  <div class="work-card__meta">
-                    <span>07 · Real Estate Flagship</span>
-                    <span>High Traffic</span>
-                  </div>
-                  <h3 class="work-card__title">Royaal Mahaadeva Builders</h3>
-                  <p class="work-card__desc">Designed and developed a real estate developer's website showcasing residential and commercial property listings, architectural portfolio, and high-converting inquiry funnels.</p>
-                </div>
-                <div class="work-card__tags">
-                  <span class="chip">UI/UX</span>
-                  <span class="chip">WordPress</span>
-                  <span class="chip">SEO &amp; Performance</span>
-                </div>
-                <div class="work-card__actions">
-                  <button class="text-action" type="button" data-open-case="royaal">
-                    Inspect Case Study
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                  </button>
-                  <a class="text-action" href="https://royaalmahaadevabuilders.com/" target="_blank" rel="noopener noreferrer" data-cursor="LIVE ↗">
                     Visit Live
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
                   </a>
@@ -1093,33 +1098,11 @@
     </div>
   </div>
 
-  <!-- Floating Portfolio AI Agent -->
-  <button id="assistant-fab" class="assistant-fab" type="button" aria-expanded="false" aria-controls="assistant-panel" aria-label="Chat with Syed's Portfolio Agent">
+  <!-- Floating Portfolio AI Agent Launcher (Panel lazy-loaded via js/agent-ui.js) -->
+  <button id="assistant-fab" class="assistant-fab" type="button" aria-expanded="false" aria-controls="assistant-panel" aria-label="Open Syed's AI Portfolio Agent">
     <span class="status-dot" aria-hidden="true"></span>
-    <span class="assistant-fab__label">Ask Syed's Agent</span>
+    <span class="assistant-fab__label">Ask Syed's AI</span>
   </button>
-
-  <aside id="assistant-panel" class="assistant-panel" aria-hidden="true" aria-label="Syed's Portfolio Agent">
-    <div class="assistant-panel__head">
-      <div class="assistant-panel__title-wrap">
-        <div class="assistant-panel__avatar" aria-hidden="true">AI</div>
-        <div class="assistant-panel__title">
-          <span>Syed's Portfolio Agent</span>
-          <span class="assistant-panel__status"><span class="status-dot" style="width:6px;height:6px;" aria-hidden="true"></span>CV Knowledge · Live Tools</span>
-        </div>
-      </div>
-      <div class="assistant-panel__head-actions">
-        <button class="assistant-icon-btn" type="button" data-assistant-reset title="Reset conversation" aria-label="Reset conversation">↺</button>
-        <button class="assistant-icon-btn" type="button" data-assistant-close title="Close agent" aria-label="Close agent">✕</button>
-      </div>
-    </div>
-    <div class="assistant-panel__messages" role="log" aria-live="polite"></div>
-    <div class="assistant-prompts"></div>
-    <form class="assistant-form">
-      <input type="text" placeholder="Ask a question, test role fit, or say 'open NovaCut'..." aria-label="Ask Syed's agent">
-      <button type="submit">Send</button>
-    </form>
-  </aside>
 
   <script src="./js/script.js" defer></script>
 </body>

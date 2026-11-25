@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /server/
+Disallow: /api/
+Disallow: /scripts/
+Disallow: /tests/
+
+Sitemap: https://syedshahbuddin.github.io/sitemap.xml
+

@@ -1,0 +1,10 @@
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# OS & Logs
+.DS_Store
+*.log
+node_modules/
+

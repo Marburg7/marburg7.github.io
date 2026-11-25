@@ -1,0 +1,371 @@
+{
+  "meta": {
+    "version": "2026-11",
+    "source": "Syed Shahabuddin Portfolio & CV (verified documented facts only)"
+  },
+  "profile": {
+    "name": "Syed Shahabuddin",
+    "headline": "React.js Developer | Full Stack Web Developer",
+    "location": "Bengaluru, India",
+    "yearsExperience": "3+",
+    "currentRole": "Full Stack Web Developer (Web Developer Specialist) at Sovos (Aug 2025 – Present)",
+    "summary": "React.js and Full Stack Web Developer with 3+ years of experience building, optimizing, and maintaining scalable, high-performance web applications and enterprise eCommerce websites. Skilled in developing responsive, reusable, component-based UI systems and front-end libraries with React.js (hooks), TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, and Storybook, integrating RESTful APIs and backend services (PHP, MySQL, Node.js), and maintaining unit/component tests with Jest and React Testing Library. Comfortable with Python and FastAPI for backend and automation work, Docker/Kubernetes/Lando/AWS/Azure for containerized cloud workflows, WordPress/WooCommerce enterprise management, technical SEO, Core Web Vitals, and WCAG accessibility.",
+    "suitableRoles": [
+      "React.js Developer / Senior Frontend Engineer",
+      "Full Stack Web Developer (React + Node.js / PHP / Python FastAPI)",
+      "UI/UX Engineer / Design Systems Engineer (Storybook, Tailwind, Figma)",
+      "Enterprise WordPress / eCommerce Engineer (WordPress, WooCommerce, Shopify, Multisite)",
+      "Web Performance & Technical SEO Engineer"
+    ],
+    "teamStrengths": [
+      "Bridges UI/UX design (Figma, prototyping, usability & A/B testing) directly with production engineering (React.js, TypeScript, Storybook, Jest/RTL).",
+      "Proven ownership across both enterprise Agile/Scrum teams (10+ Sovos eCommerce sites & 7+ regional multisites) and end-to-end solo product delivery (Eduleem.com sustaining 70,000+ visitors every 15 days).",
+      "Full-lifecycle breadth: component libraries, REST APIs, CI/CD YAML pipelines, Docker/Kubernetes, AWS/Azure, technical SEO, and Core Web Vitals."
+    ],
+    "careerInterests": [
+      "Scalable React.js & TypeScript web applications and reusable component systems",
+      "Full-stack product engineering combining strong UX craft with resilient backend/cloud workflows",
+      "AI-assisted tooling and practical automation (e.g., NovaCut Studio, AI-agent SEO on Taxapedia)"
+    ],
+    "availabilityNote": "Exact notice period, salary expectations, and relocation preferences are not documented in the portfolio; visitors should contact Syed directly to discuss availability and role specifics."
+  },
+  "contact": {
+    "email": "syedshafaiz76@gmail.com",
+    "phone": "+91 7019487141",
+    "location": "Bengaluru, India",
+    "linkedin": "https://www.linkedin.com/in/syed-shahabuddin-1b209721b/",
+    "github": "https://github.com/Marburg7",
+    "portfolio": "https://syedshahbuddin.github.io/",
+    "resumeNote": "A downloadable PDF file is not hosted directly in this static repo; visitors can view Syed's complete CV details across the Experience and Technical Skills sections or request the latest PDF via syedshafaiz76@gmail.com."
+  },
+  "skills": [
+    {
+      "id": "frontend",
+      "category": "Frontend Development",
+      "items": [
+        { "name": "React.js", "aliases": ["react", "reactjs", "react.js", "hooks", "jsx"], "workEvidence": "Sovos (enterprise multisite, reusable component libraries & Sovos Studio report builder), Eduleem (multi-domain web renovations)", "projectEvidence": ["Sovos Studio", "Sovos Multisite Platform", "NovaCut Studio", "eFileMyForm", "Eduleem.com"] },
+        { "name": "Next.js", "aliases": ["nextjs", "next.js", "next"], "workEvidence": "Sovos Studio (Next.js API-connected data visualization & report studio workspace)", "projectEvidence": ["Sovos Studio"] },
+        { "name": "TypeScript", "aliases": ["typescript", "ts"], "workEvidence": "Sovos (enterprise multisite platform & typed reusable React UI component libraries)", "projectEvidence": ["Sovos Multisite Platform", "NovaCut Studio"] },
+        { "name": "JavaScript (ES6+)", "aliases": ["javascript", "js", "es6", "jquery"], "workEvidence": "Sovos, Eduleem, ARM Infoserve (including jQuery)", "projectEvidence": ["Sovos Multisite Platform", "eFileMyForm", "1099pro.com", "Royaal Mahaadeva Builders"] },
+        { "name": "HTML5 & CSS3", "aliases": ["html", "html5", "css", "css3", "responsive", "responsive web design"], "workEvidence": "Sovos, Eduleem, ARM Infoserve (responsive, cross-browser-compatible interfaces)", "projectEvidence": ["All 7 portfolio projects"] },
+        { "name": "Tailwind CSS", "aliases": ["tailwind", "tailwindcss"], "workEvidence": "Sovos (reusable UI component libraries & multisite styling)", "projectEvidence": ["Sovos Multisite Platform"] },
+        { "name": "Bootstrap", "aliases": ["bootstrap"], "workEvidence": "Documented technical skill and early frontend builds", "projectEvidence": ["First full-stack web app (documented in blog)"] },
+        { "name": "Storybook", "aliases": ["storybook", "design system", "design systems", "component library", "reusable ui"], "workEvidence": "Sovos (documented, scalable React UI libraries across 7+ regional web properties)", "projectEvidence": ["Sovos Multisite Platform"] }
+      ]
+    },
+    {
+      "id": "testing",
+      "category": "Testing & Quality",
+      "items": [
+        { "name": "Jest", "aliases": ["jest", "unit test", "unit tests", "unit testing"], "workEvidence": "Sovos (unit and component tests for React.js UI libraries)", "projectEvidence": ["Sovos Multisite Platform"] },
+        { "name": "React Testing Library", "aliases": ["rtl", "react testing library", "component testing", "testing"], "workEvidence": "Sovos (component test suites for reusable front-end libraries)", "projectEvidence": ["Sovos Multisite Platform"] }
+      ]
+    },
+    {
+      "id": "backend",
+      "category": "Backend Development",
+      "items": [
+        { "name": "PHP", "aliases": ["php"], "workEvidence": "Sovos (enterprise WordPress themes/plugins & backend integrations), ARM Infoserve", "projectEvidence": ["Sovos Multisite Platform", "eFileMyForm"] },
+        { "name": "Node.js", "aliases": ["node", "nodejs", "node.js", "express"], "workEvidence": "Eduleem (multi-domain renovations & REST APIs)", "projectEvidence": ["Eduleem.com", "eFileMyForm"] },
+        { "name": "Python", "aliases": ["python"], "workEvidence": "Backend and automation work (documented in professional summary & skills)", "projectEvidence": ["NovaCut Studio"] },
+        { "name": "FastAPI", "aliases": ["fastapi"], "workEvidence": "Backend API and automation work (documented in professional summary & skills)", "projectEvidence": ["NovaCut Studio"] },
+        { "name": "RESTful APIs", "aliases": ["rest", "restful", "api", "apis", "rest api"], "workEvidence": "Sovos (Marketo, Smartling, Infogram integrations), Eduleem", "projectEvidence": ["Sovos Multisite Platform", "eFileMyForm", "1099pro.com", "Eduleem.com"] }
+      ]
+    },
+    {
+      "id": "database",
+      "category": "Database",
+      "items": [
+        { "name": "MySQL", "aliases": ["mysql", "sql", "mysql workbench", "relational database"], "workEvidence": "Backend database services & schema management across full-stack builds", "projectEvidence": ["eFileMyForm", "Eduleem.com"] },
+        { "name": "Alembic", "aliases": ["alembic", "schema migrations", "migrations"], "workEvidence": "Documented database skill for schema migrations alongside Python/SQL workflows", "projectEvidence": ["NovaCut Studio"] }
+      ]
+    },
+    {
+      "id": "cms",
+      "category": "CMS & eCommerce",
+      "items": [
+        { "name": "WordPress", "aliases": ["wordpress", "wp", "elementor", "multisite", "custom themes", "custom plugins"], "workEvidence": "Sovos (enterprise multisite, custom themes & plugins, Taxapedia on Elementor), Eduleem, ARM Infoserve", "projectEvidence": ["Sovos Multisite Platform", "Taxapedia", "Eduleem.com", "Royaal Mahaadeva Builders"] },
+        { "name": "WooCommerce", "aliases": ["woocommerce", "ecommerce", "e-commerce"], "workEvidence": "Sovos (10+ eCommerce websites), Eduleem (Amazon-style product showcase & rich eCommerce content), ARM Infoserve", "projectEvidence": ["Sovos Multisite Platform", "Eduleem.com"] },
+        { "name": "Shopify", "aliases": ["shopify"], "workEvidence": "Documented CMS & eCommerce technical skill", "projectEvidence": [] },
+        { "name": "HubSpot CMS", "aliases": ["hubspot", "hubspot cms"], "workEvidence": "Eduleem (HubSpot-style modular marketing landing pages) & documented CMS skill", "projectEvidence": ["Eduleem.com"] }
+      ]
+    },
+    {
+      "id": "devops",
+      "category": "DevOps & Cloud",
+      "items": [
+        { "name": "Git & GitHub", "aliases": ["git", "github"], "workEvidence": "Sovos (Git/GitHub workflows, code reviews, CI/CD)", "projectEvidence": ["NovaCut Studio", "Sovos Multisite Platform"] },
+        { "name": "Docker", "aliases": ["docker", "container", "containers"], "workEvidence": "Sovos (containerized local & production environments)", "projectEvidence": ["Sovos Multisite Platform"] },
+        { "name": "Kubernetes", "aliases": ["kubernetes", "k8s"], "workEvidence": "Sovos (containerized production environments)", "projectEvidence": ["Sovos Multisite Platform"] },
+        { "name": "Lando", "aliases": ["lando"], "workEvidence": "Sovos (containerized local development environments)", "projectEvidence": ["Sovos Multisite Platform"] },
+        { "name": "AWS", "aliases": ["aws", "amazon web services"], "workEvidence": "Sovos (cloud deployments), Eduleem (AWS Console hosting) + AWS Solutions Architect Certificate (Oct 2024)", "projectEvidence": ["Sovos Multisite Platform", "Eduleem.com"] },
+        { "name": "Azure", "aliases": ["azure", "microsoft azure"], "workEvidence": "Sovos (cloud infrastructure deployments)", "projectEvidence": ["Sovos Multisite Platform"] },
+        { "name": "CI/CD & YAML", "aliases": ["ci/cd", "cicd", "ci cd", "yaml", "pipelines", "npm", "yarn", "jira", "pagely"], "workEvidence": "Sovos (dev/staging/prod automated testing & deployment pipelines, YAML configs, Jira, Pagely)", "projectEvidence": ["Sovos Multisite Platform"] }
+      ]
+    },
+    {
+      "id": "martech",
+      "category": "Marketing & Localization",
+      "items": [
+        { "name": "Marketo Forms", "aliases": ["marketo"], "workEvidence": "Sovos (RESTful API & Marketo form integrations across regional sites)", "projectEvidence": ["Sovos Multisite Platform"] },
+        { "name": "Smartling", "aliases": ["smartling", "localization", "translation"], "workEvidence": "Sovos (translation management integration across regional sites)", "projectEvidence": ["Sovos Multisite Platform"] },
+        { "name": "Infogram", "aliases": ["infogram", "data visualization"], "workEvidence": "Sovos (interactive data visualization integrations)", "projectEvidence": ["Sovos Multisite Platform"] }
+      ]
+    },
+    {
+      "id": "design",
+      "category": "UI/UX & Design",
+      "items": [
+        { "name": "Figma", "aliases": ["figma", "wireframing", "prototyping", "ui/ux", "ui ux", "ux", "ui"], "workEvidence": "Eduleem (user research, wireframing, prototyping, A/B testing), Sovos (UX collaboration)", "projectEvidence": ["Eduleem.com", "eFileMyForm", "1099pro.com", "Royaal Mahaadeva Builders"] },
+        { "name": "Adobe XD & Illustrator", "aliases": ["adobe xd", "xd", "illustrator", "adobe illustrator"], "workEvidence": "Design & prototyping workflows across portfolio and client engagements", "projectEvidence": ["Eduleem.com"] },
+        { "name": "Framer", "aliases": ["framer"], "workEvidence": "Interactive prototyping and web design workflows", "projectEvidence": [] },
+        { "name": "Usability & A/B Testing", "aliases": ["a/b testing", "ab testing", "usability", "user research"], "workEvidence": "Eduleem (conducted user research, A/B testing & usability analysis to improve UX and performance)", "projectEvidence": ["Eduleem.com"] }
+      ]
+    },
+    {
+      "id": "seo",
+      "category": "SEO, Performance & Methodologies",
+      "items": [
+        { "name": "Technical SEO & Schema Markup", "aliases": ["seo", "technical seo", "schema", "schema markup", "xml sitemaps", "semrush", "canonical"], "workEvidence": "Sovos (Taxapedia canonicals/metadata/AI-agent SEO & enterprise technical SEO), Eduleem (resolved 100+ technical SEO issues via Semrush & manual audits)", "projectEvidence": ["Taxapedia", "Eduleem.com", "Sovos Multisite Platform"] },
+        { "name": "Google Tag Manager & GA4", "aliases": ["gtm", "ga4", "google tag manager", "google analytics"], "workEvidence": "Analytics, conversion tracking, and performance measurement across production sites", "projectEvidence": ["Eduleem.com", "Sovos Multisite Platform"] },
+        { "name": "Core Web Vitals & WCAG Accessibility", "aliases": ["cwv", "core web vitals", "performance", "wcag", "accessibility", "a11y"], "workEvidence": "Sovos (Core Web Vitals & WCAG accessibility optimization), ARM Infoserve", "projectEvidence": ["Sovos Multisite Platform", "Taxapedia", "1099pro.com"] },
+        { "name": "Agile / Scrum & Code Reviews", "aliases": ["agile", "scrum", "code review", "code reviews", "cross-functional"], "workEvidence": "Sovos (Agile/Scrum collaboration with UX/UI, backend, marketing, product & growth teams)", "projectEvidence": ["Sovos Multisite Platform"] }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "sovos",
+      "company": "Sovos",
+      "role": "Full Stack Web Developer (Web Developer Specialist)",
+      "period": "Aug 2025 – Present",
+      "url": "https://sovos.com/",
+      "highlights": [
+        "Design, develop, and maintain Sovos' enterprise multisite platform end to end using React.js, TypeScript, and JavaScript (ES6+), supporting multiple brands, regions, and business units.",
+        "Manage 10+ eCommerce websites across the Sovos ecosystem, delivering feature enhancements and production support with responsive, cross-browser-compatible interfaces.",
+        "Build and maintain scalable, reusable React.js UI components and front-end libraries using hooks, TypeScript, Tailwind CSS, and Storybook, with clean, well-documented code backed by unit and component tests in Jest and React Testing Library.",
+        "Manage development, staging, and production environments and implement CI/CD pipelines, Git/GitHub workflows, and structured YAML configurations to support automated testing and deployment.",
+        "Administer WordPress-based enterprise websites, including custom theme and plugin development, content management, and performance tuning.",
+        "Integrate and consume RESTful APIs and third-party services, including Marketo forms, Smartling translation, and Infogram data visualizations across regional sites.",
+        "Work with Docker, Kubernetes, and Lando for containerized local/production environments, deploying across AWS and Azure cloud infrastructure.",
+        "Optimize performance, scalability, and maintainability via Core Web Vitals, technical SEO, and WCAG accessibility improvements; troubleshoot production bugs, debug cross-browser issues, and participate in code reviews.",
+        "Collaborate with UX/UI designers, backend developers, and marketing, product, and growth teams in an Agile/Scrum environment to deliver conversion-focused websites and landing pages."
+      ],
+      "technologies": ["React.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "Storybook", "Jest", "React Testing Library", "WordPress", "PHP", "RESTful APIs", "Marketo", "Smartling", "Infogram", "Docker", "Kubernetes", "Lando", "AWS", "Azure", "CI/CD", "YAML"]
+    },
+    {
+      "id": "eduleem",
+      "company": "Eduleem India Pvt Ltd",
+      "role": "Software Developer (UI/UX + Web Developer)",
+      "period": "Dec 2023 – Aug 2025",
+      "url": "https://eduleem.com/",
+      "highlights": [
+        "Led website renovations across multiple domains using React.js, Node.js, WordPress, and REST APIs.",
+        "Built and maintained 20+ marketing-centric landing pages, integrating SEO elements and HubSpot-style modules.",
+        "Designed Amazon-style product showcase pages and managed rich eCommerce content on WordPress/WooCommerce.",
+        "Conducted user research, A/B testing, and usability analysis to improve UX and site performance.",
+        "Resolved 100+ technical SEO issues (broken links, crawl errors, alt tags) using Semrush and manual audits.",
+        "Delivered notable projects including Eduleem.com, CubeDecors.com, Royaalmahaadevabuilders.com, Digileem.com, and Eduleem.org, each sustaining 70,000+ visitors every 15 days."
+      ],
+      "technologies": ["React.js", "Node.js", "WordPress", "WooCommerce", "REST APIs", "Figma", "Semrush", "Technical SEO", "A/B Testing", "HubSpot-style Modules"]
+    },
+    {
+      "id": "arm",
+      "company": "ARM Infoserve India Pvt Ltd",
+      "role": "Full Stack Web Developer Intern",
+      "period": "Sep 2023 – Nov 2023",
+      "url": "https://arminfoserve.com/",
+      "highlights": [
+        "Designed and built a responsive company website (arminfoserve.com) using WordPress, WooCommerce, Core Java, HTML, CSS, JavaScript, jQuery, and PHP.",
+        "Integrated user-friendly UI components with a focus on accessibility and responsiveness."
+      ],
+      "technologies": ["WordPress", "WooCommerce", "Core Java", "HTML", "CSS", "JavaScript", "jQuery", "PHP"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "sovos_studio",
+      "name": "Sovos Studio",
+      "category": "Enterprise SaaS · Interactive Data Visualization & Report Builder",
+      "role": "Full Stack Web Developer (Next.js + React)",
+      "timeline": "2025 – 2026",
+      "github": null,
+      "liveUrl": "https://sovos.com/",
+      "images": [
+        "assets/images/project-sovos-studio-editor.jpg",
+        "assets/images/project-sovos-studio-map.png",
+        "assets/images/project-sovos-studio-dashboard.jpg"
+      ],
+      "summary": "Interactive enterprise report builder and data visualization studio backed by a Next.js API—enabling teams to create multi-page reports, USA choropleth and marker maps, charts, KPI cards, and data tables with a live spreadsheet editor and full admin governance.",
+      "architecture": "Full-stack React/Next.js API workspace featuring a drag-and-configure multi-page report canvas (Headings, Paragraphs, KPI cards, Charts, Data tables, Interactive choropleth/marker maps, Flowcharts/Timelines, Shapes, Graphics), a synchronized tabular dataset editor (CSV/XLSX upload, row/column editing, type conversion, sheet tabs), interactive hover tooltips, draft/publish lifecycle, version history, export controls, and an admin suite (User Management, Project Management, Audit Log, Integrations).",
+      "challengesAndSolutions": "Replaced fragmented third-party visualization workflows by uniting a live spreadsheet dataset editor directly with an interactive choropleth map and multi-page report canvas backed by Next.js API persistence, audit logging, and draft/publish state management.",
+      "technologies": ["Next.js API", "React.js", "TypeScript", "Interactive Choropleth Maps", "Live Data Table Editor", "CSV/XLSX Datasets", "RBAC Admin & Audit Log"],
+      "highlights": [
+        "Interactive USA Choropleth Map engine with color-coded regulatory grouping, custom legends, and dynamic hover tooltips per state.",
+        "Live spreadsheet dataset editor supporting CSV/XLSX upload, inline row/column editing, type conversions, and instant canvas updates.",
+        "Complete workspace & governance layer with Draft/Published lifecycle, Version History, Export, Admin Panel, User Management, Audit Log, and Integrations."
+      ]
+    },
+    {
+      "id": "novacut",
+      "name": "NovaCut Studio",
+      "category": "Open Source · AI Video Automation",
+      "role": "Creator & Full-Stack AI Engineer",
+      "timeline": "Open Source",
+      "github": "https://github.com/Marburg7/NovaCut",
+      "liveUrl": "https://github.com/Marburg7/NovaCut",
+      "summary": "Free, open-source AI clip maker that turns YouTube, Twitch, and Kick streams into captioned 9:16 vertical clips for Shorts, Reels, and TikTok using local transcription and an NLP engine.",
+      "architecture": "Combines a local transcription and NLP highlight-detection pipeline with optional pluggable LLM providers (Gemini, OpenAI, Claude, Ollama), per-creator isolated workspaces, real-time live clipping, scheduled auto-posting, and a dark-mode web studio dashboard featuring a video scrubber and interactive caption designer.",
+      "challengesAndSolutions": "Eliminated mandatory paid cloud-transcription dependencies by running local transcription and an NLP engine while keeping LLM selection modular (supporting local Ollama alongside Gemini, OpenAI, and Claude).",
+      "technologies": ["Python", "FastAPI", "React.js", "TypeScript", "Local Transcription", "NLP Engine", "Gemini", "OpenAI", "Claude", "Ollama"],
+      "highlights": [
+        "Turns YouTube, Twitch, and Kick streams into captioned 9:16 clips for Shorts, Reels, and TikTok.",
+        "Real-time live clipping, per-creator workspaces, and scheduled auto-posting.",
+        "Optional LLM integrations (Gemini, OpenAI, Claude, Ollama) + dark-mode dashboard with video scrubber and caption designer."
+      ]
+    },
+    {
+      "id": "sovos",
+      "name": "Sovos Multisite Platform",
+      "category": "Enterprise Multisite · Global Tax Compliance",
+      "role": "Full Stack Web Developer (Web Developer Specialist)",
+      "timeline": "Aug 2025 – Present",
+      "github": null,
+      "liveUrl": "https://sovos.com/",
+      "summary": "Enterprise multisite platform spanning 7+ regional webpages and 10+ eCommerce properties across multiple brands and business units.",
+      "architecture": "Component-driven React.js, TypeScript, Tailwind CSS, and Storybook UI libraries paired with enterprise WordPress/PHP multisite administration, automated Jest/RTL tests, YAML CI/CD pipelines, containerized Docker/Kubernetes/Lando environments on AWS & Azure, and REST API integrations for Marketo, Smartling, and Infogram.",
+      "challengesAndSolutions": "Standardized UI consistency and release velocity across 7+ regional sites and 10+ eCommerce storefronts by building documented, test-backed Storybook components and automated dev/staging/prod CI/CD pipelines.",
+      "technologies": ["React.js", "TypeScript", "Storybook", "Tailwind CSS", "Jest", "React Testing Library", "PHP", "WordPress Multisite", "Docker", "Kubernetes", "AWS", "Azure"],
+      "highlights": [
+        "Spans 7+ regional webpages and 10+ eCommerce websites across the Sovos ecosystem.",
+        "Reusable React/TypeScript/Tailwind/Storybook components backed by Jest & React Testing Library.",
+        "Integrates Marketo forms, Smartling translation, and Infogram visualizations."
+      ]
+    },
+    {
+      "id": "taxapedia",
+      "name": "Taxapedia",
+      "category": "Enterprise Knowledge Hub · Technical & AI SEO",
+      "role": "Full Stack Web Developer",
+      "timeline": "2025 – 2026",
+      "github": null,
+      "liveUrl": "https://sovos.com/taxapedia",
+      "summary": "Tax-compliance reference site built on WordPress/Elementor, structured with security best practices and technical SEO to rank higher in search and serve AI agents accurately.",
+      "architecture": "Content-hub architecture on WordPress/Elementor enforcing canonical tags, structured metadata, security hardening, clean semantic hierarchy, named authors, dated updates, and explicitly cited sources tailored for both traditional crawlers and AI agents like ChatGPT and Claude.",
+      "challengesAndSolutions": "Addressed AI-search discoverability and citation accuracy by structuring pages with explicit authorship, dated updates, canonical tags, and cleanly cited regulatory sources.",
+      "technologies": ["WordPress", "Elementor", "Technical SEO", "Canonical Tags", "Schema/Meta Data", "AI-Agent Optimization", "Security Best Practices"],
+      "highlights": [
+        "Built on WordPress/Elementor with security best practices and technical SEO content hubs.",
+        "Optimized for AI agents such as ChatGPT and Claude with clean structure, named authors, dated updates, and cited sources."
+      ]
+    },
+    {
+      "id": "efilemyform",
+      "name": "eFileMyForm",
+      "category": "FinTech / TaxTech · IRS-Approved eFiling",
+      "role": "Full-Stack Web Developer & UI/UX Designer",
+      "timeline": "2024 – 2025",
+      "github": null,
+      "liveUrl": "https://efilemyforms.com/",
+      "summary": "IRS-approved cloud e-filing platform simplifying online filing of 1099, W-2, and ACA forms for businesses, SMBs, and CPAs.",
+      "architecture": "Full-stack web application combining guided frontend filing workflows with backend/API validation logic, real-time IRS compliance checks, and integrated print-and-mail fulfillment.",
+      "challengesAndSolutions": "Simplified complex IRS form compliance for non-specialist SMB filers and CPAs through step-by-step UI validation and end-to-end filing status orchestration.",
+      "technologies": ["React.js", "JavaScript (ES6+)", "RESTful APIs", "Backend/API Logic", "UI/UX Design"],
+      "highlights": [
+        "Handled both frontend and backend/API logic for 1099, W-2, and ACA e-filing.",
+        "Real-time IRS compliance validation and integrated print-and-mail services."
+      ]
+    },
+    {
+      "id": "1099pro",
+      "name": "1099pro.com",
+      "category": "Cloud SaaS · IRS-Approved eFiling",
+      "role": "Full-Stack Web Developer & UI/UX Designer",
+      "timeline": "2024 – 2025",
+      "github": null,
+      "liveUrl": "https://1099pro.com/",
+      "summary": "IRS-compliant cloud e-filing platform for 1099, W-2, and ACA reporting built across both frontend and backend/API layers.",
+      "architecture": "Responsive cloud e-filing web interface paired with compliance-validation API workflows and print-and-mail integration engineered for reliability under peak tax-season demand.",
+      "challengesAndSolutions": "Balanced high-density regulatory requirements with accessible, responsive UI hierarchy across desktop and mobile devices.",
+      "technologies": ["React.js", "JavaScript", "RESTful APIs", "Figma", "WCAG Accessibility"],
+      "highlights": [
+        "End-to-end IRS-compliant cloud e-filing workflows for businesses, SMBs, and CPAs.",
+        "Real-time IRS compliance validation and print-and-mail integration."
+      ]
+    },
+    {
+      "id": "eduleem",
+      "name": "Eduleem.com",
+      "category": "EdTech · High-Traffic Institute Platform",
+      "role": "Sole Developer & UI/UX Engineer",
+      "timeline": "Dec 2023 – Aug 2025",
+      "github": null,
+      "liveUrl": "https://eduleem.com/",
+      "summary": "End-to-end digital flagship built as sole developer—from UX design through deployment—for a Bangalore institute offering career-focused design, IT, and technology courses.",
+      "architecture": "Full-lifecycle web platform built with React.js/Node.js/WordPress, 20+ modular marketing landing pages, technical SEO optimizations audited via Semrush, and conversion funnels sustaining 70,000+ visitors every 15 days across the delivered domain suite.",
+      "challengesAndSolutions": "Owned UX research, A/B testing, full-stack engineering, and 100+ technical SEO fixes solo to sustain high organic traffic (70K+ biweekly visitors).",
+      "technologies": ["React.js", "Node.js", "WordPress", "WooCommerce", "Figma", "Semrush", "Technical SEO"],
+      "highlights": [
+        "Built end-to-end as sole developer from UX wireframes through deployment.",
+        "Part of a 5-domain suite (including CubeDecors.com, Digileem.com, Eduleem.org, Royaalmahaadevabuilders.com) each sustaining 70,000+ visitors every 15 days."
+      ]
+    },
+    {
+      "id": "royaal",
+      "name": "Royaal Mahaadeva Builders",
+      "category": "Real Estate & Architecture",
+      "role": "Software Developer (UI/UX + Web)",
+      "timeline": "2024",
+      "github": null,
+      "liveUrl": "https://royaalmahaadevabuilders.com/",
+      "summary": "Real estate developer website showcasing residential and commercial property listings, portfolio, and inquiry funnels.",
+      "architecture": "Responsive WordPress web platform structured for mobile property discovery, SEO crawlability, and lead generation.",
+      "challengesAndSolutions": "Organized multi-property residential and commercial showcases into a fast, conversion-focused layout sustaining strong organic traffic.",
+      "technologies": ["WordPress", "UI/UX Design", "JavaScript", "Technical SEO"],
+      "highlights": [
+        "Showcases residential and commercial property listings and architectural portfolio.",
+        "Part of the high-traffic domain portfolio delivered during Eduleem tenure."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Engineering",
+      "institution": "Visvesvaraya Technological University — KNS Institute of Technology",
+      "year": "2023",
+      "score": "CGPA: 7.5"
+    },
+    {
+      "degree": "Pre-University Course (PUC)",
+      "institution": "Department of Pre-University Education — Ramaiah Pre-University College",
+      "year": "2019",
+      "score": "60%"
+    },
+    {
+      "degree": "10th Standard (SSLC)",
+      "institution": "Karnataka Secondary Education Examination Board — Sun Shine English School",
+      "year": "2017",
+      "score": "78%"
+    }
+  ],
+  "certifications": [
+    { "name": "AWS Solutions Architect Certificate", "issuer": "Eduleem", "date": "Oct 2024" },
+    { "name": "Ethnus Special Training Program: Full Stack Developer", "issuer": "Ethnus", "date": "Aug 2024" },
+    { "name": "Accenture North America Coding: Development & Advanced Engineering Job Simulation", "issuer": "Accenture", "date": "Mar 2024" },
+    { "name": "Accenture Nordics Developer Job Simulation", "issuer": "Accenture", "date": "Mar 2024" }
+  ],
+  "articles": [
+    { "title": "How I Approach UI/UX Design for a Full-Stack Application", "date": "Jan 24, 2025", "path": "blog/how-i-approach-ui-ux-design-for-a-full-stack-application/" },
+    { "title": "How I Built My First Full-Stack Web App: Challenges & Learnings", "date": "Dec 25, 2024", "path": "blog/how-i-built-my-first-full-stack-web-app/" },
+    { "title": "Turning a Boring Dashboard into an Engaging User Interface", "date": "Nov 23, 2024", "path": "blog/turning-a-boring-dashboard-into-an-engaging-user-interface/" },
+    { "title": "How Can Designers Prepare for the Future?", "date": "Oct 28, 2024", "path": "blog/how-can-designers-prepare-for-the-future/" }
+  ],
+  "sections": [
+    { "id": "projects", "label": "Key Projects", "path": "projects/", "anchor": "#projects", "bestFor": ["recruiter", "cto", "developer", "client"] },
+    { "id": "experience", "label": "Work Experience & Credentials", "path": "experience/", "anchor": "#experience", "bestFor": ["recruiter", "cto"] },
+    { "id": "tools", "label": "Technical Skills Matrix", "path": "tools/", "anchor": "#tools", "bestFor": ["developer", "cto", "recruiter"] },
+    { "id": "blog", "label": "Design & Engineering Thoughts", "path": "blog/", "anchor": "#thoughts", "bestFor": ["developer", "designer", "cto"] },
+    { "id": "contact", "label": "Contact & Inquiry Brief", "path": "#contact", "anchor": "#contact", "bestFor": ["recruiter", "client"] }
+  ]
+}
+

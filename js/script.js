@@ -503,6 +503,27 @@
      10. Interactive Case Study Slide-Over Drawer
      ------------------------------------------------------------------------ */
   const CASE_STUDIES = {
+    sovos_studio: {
+      category: "Enterprise SaaS · Interactive Report & Data Visualization Studio",
+      title: "Sovos Studio",
+      role: "Full Stack Web Developer (Next.js API + React)",
+      timeline: "2025 — 2026",
+      url: "https://sovos.com/",
+      image: "assets/images/project-sovos-studio-editor.jpg",
+      gallery: [
+        { label: "Canvas & Data Editor", src: "assets/images/project-sovos-studio-editor.jpg" },
+        { label: "USA Choropleth Map", src: "assets/images/project-sovos-studio-map.png" },
+        { label: "Workspace & Admin", src: "assets/images/project-sovos-studio-dashboard.jpg" },
+      ],
+      summary:
+        "Interactive enterprise data visualization and multi-page report builder connected to a Next.js API backend—combining a drag-and-configure canvas, USA choropleth & marker maps with live state tooltips, a synchronized CSV/XLSX spreadsheet editor, and full workspace governance.",
+      highlights: [
+        "Built interactive USA Choropleth Maps with regulatory color-grouping, legends, and dynamic hover tooltips per state.",
+        "Engineered a live spreadsheet dataset editor supporting CSV/XLSX upload, inline row/column editing, type conversions, and real-time canvas updates.",
+        "Delivered complete workspace management including Draft/Published lifecycles, Version History, Export, Admin Panel, User Management, Audit Log, and Integrations.",
+      ],
+      stack: ["Next.js API", "React.js", "TypeScript", "Choropleth Maps", "Spreadsheet Data Editor", "CSV/XLSX", "RBAC & Audit Log"],
+    },
     novacut: {
       category: "Open Source · AI Video Automation",
       title: "NovaCut Studio",
@@ -643,15 +664,56 @@
         imgEl.src = `${rootPrefix}${data.image}`;
         imgEl.alt = `${data.title} project preview`;
       }
+      let galleryEl = backdrop.querySelector("[data-case-gallery]");
+      if (!galleryEl && imgEl?.parentElement) {
+        galleryEl = document.createElement("div");
+        galleryEl.className = "case-drawer__gallery";
+        galleryEl.setAttribute("data-case-gallery", "");
+        imgEl.parentElement.insertAdjacentElement("afterend", galleryEl);
+      }
+      if (galleryEl) {
+        if (Array.isArray(data.gallery) && data.gallery.length > 1) {
+          galleryEl.hidden = false;
+          galleryEl.innerHTML = "";
+          data.gallery.forEach((shot, idx) => {
+            const tab = document.createElement("button");
+            tab.type = "button";
+            tab.className = `case-gallery-tab${idx === 0 ? " is-active" : ""}`;
+            tab.textContent = shot.label;
+            tab.addEventListener("click", () => {
+              galleryEl.querySelectorAll(".case-gallery-tab").forEach((b) => b.classList.toggle("is-active", b === tab));
+              if (imgEl) {
+                imgEl.src = `${rootPrefix}${shot.src}`;
+                imgEl.alt = `${data.title} — ${shot.label}`;
+              }
+            });
+            galleryEl.appendChild(tab);
+          });
+        } else {
+          galleryEl.hidden = true;
+          galleryEl.innerHTML = "";
+        }
+      }
       if (roleEl) roleEl.textContent = data.role;
       if (timeEl) timeEl.textContent = data.timeline;
       if (descEl) descEl.textContent = data.summary;
 
       if (listEl) {
-        listEl.innerHTML = data.highlights.map((h) => `<li>${h}</li>`).join("");
+        listEl.textContent = "";
+        data.highlights.forEach((h) => {
+          const li = document.createElement("li");
+          li.textContent = h;
+          listEl.appendChild(li);
+        });
       }
       if (stackEl) {
-        stackEl.innerHTML = data.stack.map((t) => `<span class="chip">${t}</span>`).join("");
+        stackEl.textContent = "";
+        data.stack.forEach((t) => {
+          const span = document.createElement("span");
+          span.className = "chip";
+          span.textContent = t;
+          stackEl.appendChild(span);
+        });
       }
       if (linkEl) {
         linkEl.href = data.url;
@@ -814,772 +876,53 @@
   }
 
   /* ------------------------------------------------------------------------
-     12. Interactive Tool-Using Portfolio Agent (Works Across All Pages)
+     12. Lazy-Loaded AI Portfolio Agent Launcher (Loads js/agent-ui.js on demand)
      ------------------------------------------------------------------------ */
   function initAssistant() {
     const rootPrefix = document.body.dataset.root || "./";
 
-    // Auto-mount floating agent on subpages that don't have the markup inline
-    if (!document.getElementById("assistant-fab")) {
-      const fabBtn = document.createElement("button");
-      fabBtn.id = "assistant-fab";
-      fabBtn.className = "assistant-fab";
-      fabBtn.type = "button";
-      fabBtn.setAttribute("aria-expanded", "false");
-      fabBtn.setAttribute("aria-controls", "assistant-panel");
-      fabBtn.setAttribute("aria-label", "Chat with Syed's Portfolio Agent");
-      fabBtn.innerHTML = `<span class="status-dot" aria-hidden="true"></span><span class="assistant-fab__label">Ask Syed's Agent</span>`;
-
-      const aside = document.createElement("aside");
-      aside.id = "assistant-panel";
-      aside.className = "assistant-panel";
-      aside.setAttribute("aria-hidden", "true");
-      aside.setAttribute("aria-label", "Syed's Portfolio Agent");
-      aside.innerHTML = `
-        <div class="assistant-panel__head">
-          <div class="assistant-panel__title-wrap">
-            <div class="assistant-panel__avatar" aria-hidden="true">AI</div>
-            <div class="assistant-panel__title">
-              <span>Syed's Portfolio Agent</span>
-              <span class="assistant-panel__status"><span class="status-dot" style="width:6px;height:6px;" aria-hidden="true"></span>CV Knowledge · Live Tools</span>
-            </div>
-          </div>
-          <div class="assistant-panel__head-actions">
-            <button class="assistant-icon-btn" type="button" data-assistant-reset title="Reset conversation" aria-label="Reset conversation">↺</button>
-            <button class="assistant-icon-btn" type="button" data-assistant-close title="Close agent" aria-label="Close agent">✕</button>
-          </div>
-        </div>
-        <div class="assistant-panel__messages" role="log" aria-live="polite"></div>
-        <div class="assistant-prompts"></div>
-        <form class="assistant-form">
-          <input type="text" placeholder="Ask a question, test role fit, or say 'open NovaCut'..." aria-label="Ask Syed's agent">
-          <button type="submit">Send</button>
-        </form>
-      `;
-      document.body.append(fabBtn, aside);
+    // Ensure launcher button exists across all pages
+    let fab = document.getElementById("assistant-fab");
+    if (!fab) {
+      fab = document.createElement("button");
+      fab.id = "assistant-fab";
+      fab.className = "assistant-fab";
+      fab.type = "button";
+      fab.setAttribute("aria-expanded", "false");
+      fab.setAttribute("aria-controls", "assistant-panel");
+      fab.setAttribute("aria-label", "Open Syed's AI Portfolio Agent");
+      fab.innerHTML = `<span class="status-dot" aria-hidden="true"></span><span class="assistant-fab__label">Ask Syed's AI</span>`;
+      document.body.appendChild(fab);
     }
 
-    const fab = document.getElementById("assistant-fab");
-    const panel = document.getElementById("assistant-panel");
-    if (!fab || !panel) return;
+    let scriptRequested = false;
+    function loadAgentBundle(openImmediately = false) {
+      if (window.__syedAgentMounted) return;
+      if (openImmediately) window.__syedAgentOpenOnLoad = true;
+      if (scriptRequested) return;
+      scriptRequested = true;
+      const script = document.createElement("script");
+      script.src = `${rootPrefix}js/agent-ui.js`;
+      script.defer = true;
+      document.body.appendChild(script);
+    }
 
-    const closeBtn = panel.querySelector("[data-assistant-close]");
-    const resetBtn = panel.querySelector("[data-assistant-reset]");
-    const messagesEl = panel.querySelector(".assistant-panel__messages");
-    const promptsEl = panel.querySelector(".assistant-prompts");
-    const form = panel.querySelector(".assistant-form");
-    const input = form ? form.querySelector("input") : null;
-
-    const STORAGE_KEY = "ss_agent_state_v2";
-
-    /* --- Structured CV Knowledge Base --- */
-    const SKILLS_CATALOG = [
-      { name: "React.js", cat: "Frontend", aliases: ["react", "reactjs", "react.js", "hooks", "jsx"], detail: "Hooks, scalable component architecture & reusable UI libraries" },
-      { name: "TypeScript", cat: "Frontend", aliases: ["typescript", "ts"], detail: "Typed enterprise React UI libraries & multisite platforms" },
-      { name: "JavaScript (ES6+)", cat: "Frontend", aliases: ["javascript", "js", "es6", "jquery"], detail: "Modern ES6+, interactive DOM/canvas engineering, and jQuery" },
-      { name: "Tailwind CSS", cat: "Frontend", aliases: ["tailwind", "tailwindcss", "css", "css3", "html", "html5", "bootstrap"], detail: "Responsive, cross-browser styling systems with Tailwind, CSS3, HTML5 & Bootstrap" },
-      { name: "Storybook", cat: "Frontend", aliases: ["storybook", "design system", "component library"], detail: "Documented enterprise UI primitives across 7+ regional web properties" },
-      { name: "Jest & React Testing Library", cat: "Testing", aliases: ["jest", "rtl", "react testing library", "unit test", "testing", "tests"], detail: "Unit and component testing for clean, production-grade front-end libraries" },
-      { name: "PHP", cat: "Backend", aliases: ["php"], detail: "Custom WordPress themes/plugins and backend REST integrations" },
-      { name: "Node.js", cat: "Backend", aliases: ["node", "nodejs", "node.js", "express", "npm", "yarn"], detail: "Scalable REST APIs, backend services, and modern build tooling" },
-      { name: "Python & FastAPI", cat: "Backend & AI", aliases: ["python", "fastapi", "nlp", "ai", "llm", "ollama", "gemini", "openai", "claude"], detail: "Backend automation, FastAPI APIs, local transcription & LLM integrations (NovaCut Studio)" },
-      { name: "MySQL & Alembic", cat: "Database", aliases: ["mysql", "sql", "database", "db", "alembic", "workbench", "migrations"], detail: "Relational schema design, MySQL Workbench, and Alembic migrations" },
-      { name: "WordPress & WooCommerce", cat: "CMS & eCommerce", aliases: ["wordpress", "wp", "woocommerce", "elementor", "shopify", "hubspot", "ecommerce", "e-commerce", "cms"], detail: "10+ enterprise eCommerce sites, custom themes/plugins, WooCommerce, Shopify & HubSpot CMS" },
-      { name: "Docker, Kubernetes & Lando", cat: "DevOps", aliases: ["docker", "kubernetes", "k8s", "lando", "container", "containers", "devops"], detail: "Containerized local, staging, and production infrastructure" },
-      { name: "AWS & Azure", cat: "Cloud", aliases: ["aws", "azure", "cloud", "ci/cd", "cicd", "yaml", "github", "git", "pagely", "jira"], detail: "AWS Solutions Architect certified (Oct 2024), Azure, Git/GitHub CI/CD & YAML pipelines" },
-      { name: "Marketo, Smartling & Infogram", cat: "MarTech", aliases: ["marketo", "smartling", "infogram", "localization", "translation"], detail: "Third-party enterprise API integrations across regional sites" },
-      { name: "Figma, Adobe XD & Framer", cat: "UI/UX Design", aliases: ["figma", "xd", "adobe xd", "framer", "illustrator", "wireframe", "prototype", "ui", "ux", "a/b"], detail: "Wireframing, prototyping, usability analysis, and A/B testing" },
-      { name: "Technical SEO & Core Web Vitals", cat: "SEO & Performance", aliases: ["seo", "schema", "sitemap", "gtm", "ga4", "analytics", "semrush", "cwv", "core web vitals", "wcag", "accessibility", "a11y"], detail: "100+ technical SEO fixes, Schema Markup, GA4/GTM, AI-agent SEO, CWV & WCAG accessibility" },
-    ];
-
-    const COMPANIES = {
-      sovos: {
-        name: "Sovos",
-        role: "Full Stack Web Developer (Web Developer Specialist)",
-        dates: "Aug 2025 – Present",
-        summary: "Syed owns Sovos' enterprise multisite platform end-to-end using React.js, TypeScript, and ES6+, managing 10+ eCommerce websites across multiple brands and regions.",
-        bullets: [
-          "Builds scalable **React.js, TypeScript, Tailwind CSS & Storybook** UI libraries tested with **Jest & React Testing Library**.",
-          "Integrates RESTful APIs including **Marketo forms, Smartling translation, and Infogram** visualizations.",
-          "Manages dev/staging/prod CI/CD pipelines, **Docker, Kubernetes, Lando, AWS & Azure**, plus Core Web Vitals & WCAG accessibility.",
-        ],
-        actions: [
-          { label: "Inspect Sovos Case Study", type: "open-case", value: "sovos" },
-          { label: "Inspect Taxapedia", type: "open-case", value: "taxapedia" },
-          { label: "Full Experience Page", type: "navigate", value: `${rootPrefix}experience/` },
-        ],
-        followups: ["Tell me about Taxapedia", "Does he use Docker and AWS?", "What did he do at Eduleem?"],
+    fab.addEventListener("pointerenter", () => loadAgentBundle(false), { once: true });
+    fab.addEventListener("focus", () => loadAgentBundle(false), { once: true });
+    fab.addEventListener(
+      "click",
+      () => {
+        if (!window.__syedAgentMounted) loadAgentBundle(true);
       },
-      eduleem: {
-        name: "Eduleem India Pvt Ltd",
-        role: "Software Developer (UI/UX + Web Developer)",
-        dates: "Dec 2023 – Aug 2025",
-        summary: "Syed led multi-domain web renovations using React.js, Node.js, WordPress, and REST APIs—delivering high-traffic domains sustaining **70,000+ visitors every 15 days**.",
-        bullets: [
-          "Built & maintained **20+ marketing landing pages** with SEO and HubSpot-style modules plus Amazon-style WooCommerce showcases.",
-          "Conducted user research, A/B testing & usability analysis, and resolved **100+ technical SEO issues** via Semrush.",
-          "Shipped **Eduleem.com, CubeDecors.com, Royaalmahaadevabuilders.com, Digileem.com, and Eduleem.org**.",
-        ],
-        actions: [
-          { label: "Inspect Eduleem Case Study", type: "open-case", value: "eduleem" },
-          { label: "Inspect Royaal Builders", type: "open-case", value: "royaal" },
-        ],
-        followups: ["What is he doing now at Sovos?", "Tell me about his SEO skills", "Show me his certifications"],
-      },
-      arm: {
-        name: "ARM Infoserve India Pvt Ltd",
-        role: "Full Stack Web Developer Intern",
-        dates: "Sep 2023 – Nov 2023",
-        summary: "Syed designed and built **arminfoserve.com** from scratch using WordPress, WooCommerce, Core Java, HTML, CSS, JavaScript, jQuery, and PHP.",
-        bullets: [
-          "Delivered responsive, accessible UI components across desktop and mobile devices.",
-          "Owned both visual interface design and full-stack web implementation.",
-        ],
-        actions: [
-          { label: "View Full Experience", type: "navigate", value: `${rootPrefix}experience/` },
-          { label: "Visit arminfoserve.com ↗", type: "external", value: "https://arminfoserve.com/" },
-        ],
-        followups: ["What did he do at Eduleem?", "What does he do at Sovos?", "Show his education"],
-      },
-    };
+      { once: true }
+    );
 
-    let state = {
-      history: [],
-      lastEntity: null, // { kind: 'project' | 'company', id: string }
-      intake: { active: false, step: 0, service: "", timeline: "", brief: "" },
-    };
-
-    try {
-      const saved = sessionStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (parsed && Array.isArray(parsed.history)) state = parsed;
-      }
-    } catch {
-      // ignore storage errors
-    }
-
-    function saveState() {
-      try {
-        sessionStorage.setItem(STORAGE_KEY, JSON.stringify({
-          ...state,
-          history: state.history.slice(-24),
-        }));
-      } catch {
-        // ignore storage errors
-      }
-    }
-
-    function escapeHtml(str) {
-      return String(str)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;");
-    }
-
-    function formatInline(text) {
-      return escapeHtml(text).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-    }
-
-    function executeAction(action) {
-      if (!action) return;
-      if (action.type === "open-case") {
-        if (typeof window.__openCaseStudy === "function") {
-          toggle(false);
-          window.__openCaseStudy(action.value);
-        } else {
-          window.location.href = `${rootPrefix}projects/`;
-        }
-      } else if (action.type === "scroll") {
-        const el = document.getElementById(action.value);
-        if (el) {
-          toggle(false);
-          el.scrollIntoView({ behavior: "smooth" });
-        } else {
-          window.location.href = `${rootPrefix}#${action.value}`;
-        }
-      } else if (action.type === "filter-projects") {
-        const pill = document.querySelector(`[data-filter-group="projects"] [data-filter="${action.value}"]`);
-        const section = document.getElementById("projects");
-        if (pill) {
-          pill.click();
-          if (section) section.scrollIntoView({ behavior: "smooth" });
-          toggle(false);
-        } else {
-          window.location.href = `${rootPrefix}projects/`;
-        }
-      } else if (action.type === "navigate") {
-        window.location.href = action.value;
-      } else if (action.type === "external") {
-        window.open(action.value, "_blank", "noopener,noreferrer");
-      } else if (action.type === "copy") {
-        navigator.clipboard?.writeText(action.value).catch(() => {});
-      } else if (action.type === "prefill-contact") {
-        const contactSection = document.getElementById("contact");
-        if (contactSection) {
-          const msgBox = contactSection.querySelector('textarea[name="Message"]');
-          const srvInput = contactSection.querySelector('input[name="Service"]');
-          if (srvInput && action.service) srvInput.value = action.service;
-          if (msgBox && action.brief) msgBox.value = action.brief;
-          const nextBtn = contactSection.querySelector("[data-wizard-next]");
-          if (nextBtn) nextBtn.click();
-          toggle(false);
-          contactSection.scrollIntoView({ behavior: "smooth" });
-          const nameField = contactSection.querySelector('input[name="Name"]');
-          if (nameField) window.setTimeout(() => nameField.focus(), 450);
-        } else {
-          const subj = encodeURIComponent(`Portfolio Inquiry — ${action.service || "Collaboration"}`);
-          const body = encodeURIComponent(action.brief || "");
-          window.location.href = `mailto:syedshafaiz76@gmail.com?subject=${subj}&body=${body}`;
-        }
-      } else if (action.type === "start-intake") {
-        handleUserInput("I want to hire Syed for a project");
-      }
-    }
-
-    function renderMessage(msg) {
-      if (!messagesEl) return;
-      const div = document.createElement("div");
-      div.className = `chat-bubble chat-bubble--${msg.who}`;
-
-      if (msg.who === "user") {
-        div.textContent = msg.text;
-      } else {
-        let html = "";
-        if (msg.trace) {
-          html += `<div class="chat-trace">⚡ ${escapeHtml(msg.trace)}</div>`;
-        }
-        html += `<div class="chat-bubble__body">`;
-        if (msg.text) {
-          msg.text.split("\n\n").forEach((para) => {
-            html += `<p>${formatInline(para)}</p>`;
-          });
-        }
-        if (msg.bullets && msg.bullets.length) {
-          html += `<ul class="chat-bubble__list">${msg.bullets
-            .map((b) => `<li><span>${formatInline(b)}</span></li>`)
-            .join("")}</ul>`;
-        }
-        html += `</div>`;
-        div.innerHTML = html;
-
-        if (msg.actions && msg.actions.length) {
-          const bar = document.createElement("div");
-          bar.className = "chat-actions";
-          msg.actions.forEach((act) => {
-            const btn = document.createElement("button");
-            btn.type = "button";
-            btn.className = "chat-action-btn";
-            btn.textContent = act.label;
-            btn.addEventListener("click", () => {
-              executeAction(act);
-              if (act.type === "copy") {
-                const orig = btn.textContent;
-                btn.textContent = "Copied ✓";
-                window.setTimeout(() => (btn.textContent = orig), 1600);
-              }
-            });
-            bar.appendChild(btn);
-          });
-          div.appendChild(bar);
-        }
-      }
-
-      messagesEl.appendChild(div);
-      messagesEl.scrollTop = messagesEl.scrollHeight;
-    }
-
-    function renderPrompts(list) {
-      if (!promptsEl) return;
-      promptsEl.innerHTML = "";
-      (list || []).slice(0, 3).forEach((p) => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "prompt-chip";
-        btn.textContent = p;
-        btn.dataset.prompt = p;
-        btn.addEventListener("click", () => handleUserInput(p));
-        promptsEl.appendChild(btn);
-      });
-    }
-
-    function showTyping(statusText) {
-      const div = document.createElement("div");
-      div.className = "chat-bubble chat-bubble--bot";
-      div.dataset.typing = "true";
-      div.innerHTML = `<span class="chat-typing"><span class="chat-typing__dots"><span></span><span></span><span></span></span><span>${escapeHtml(statusText)}</span></span>`;
-      messagesEl.appendChild(div);
-      messagesEl.scrollTop = messagesEl.scrollHeight;
-      return div;
-    }
-
-    /* --- Natural Language Agent Reasoner --- */
-    function generateAgentReply(rawQuery) {
-      const q = rawQuery.trim();
-      const s = q.toLowerCase();
-
-      // 0. Active interactive project-scoping intake flow
-      if (state.intake.active) {
-        if (/(cancel|nevermind|stop|back|exit)/.test(s)) {
-          state.intake = { active: false, step: 0, service: "", timeline: "", brief: "" };
-          return {
-            trace: "Intake Cancelled",
-            text: "No problem! I've cleared the project brief. What else would you like to know about Syed?",
-            followups: ["Tell me about NovaCut Studio", "Check React & TypeScript fit", "Show certifications"],
-          };
-        }
-
-        if (state.intake.step === 1) {
-          state.intake.service = q;
-          state.intake.step = 2;
-          return {
-            trace: "Project Scoping · Step 2/2",
-            text: `Got it — **${q}**. What's your ideal timeline and a quick summary of what you want to achieve?`,
-            followups: ["Launch within 1 month", "Full-time React.js role", "Cancel"],
-          };
-        }
-
-        if (state.intake.step === 2) {
-          state.intake.brief = `Focus: ${state.intake.service}\nDetails & Timeline: ${q}`;
-          const finalBrief = state.intake.brief;
-          const finalService = state.intake.service;
-          state.intake = { active: false, step: 0, service: "", timeline: "", brief: "" };
-          return {
-            trace: "Brief Ready · Action Prepared",
-            text: `Awesome! I've drafted your brief for Syed (**${finalService}**). Click below to auto-fill the Contact form or copy his email directly:`,
-            bullets: [
-              `**Email:** syedshafaiz76@gmail.com`,
-              `**Phone:** +91 7019487141 (Bengaluru, India)`,
-            ],
-            actions: [
-              { label: "⚡ Prefill Contact Form", type: "prefill-contact", service: finalService, brief: finalBrief },
-              { label: "Copy Email", type: "copy", value: "syedshafaiz76@gmail.com" },
-            ],
-            followups: ["Show Syed's key projects", "Check his AWS certification"],
-          };
-        }
-      }
-
-      // 1. Direct UI commands ("open novacut", "filter ai projects", "go to contact")
-      if (/\b(open|show|launch|inspect)\b/.test(s)) {
-        const caseMap = [
-          { re: /novacut/, id: "novacut" },
-          { re: /taxapedia/, id: "taxapedia" },
-          { re: /sovos/, id: "sovos" },
-          { re: /efile/, id: "efilemyform" },
-          { re: /1099/, id: "1099pro" },
-          { re: /eduleem/, id: "eduleem" },
-          { re: /royaal|mahaadeva|builder/, id: "royaal" },
-        ];
-        for (const item of caseMap) {
-          if (item.re.test(s) && /\b(open|inspect|launch|case study)\b/.test(s)) {
-            const c = CASE_STUDIES[item.id];
-            state.lastEntity = { kind: "project", id: item.id };
-            return {
-              trace: `Tool Ready · Case Study (${c.title})`,
-              text: `**${c.title}** — ${c.summary}`,
-              bullets: c.highlights.slice(0, 2),
-              actions: [
-                { label: `⚡ Open ${c.title} Drawer`, type: "open-case", value: item.id },
-                { label: "Launch Live ↗", type: "external", value: c.url },
-              ],
-              followups: ["What stack was used?", "Show all projects", "Start a project brief"],
-            };
-          }
-        }
-        if (/ai\s+project|open\s+source/.test(s)) {
-          return {
-            trace: "Tool Ready · Filter Projects (AI)",
-            text: "Syed's AI & open-source highlights are **NovaCut Studio** (open-source AI stream-to-shorts clipper with local NLP + Gemini/OpenAI/Claude/Ollama) and **Taxapedia** (AI-agent & SEO optimized compliance hub).",
-            actions: [
-              { label: "⚡ Filter AI Projects", type: "filter-projects", value: "ai" },
-              { label: "Open NovaCut Case Study", type: "open-case", value: "novacut" },
-            ],
-            followups: ["Tell me about NovaCut Studio", "Does he know Python & FastAPI?"],
-          };
-        }
-      }
-
-      // 2. Greetings & identity
-      if (/^(hi|hello|hey|yo|good\s+(morning|afternoon|evening)|hola|namaste|salam)\b/.test(s) && s.length < 36) {
-        return {
-          trace: "Agent Ready",
-          text: "Hey there! I'm **Syed's Portfolio Agent**. I know every detail of Syed's CV, projects, tech stack, and experience—and I can open case studies, check role fit, or draft a project brief for you. What would you like to explore?",
-          followups: ["Check fit for a React.js role", "Tell me about NovaCut Studio", "Hire Syed for a project"],
-        };
-      }
-
-      if (/(who are you|what can you do|help|how do you work)/.test(s)) {
-        return {
-          trace: "Capabilities Overview",
-          text: "I act as Syed's interactive CV & portfolio agent. Try asking me things like:",
-          bullets: [
-            "**Role & Skill Checks:** \"Does Syed know TypeScript, Jest, Docker, and AWS?\"",
-            "**Deep Dives:** \"Tell me about NovaCut Studio\" or \"What did he build at Sovos?\"",
-            "**Live Actions:** \"Open NovaCut case study\" or \"I want to hire Syed for an eCommerce site\"",
-          ],
-          followups: ["Does he know React, TS & AWS?", "Summarize his 3+ yrs experience", "Start a project brief"],
-        };
-      }
-
-      if (/^(thanks|thank you|thx|awesome|cool|great|nice)\b/.test(s) && s.length < 35) {
-        return {
-          trace: "Standing By",
-          text: "Glad I could help! Let me know if you want to inspect another project, check a specific skill, or connect directly with Syed.",
-          actions: [
-            { label: "Copy Email", type: "copy", value: "syedshafaiz76@gmail.com" },
-            { label: "Jump to Contact", type: "scroll", value: "contact" },
-          ],
-          followups: ["Start a project brief", "Show Syed's certifications"],
-        };
-      }
-
-      // 3. Follow-up resolution using conversation memory ("what stack did he use?", "tell me more", "link?")
-      if (state.lastEntity && /\b(it|that|there|this project|this role|stack|tech|tools|link|url|github|more|details)\b/.test(s) && !/(sovos|novacut|taxapedia|efile|1099|eduleem|royaal|arm)/.test(s)) {
-        if (state.lastEntity.kind === "project") {
-          const c = CASE_STUDIES[state.lastEntity.id];
-          if (c) {
-            return {
-              trace: `Context Follow-up · ${c.title}`,
-              text: `For **${c.title}** (${c.role}, ${c.timeline}), Syed used **${c.stack.join(", ")}**.`,
-              bullets: c.highlights,
-              actions: [
-                { label: `⚡ Open ${c.title} Drawer`, type: "open-case", value: state.lastEntity.id },
-                { label: "Open Live Link ↗", type: "external", value: c.url },
-              ],
-              followups: ["Show other projects", "What is his full tech stack?", "Start a project brief"],
-            };
-          }
-        }
-      }
-
-      // 4. Specific Project Deep-Dives
-      const projectMatchers = [
-        { id: "novacut", re: /novacut|clip\s*maker|shorts|reels|tiktok|twitch|kick|scrubber|caption/ },
-        { id: "taxapedia", re: /taxapedia|elementor|ai\s*agent.*seo|chatgpt.*claude/ },
-        { id: "efilemyform", re: /efilemyform|efile|w-2|aca\s*form|print.and.mail/ },
-        { id: "1099pro", re: /1099pro|1099/ },
-        { id: "royaal", re: /royaal|mahaadeva|real\s*estate|builder/ },
-      ];
-      for (const pm of projectMatchers) {
-        if (pm.re.test(s)) {
-          const c = CASE_STUDIES[pm.id];
-          state.lastEntity = { kind: "project", id: pm.id };
-          return {
-            trace: `Project Match · ${c.title}`,
-            text: `**${c.title}** (${c.category}) — ${c.summary}`,
-            bullets: c.highlights,
-            actions: [
-              { label: `⚡ Inspect ${c.title}`, type: "open-case", value: pm.id },
-              { label: "Visit Project ↗", type: "external", value: c.url },
-            ],
-            followups: ["What stack did he use there?", "Tell me about Sovos", "How do I hire Syed?"],
-          };
-        }
-      }
-
-      // 5. Specific Company Deep-Dives
-      if (/\bsovos\b/.test(s)) {
-        const co = COMPANIES.sovos;
-        state.lastEntity = { kind: "company", id: "sovos" };
-        return {
-          trace: `Experience Match · ${co.name}`,
-          text: `At **${co.name}** (${co.role}, ${co.dates}), ${co.summary}`,
-          bullets: co.bullets,
-          actions: co.actions,
-          followups: co.followups,
-        };
-      }
-      if (/\b(eduleem|cubedecors|digileem)\b/.test(s)) {
-        const co = COMPANIES.eduleem;
-        state.lastEntity = { kind: "company", id: "eduleem" };
-        return {
-          trace: `Experience Match · ${co.name}`,
-          text: `At **${co.name}** (${co.role}, ${co.dates}), ${co.summary}`,
-          bullets: co.bullets,
-          actions: co.actions,
-          followups: co.followups,
-        };
-      }
-      if (/\b(arm\s*info|arminfoserve)\b/.test(s)) {
-        const co = COMPANIES.arm;
-        state.lastEntity = { kind: "company", id: "arm" };
-        return {
-          trace: `Experience Match · ${co.name}`,
-          text: `At **${co.name}** (${co.role}, ${co.dates}), ${co.summary}`,
-          bullets: co.bullets,
-          actions: co.actions,
-          followups: co.followups,
-        };
-      }
-
-      // 6. Hiring / Project Intake / Contact Intent
-      if (/\b(hire|start a project|build a|need a|looking for|freelance|quote|budget|rate|pricing|contact|email|phone|call|reach|collaborat|interview|recruit|resume|cv)\b/.test(s)) {
-        if (/\b(build|need|hire|project|website|app|ecommerce|redesign|brief|start)\b/.test(s) && !/\b(email|phone|call|number)\b/.test(s)) {
-          state.intake = { active: true, step: 1, service: "", timeline: "", brief: "" };
-          return {
-            trace: "Project Scoping · Step 1/2",
-            text: "I'd love to connect you with Syed! What kind of work or role are you looking for? (e.g., **React.js / Full-Stack**, **Enterprise WordPress / eCommerce**, **UI/UX & Storybook**, or **AI / Python Automation**)",
-            actions: [
-              { label: "Copy Email", type: "copy", value: "syedshafaiz76@gmail.com" },
-              { label: "Jump to Contact Form", type: "scroll", value: "contact" },
-            ],
-            followups: ["React.js / Full-Stack Web App", "Enterprise WordPress / eCommerce", "Full-Time Software Engineer Role"],
-          };
-        }
-        return {
-          trace: "Contact Details",
-          text: "Syed is based in **Bengaluru, India** and responds quickly to engineering roles, consulting, and product builds:",
-          bullets: [
-            "**Email:** syedshafaiz76@gmail.com",
-            "**Phone:** +91 7019487141",
-            "**Profiles:** LinkedIn & GitHub (`github.com/Marburg7`)",
-          ],
-          actions: [
-            { label: "Copy Email", type: "copy", value: "syedshafaiz76@gmail.com" },
-            { label: "Copy Phone", type: "copy", value: "+91 7019487141" },
-            { label: "Start Guided Brief", type: "start-intake" },
-          ],
-          followups: ["Start a project brief", "Why hire Syed?", "Show his key projects"],
-        };
-      }
-
-      // 7. Dynamic Skill & Role-Fit Matcher (detects any skills mentioned in user's query!)
-      const matchedSkills = SKILLS_CATALOG.filter((sk) =>
-        sk.aliases.some((al) => {
-          const escaped = al.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-          return new RegExp(`(^|[^a-z0-9])${escaped}([^a-z0-9]|$)`, "i").test(s);
-        })
-      );
-
-      if (matchedSkills.length > 0 && !/\b(all projects|list projects)\b/.test(s)) {
-        const names = matchedSkills.map((m) => m.name);
-        return {
-          trace: `Skill Match · ${matchedSkills.length} Verified from CV`,
-          text:
-            matchedSkills.length === 1
-              ? `Yes! **${matchedSkills[0].name}** is a core part of Syed's production stack (${matchedSkills[0].cat}):`
-              : `Strong match — Syed has verified production experience across **${names.join(", ")}**:`,
-          bullets: matchedSkills.slice(0, 5).map((m) => `**${m.name}:** ${m.detail}.`),
-          actions: [
-            { label: "View Full Skills Matrix", type: "navigate", value: `${rootPrefix}tools/` },
-            { label: "Inspect Sovos Platform", type: "open-case", value: "sovos" },
-          ],
-          followups: ["Check his Cloud & DevOps stack", "Tell me about NovaCut Studio", "Start a project brief"],
-        };
-      }
-
-      // 8. Education & Certifications
-      if (/\b(education|degree|college|university|vtu|kns|cgpa|puc|sslc|school|certif|certificate|ethnus|accenture)\b/.test(s)) {
-        return {
-          trace: "CV Credentials · Education & Certs",
-          text: "Here are Syed's academic credentials and verified certifications:",
-          bullets: [
-            "**B.E. (2023):** Visvesvaraya Technological University — KNS Institute of Technology (**CGPA: 7.5**).",
-            "**Certifications:** AWS Solutions Architect Certificate (Eduleem, Oct 2024), Ethnus Full Stack Developer (Aug 2024), Accenture North America Coding & Nordics Developer Simulations (Mar 2024).",
-            "**Earlier Education:** PUC at Ramaiah Pre-University College (2019, 60%) & SSLC at Sun Shine English School (2017, 78%).",
-          ],
-          actions: [
-            { label: "Jump to Credentials", type: "scroll", value: "credentials" },
-            { label: "Full Experience & CV", type: "navigate", value: `${rootPrefix}experience/` },
-          ],
-          followups: ["Summarize his work experience", "Show his key projects", "Contact Syed"],
-        };
-      }
-
-      // 9. Broad Experience / Summary / Why Hire
-      if (/\b(experience|career|work|history|background|summary|about|years|why hire|fit|strengths|achievements|impact|metrics)\b/.test(s)) {
-        return {
-          trace: "CV Executive Summary",
-          text: "Syed is a **React.js & Full Stack Web Developer** with **3+ years of experience** shipping enterprise web apps, UI component libraries, and high-traffic eCommerce sites:",
-          bullets: [
-            "**Sovos (Aug 2025 – Present):** Full Stack Web Developer managing 7+ regional multisites & 10+ eCommerce websites with React.js, TypeScript, Storybook, Jest/RTL, Docker, K8s, AWS & Azure.",
-            "**Eduleem India Pvt Ltd (Dec 2023 – Aug 2025):** Shipped 20+ landing pages, fixed 100+ technical SEO issues, and delivered 5 domains each sustaining **70,000+ visitors every 15 days**.",
-            "**ARM Infoserve (Sep – Nov 2023):** Built responsive WooCommerce/WordPress/PHP/Java company web platform.",
-          ],
-          actions: [
-            { label: "Full Experience Page", type: "navigate", value: `${rootPrefix}experience/` },
-            { label: "Start a Project Brief", type: "start-intake" },
-          ],
-          followups: ["Tell me about Sovos", "Tell me about NovaCut Studio", "Show his certifications"],
-        };
-      }
-
-      // 10. Projects Overview
-      if (/\b(project|projects|portfolio|built|shipped|work samples|case stud)\b/.test(s)) {
-        return {
-          trace: "Projects Index · 7 Shipped Builds",
-          text: "Syed has **7 key projects** across open-source AI, enterprise TaxTech, EdTech, and real estate:",
-          bullets: [
-            "**NovaCut Studio:** Open-source AI stream-to-shorts clipper (local transcription, NLP, Gemini/OpenAI/Claude/Ollama).",
-            "**Sovos Multisite & Taxapedia:** 7+ regional enterprise sites + AI-agent/SEO optimized compliance hub.",
-            "**eFileMyForm & 1099pro.com:** IRS-approved cloud tax e-filing platforms (frontend + backend/API).",
-            "**Eduleem.com & Royaal Mahaadeva Builders:** High-traffic EdTech & real estate flagships (70K+ biweekly visitors).",
-          ],
-          actions: [
-            { label: "⚡ Open NovaCut Studio", type: "open-case", value: "novacut" },
-            { label: "Explore All Projects", type: "navigate", value: `${rootPrefix}projects/` },
-          ],
-          followups: ["Tell me about NovaCut Studio", "Tell me about Taxapedia", "Check his tech stack"],
-        };
-      }
-
-      // 11. General Tech Stack Overview
-      if (/\b(stack|tech|skills|tools|languages|frameworks|what does he know)\b/.test(s)) {
-        return {
-          trace: "Full Technical Stack · 9 Domains",
-          text: "Syed works across the full modern web stack:",
-          bullets: [
-            "**Frontend & Testing:** React.js (hooks), TypeScript, ES6+, Tailwind CSS, Storybook, Jest & React Testing Library.",
-            "**Backend & Data:** PHP, Node.js, Python, FastAPI, RESTful APIs, MySQL & Alembic.",
-            "**CMS, Cloud & DevOps:** WordPress, WooCommerce, Shopify, HubSpot, Docker, Kubernetes, Lando, AWS, Azure, CI/CD & YAML.",
-            "**UX, MarTech & SEO:** Figma, XD, Framer, Marketo, Smartling, Infogram, Technical SEO, GA4, GTM, Core Web Vitals & WCAG.",
-          ],
-          actions: [
-            { label: "Open Technical Skills", type: "navigate", value: `${rootPrefix}tools/` },
-            { label: "Test Role Fit", type: "start-intake" },
-          ],
-          followups: ["Does he know Python & FastAPI?", "Tell me about Sovos", "Show certifications"],
-        };
-      }
-
-      // 12. Blog / Articles
-      if (/\b(blog|article|articles|thoughts|writing|posts|read)\b/.test(s)) {
-        return {
-          trace: "Editorial Articles · 4 Posts",
-          text: "Syed writes about UI/UX for full-stack apps, building his first full-stack web app, transforming dashboards, and preparing for the future of design & AI.",
-          actions: [
-            { label: "Read Design Thoughts", type: "navigate", value: `${rootPrefix}blog/` },
-          ],
-          followups: ["Show Syed's key projects", "Summarize his experience"],
-        };
-      }
-
-      // 13. Smart Conversational Fallback
-      return {
-        trace: "Smart Assistant · Ready to Help",
-        text: `I didn't find an exact CV match for "${q}", but I can answer detailed questions about Syed's **3+ years of React.js & Full-Stack experience**, evaluate fit for specific skills (like TypeScript, FastAPI, Docker, AWS, or WordPress), walk through projects like **NovaCut Studio** or **Taxapedia**, or help you message Syed directly.`,
-        actions: [
-          { label: "Start a Project Brief", type: "start-intake" },
-          { label: "Copy Syed's Email", type: "copy", value: "syedshafaiz76@gmail.com" },
-        ],
-        followups: ["Does he know React, TypeScript & AWS?", "Tell me about NovaCut Studio", "Summarize his experience"],
-      };
-    }
-
-    function handleUserInput(text) {
-      const cleaned = text.trim();
-      if (!cleaned) return;
-
-      const userMsg = { who: "user", text: cleaned };
-      state.history.push(userMsg);
-      renderMessage(userMsg);
-      saveState();
-
-      const typingEl = showTyping("Analyzing CV & portfolio...");
-      const delay = reducedMotion ? 60 : 340 + Math.min(260, cleaned.length * 4);
-
-      window.setTimeout(async () => {
-        let reply = null;
-
-        // Optional external LLM hook if configured in future (window.SYED_AGENT_ENDPOINT)
-        if (typeof window.SYED_AGENT_ENDPOINT === "string" && window.SYED_AGENT_ENDPOINT) {
-          try {
-            const res = await fetch(window.SYED_AGENT_ENDPOINT, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ message: cleaned, history: state.history.slice(-8) }),
-            });
-            if (res.ok) {
-              const data = await res.json();
-              if (data && data.text) reply = data;
-            }
-          } catch {
-            // gracefully fall back to built-in CV agent engine
-          }
-        }
-
-        if (!reply) {
-          reply = generateAgentReply(cleaned);
-        }
-
-        typingEl.remove();
-
-        const botMsg = {
-          who: "bot",
-          trace: reply.trace,
-          text: reply.text,
-          bullets: reply.bullets || [],
-          actions: reply.actions || [],
-        };
-        state.history.push(botMsg);
-        renderMessage(botMsg);
-        renderPrompts(reply.followups || ["Show key projects", "Check React & AWS skills", "Hire Syed"]);
-        saveState();
-      }, delay);
-    }
-
-    function resetConversation() {
-      state = {
-        history: [],
-        lastEntity: null,
-        intake: { active: false, step: 0, service: "", timeline: "", brief: "" },
-      };
-      if (messagesEl) messagesEl.innerHTML = "";
-      const welcome = {
-        who: "bot",
-        trace: "Portfolio Agent Online",
-        text: "Hi! I'm **Syed's Portfolio Agent**. Ask me anything about his **3+ years of React.js & Full-Stack experience**, check his fit for specific skills, inspect projects like **NovaCut Studio** or **Taxapedia**, or start a project brief.",
-      };
-      state.history.push(welcome);
-      renderMessage(welcome);
-      renderPrompts([
-        "Does Syed know React, TypeScript & AWS?",
-        "Tell me about NovaCut Studio",
-        "I want to hire Syed for a project",
-      ]);
-      saveState();
-    }
-
-    function toggle(force) {
-      const open = typeof force === "boolean" ? force : !panel.classList.contains("is-open");
-      panel.classList.toggle("is-open", open);
-      panel.setAttribute("aria-hidden", String(!open));
-      fab.setAttribute("aria-expanded", String(open));
-      if (open && input) input.focus();
-    }
-
-    // Hydrate existing session history or initialize welcome greeting
-    if (state.history.length > 0) {
-      if (messagesEl) messagesEl.innerHTML = "";
-      state.history.forEach(renderMessage);
-      renderPrompts([
-        "Tell me about NovaCut Studio",
-        "Check Docker, K8s & AWS skills",
-        "Start a project brief",
-      ]);
+    // Also prefetch cleanly during browser idle time so opening feels instant
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(() => loadAgentBundle(false), { timeout: 2200 });
     } else {
-      resetConversation();
+      window.setTimeout(() => loadAgentBundle(false), 1200);
     }
-
-    fab.addEventListener("click", () => toggle());
-    if (closeBtn) closeBtn.addEventListener("click", () => toggle(false));
-    if (resetBtn) resetBtn.addEventListener("click", resetConversation);
-
-    if (form && input) {
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const text = input.value.trim();
-        if (!text) return;
-        input.value = "";
-        handleUserInput(text);
-      });
-    }
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && panel.classList.contains("is-open")) toggle(false);
-    });
   }
 
   /* ------------------------------------------------------------------------

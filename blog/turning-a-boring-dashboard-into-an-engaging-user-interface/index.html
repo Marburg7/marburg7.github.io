@@ -50,6 +50,21 @@
               <span class="roll-btn__text">Let's Talk</span>
               <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </a>
+            <div class="lang-switcher" data-lang-switcher>
+              <button class="lang-switcher__btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Choose website language" data-lang-trigger>
+                <svg class="lang-switcher__globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <span class="lang-switcher__code" data-lang-current-code>EN</span>
+                <svg class="lang-switcher__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <ul class="lang-switcher__menu" role="listbox" aria-label="Language selector" data-lang-menu>
+                <li role="none"><button class="lang-switcher__option is-active" type="button" role="option" aria-selected="true" data-lang-option="en"><span class="lang-switcher__names"><span class="lang-switcher__native">English</span><span class="lang-switcher__english">English</span></span><span class="lang-switcher__badge">EN</span></button></li>
+                <li role="none"><button class="lang-switcher__option" type="button" role="option" aria-selected="false" data-lang-option="de"><span class="lang-switcher__names"><span class="lang-switcher__native">Deutsch</span><span class="lang-switcher__english">German</span></span><span class="lang-switcher__badge">DE</span></button></li>
+                <li role="none"><button class="lang-switcher__option" type="button" role="option" aria-selected="false" data-lang-option="it"><span class="lang-switcher__names"><span class="lang-switcher__native">Italiano</span><span class="lang-switcher__english">Italian</span></span><span class="lang-switcher__badge">IT</span></button></li>
+                <li role="none"><button class="lang-switcher__option" type="button" role="option" aria-selected="false" data-lang-option="fr"><span class="lang-switcher__names"><span class="lang-switcher__native">Français</span><span class="lang-switcher__english">French</span></span><span class="lang-switcher__badge">FR</span></button></li>
+                <li role="none"><button class="lang-switcher__option" type="button" role="option" aria-selected="false" data-lang-option="hi"><span class="lang-switcher__names"><span class="lang-switcher__native">हिन्दी</span><span class="lang-switcher__english">Hindi</span></span><span class="lang-switcher__badge">HI</span></button></li>
+                <li role="none"><button class="lang-switcher__option" type="button" role="option" aria-selected="false" data-lang-option="ar" dir="rtl"><span class="lang-switcher__names"><span class="lang-switcher__native">العربية</span><span class="lang-switcher__english">Arabic</span></span><span class="lang-switcher__badge">AR</span></button></li>
+              </ul>
+            </div>
             <button id="menu-trigger" class="menu-trigger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
               <span class="menu-trigger__line menu-trigger__line--top"></span>
               <span class="menu-trigger__line menu-trigger__line--bottom"></span>
@@ -173,6 +188,7 @@
     </footer>
   </div>
 
+  <script src="../../js/i18n.js" defer></script>
   <script src="../../js/script.js" defer></script>
 </body>
 </html>

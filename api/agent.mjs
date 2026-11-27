@@ -93,6 +93,7 @@ export default async function handler(req, res) {
       message: validation.data.message,
       history: validation.data.history,
       mode: validation.data.mode,
+      lang: validation.data.lang,
       emit,
     });
   } catch {

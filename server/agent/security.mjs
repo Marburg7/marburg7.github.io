@@ -125,6 +125,9 @@ export function validateAgentRequest(body) {
   }
 
   const mode = body.mode === "jd" ? "jd" : "chat";
+  const SUPPORTED_LANGS = new Set(["en", "de", "it", "fr", "hi", "ar"]);
+  const rawLang = typeof body.lang === "string" ? body.lang.toLowerCase().trim() : "en";
+  const lang = SUPPORTED_LANGS.has(rawLang) ? rawLang : "en";
 
   return {
     valid: true,
@@ -132,6 +135,7 @@ export function validateAgentRequest(body) {
       message,
       history: sanitizedHistory,
       mode,
+      lang,
     },
   };
 }

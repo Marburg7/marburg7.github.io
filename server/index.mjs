@@ -159,6 +159,7 @@ export function createAppServer(options = {}) {
           message: validation.data.message,
           history: validation.data.history,
           mode: validation.data.mode,
+          lang: validation.data.lang,
           emit,
         });
       } catch (err) {

@@ -350,6 +350,7 @@ function runLocalGroundedOrchestrator({ message, history, mode, emit }) {
   // 4. Specific Project Inquiries
   const projectMap = [
     { id: "sovos_studio", re: /\b(sovos\s*studio|choropleth|usa\s*map|report\s*(builder|canvas)|data\s*visualization\s*studio|spreadsheet\s*editor|audit\s*log)\b/i },
+    { id: "streamshield", re: /\b(streamshield|chrome\s*extension|mv3|manifest\s*v3|ad\s*interruption|jiohotstar|widevine|14-?state\s*fsm)\b/i },
     { id: "novacut", re: /\b(novacut|clip\s*maker|shorts|reels|tiktok|twitch|kick|ollama)\b/i },
     { id: "taxapedia", re: /\b(taxapedia|elementor)\b/i },
     { id: "efilemyform", re: /\b(efilemyform|efile|w-2|aca)\b/i },
@@ -368,10 +369,10 @@ function runLocalGroundedOrchestrator({ message, history, mode, emit }) {
           `**Architecture & Technical Decisions:** ${p.architecture}`,
           `**Challenge & Solution:** ${p.challengesAndSolutions}`,
           `**Stack:** \`${p.technologies.join("` · `")}\``,
-          p.github ? `**GitHub:** [github.com/Marburg7/NovaCut](${p.github})` : `**Live Deployment:** [${p.liveUrl}](${p.liveUrl})`,
+          p.github ? `**GitHub:** [${p.github.replace(/^https?:\/\//, "")}](${p.github})` : `**Live Deployment:** [${p.liveUrl}](${p.liveUrl})`,
         ].join("\n"),
         actions: dedupeActions(actions),
-        followups: ["What is his strongest project?", "Show all 7 projects", "Explain his work to a CTO"],
+        followups: ["What is his strongest project?", "Show all projects", "Explain his work to a CTO"],
       };
     }
   }
@@ -553,7 +554,7 @@ function defaultFollowupsFor(message) {
 /**
  * Orchestrate one conversational turn and emit SSE events via `emit(event, payload)`.
  */
-export async function orchestrateAgentTurn({ message, history, mode, emit }) {
+export async function orchestrateAgentTurn({ message, history, mode, lang = "en", emit }) {
   const providerInfo = getActiveProviderInfo();
   emit("meta", providerInfo);
 
@@ -578,7 +579,7 @@ export async function orchestrateAgentTurn({ message, history, mode, emit }) {
     ok: true,
   });
 
-  const systemPrompt = buildSystemPrompt(retrievedChunks);
+  const systemPrompt = buildSystemPrompt(retrievedChunks, lang);
   let result = null;
 
   // 3. Call Live LLM (if configured) or Grounded Local Orchestrator

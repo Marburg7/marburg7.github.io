@@ -71,34 +71,67 @@
   }
 
   /* ------------------------------------------------------------------------
-     2. Kinetic Character-Roll Buttons
+     2. Kinetic Character-Roll Buttons (Script-Aware for Arabic & Devanagari)
      ------------------------------------------------------------------------ */
+  function buildRollButton(btn, lang) {
+    if (!btn || reducedMotion) return;
+    const labelEl = btn.querySelector(".roll-btn__text");
+    if (!labelEl) return;
+
+    const raw = (labelEl.getAttribute("aria-label") || labelEl.textContent || "").trim();
+    if (!raw) return;
+
+    const activeLang = lang || window.PortfolioI18n?.getLang?.() || document.documentElement.lang || "en";
+    const complexScript = activeLang === "ar" || activeLang === "hi" || /[\u0600-\u06FF\u0900-\u097F]/.test(raw);
+
+    labelEl.dataset.rolled = "true";
+    labelEl.setAttribute("aria-label", raw);
+    labelEl.textContent = "";
+
+    // Keep cursive Arabic & Devanagari ligatures intact by rolling as one cohesive phrase
+    if (complexScript) {
+      const wrap = document.createElement("span");
+      wrap.className = "roll-char";
+      wrap.setAttribute("aria-hidden", "true");
+      const inner = document.createElement("span");
+      inner.className = "roll-char__inner";
+      inner.style.setProperty("--char-index", 0);
+      const s1 = document.createElement("span");
+      const s2 = document.createElement("span");
+      s1.textContent = raw;
+      s2.textContent = raw;
+      inner.append(s1, s2);
+      wrap.appendChild(inner);
+      labelEl.appendChild(wrap);
+      return;
+    }
+
+    [...raw].forEach((ch, idx) => {
+      const wrap = document.createElement("span");
+      wrap.className = "roll-char";
+      wrap.setAttribute("aria-hidden", "true");
+      const inner = document.createElement("span");
+      inner.className = "roll-char__inner";
+      inner.style.setProperty("--char-index", idx);
+
+      const s1 = document.createElement("span");
+      const s2 = document.createElement("span");
+      s1.textContent = ch === " " ? "\u00A0" : ch;
+      s2.textContent = ch === " " ? "\u00A0" : ch;
+      inner.append(s1, s2);
+      wrap.appendChild(inner);
+      labelEl.appendChild(wrap);
+    });
+  }
+
+  window.__rebuildRollButton = buildRollButton;
+
   function initRollButtons() {
     if (reducedMotion) return;
     document.querySelectorAll(".roll-btn[data-roll]").forEach((btn) => {
       const labelEl = btn.querySelector(".roll-btn__text");
       if (!labelEl || labelEl.dataset.rolled === "true") return;
-      const raw = labelEl.textContent.trim();
-      labelEl.dataset.rolled = "true";
-      labelEl.setAttribute("aria-label", raw);
-      labelEl.textContent = "";
-
-      [...raw].forEach((ch, idx) => {
-        const wrap = document.createElement("span");
-        wrap.className = "roll-char";
-        wrap.setAttribute("aria-hidden", "true");
-        const inner = document.createElement("span");
-        inner.className = "roll-char__inner";
-        inner.style.setProperty("--char-index", idx);
-
-        const s1 = document.createElement("span");
-        const s2 = document.createElement("span");
-        s1.textContent = ch === " " ? "\u00A0" : ch;
-        s2.textContent = ch === " " ? "\u00A0" : ch;
-        inner.append(s1, s2);
-        wrap.appendChild(inner);
-        labelEl.appendChild(wrap);
-      });
+      buildRollButton(btn);
     });
   }
 
@@ -169,7 +202,7 @@
 
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-        ctx.fillStyle = n.warm ? "rgba(249, 115, 22, 0.45)" : "rgba(212, 255, 63, 0.35)";
+        ctx.fillStyle = n.warm ? "rgba(196, 73, 0, 0.58)" : "rgba(239, 214, 172, 0.45)";
         ctx.fill();
 
         for (let j = i + 1; j < nodes.length; j++) {
@@ -179,8 +212,8 @@
             ctx.beginPath();
             ctx.moveTo(n.x, n.y);
             ctx.lineTo(m.x, m.y);
-            const alpha = (1 - d / 135) * 0.11;
-            ctx.strokeStyle = `rgba(245, 243, 239, ${alpha.toFixed(3)})`;
+            const alpha = (1 - d / 135) * 0.13;
+            ctx.strokeStyle = `rgba(239, 214, 172, ${alpha.toFixed(3)})`;
             ctx.lineWidth = 0.8;
             ctx.stroke();
           }
@@ -340,7 +373,7 @@
     function onScroll() {
       const y = window.scrollY;
       if (header) {
-        header.classList.toggle("is-scrolled", y > 36);
+        header.classList.toggle("is-scrolled", y > 16);
       }
 
       if (progressBar) {
@@ -524,6 +557,24 @@
       ],
       stack: ["Next.js API", "React.js", "TypeScript", "Choropleth Maps", "Spreadsheet Data Editor", "CSV/XLSX", "RBAC & Audit Log"],
     },
+    streamshield: {
+      category: "Open Source · Chrome Extension (Manifest V3)",
+      title: "StreamShield — Universal Video Ad Interruption Manager",
+      role: "Creator & Full-Stack TypeScript Engineer",
+      timeline: "Open Source · v1.0.0",
+      url: "https://github.com/Marburg7/StreamShield",
+      image: "assets/svg/project-streamshield.svg",
+      summary:
+        "Production-grade, privacy-first Chrome Extension (Manifest V3) built in strict TypeScript that automatically detects video ad interruptions and activates supported player controls—accessible Skip buttons, optional DRM-safe VOD acceleration, or audio mute fallback with guaranteed post-ad volume, mute, and playback-rate restoration.",
+      highlights: [
+        "Architected a 14-state deterministic finite state machine (AdEngine + PlayerManager) with verified skip accounting, manual-unmute respect, and exact pre-ad state restoration.",
+        "Built 9 independent, modular StreamingPlatformAdapter implementations covering YouTube, JioHotstar/JioCinema, Amazon Prime Video, Netflix, Sony LIV, ZEE5, Hulu, Disney+ (Shadow-DOM piercing), and an opt-in Generic adapter.",
+        "Enforced strict DRM & live-stream safety: live sports/SSAI breaks stay strictly at 1.0x with mute fallback, Skip Intro/Recap/Credits are excluded, and DRM step-down + cooldown recovery prevent playback errors.",
+        "Engineered a dark-mode live dashboard popup, Shadow-DOM status pill, scoped least-privilege host permissions, optional per-origin consent, and zero telemetry / zero external network requests.",
+        "Backed by strict TypeScript compilation, dual dev/prod esbuild pipelines, Vitest unit & integration scenario suites, and Playwright real-Chromium MV3 extension tests.",
+      ],
+      stack: ["Strict TypeScript", "Chrome MV3", "14-State FSM", "Shadow DOM", "esbuild", "Vitest", "Playwright Chromium", "Zero Telemetry"],
+    },
     novacut: {
       category: "Open Source · AI Video Automation",
       title: "NovaCut Studio",
@@ -654,15 +705,31 @@
     const stackEl = backdrop.querySelector("[data-case-stack]");
     const linkEl = backdrop.querySelector("[data-case-link]");
 
+    let activeCaseId = null;
+
     function openCase(id) {
-      const data = CASE_STUDIES[id];
-      if (!data) return;
+      const baseData = CASE_STUDIES[id];
+      if (!baseData) return;
+      activeCaseId = id;
+
+      const localized = window.PortfolioI18n?.caseStudy?.(id) || null;
+      const data = localized
+        ? {
+          ...baseData,
+          category: localized.category || baseData.category,
+          title: localized.title || baseData.title,
+          role: localized.role || baseData.role,
+          timeline: localized.timeline || baseData.timeline,
+          summary: localized.summary || baseData.summary,
+          highlights: Array.isArray(localized.highlights) && localized.highlights.length ? localized.highlights : baseData.highlights,
+        }
+        : baseData;
 
       if (catEl) catEl.textContent = data.category;
       if (titleEl) titleEl.textContent = data.title;
       if (imgEl) {
         imgEl.src = `${rootPrefix}${data.image}`;
-        imgEl.alt = `${data.title} project preview`;
+        imgEl.alt = window.PortfolioI18n?.ui?.("casePreviewAlt", "{title} project preview", { title: data.title }) || `${data.title} project preview`;
       }
       let galleryEl = backdrop.querySelector("[data-case-gallery]");
       if (!galleryEl && imgEl?.parentElement) {
@@ -674,24 +741,25 @@
       if (galleryEl) {
         if (Array.isArray(data.gallery) && data.gallery.length > 1) {
           galleryEl.hidden = false;
-          galleryEl.innerHTML = "";
+          galleryEl.textContent = "";
           data.gallery.forEach((shot, idx) => {
+            const label = (localized && Array.isArray(localized.galleryLabels) && localized.galleryLabels[idx]) || shot.label;
             const tab = document.createElement("button");
             tab.type = "button";
             tab.className = `case-gallery-tab${idx === 0 ? " is-active" : ""}`;
-            tab.textContent = shot.label;
+            tab.textContent = label;
             tab.addEventListener("click", () => {
               galleryEl.querySelectorAll(".case-gallery-tab").forEach((b) => b.classList.toggle("is-active", b === tab));
               if (imgEl) {
                 imgEl.src = `${rootPrefix}${shot.src}`;
-                imgEl.alt = `${data.title} — ${shot.label}`;
+                imgEl.alt = `${data.title} — ${label}`;
               }
             });
             galleryEl.appendChild(tab);
           });
         } else {
           galleryEl.hidden = true;
-          galleryEl.innerHTML = "";
+          galleryEl.textContent = "";
         }
       }
       if (roleEl) roleEl.textContent = data.role;
@@ -711,7 +779,7 @@
         data.stack.forEach((t) => {
           const span = document.createElement("span");
           span.className = "chip";
-          span.textContent = t;
+          span.textContent = window.PortfolioI18n?.t?.(t, t) || t;
           stackEl.appendChild(span);
         });
       }
@@ -726,10 +794,17 @@
     }
 
     function closeCase() {
+      activeCaseId = null;
       backdrop.classList.remove("is-open");
       backdrop.setAttribute("aria-hidden", "true");
       document.body.classList.remove("modal-open");
     }
+
+    window.addEventListener("portfolio:langchange", () => {
+      if (activeCaseId && backdrop.classList.contains("is-open")) {
+        openCase(activeCaseId);
+      }
+    });
 
     window.__openCaseStudy = openCase;
 
@@ -759,11 +834,10 @@
         const email = btn.dataset.copyEmail || "syedshafaiz76@gmail.com";
         try {
           await navigator.clipboard.writeText(email);
-          const original = btn.textContent;
-          btn.textContent = "Copied!";
+          btn.textContent = window.PortfolioI18n?.ui?.("copied", "Copied!") || "Copied!";
           btn.classList.add("is-copied");
           window.setTimeout(() => {
-            btn.textContent = original;
+            btn.textContent = window.PortfolioI18n?.ui?.("copy", "Copy") || "Copy";
             btn.classList.remove("is-copied");
           }, 2000);
         } catch {
@@ -832,7 +906,11 @@
 
         if (!name || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
           if (statusEl) {
-            statusEl.textContent = "Please provide your name and a valid email address so Syed can reply.";
+            statusEl.textContent =
+              window.PortfolioI18n?.ui?.(
+                "wizardError",
+                "Please provide your name and a valid email address so Syed can reply."
+              ) || "Please provide your name and a valid email address so Syed can reply.";
             statusEl.className = "form-status is-visible form-status--error";
           }
           if (!name && nameInput) nameInput.focus();
@@ -858,7 +936,13 @@
         window.setTimeout(() => {
           if (submitBtn) submitBtn.disabled = false;
           if (statusEl) {
-            statusEl.textContent = `Thanks, ${name}! Your ${service} brief is ready — launching your email client to send to syedshafaiz76@gmail.com.`;
+            statusEl.textContent =
+              window.PortfolioI18n?.ui?.(
+                "wizardSuccess",
+                "Thanks, {name}! Your {service} brief is ready — launching your email client to send to syedshafaiz76@gmail.com.",
+                { name, service }
+              ) ||
+              `Thanks, ${name}! Your ${service} brief is ready — launching your email client to send to syedshafaiz76@gmail.com.`;
             statusEl.className = "form-status is-visible form-status--success";
           }
 
@@ -884,16 +968,31 @@
     // Ensure launcher button exists across all pages
     let fab = document.getElementById("assistant-fab");
     if (!fab) {
+      const agentStrings = window.PortfolioI18n?.agent?.();
       fab = document.createElement("button");
       fab.id = "assistant-fab";
       fab.className = "assistant-fab";
       fab.type = "button";
       fab.setAttribute("aria-expanded", "false");
       fab.setAttribute("aria-controls", "assistant-panel");
-      fab.setAttribute("aria-label", "Open Syed's AI Portfolio Agent");
-      fab.innerHTML = `<span class="status-dot" aria-hidden="true"></span><span class="assistant-fab__label">Ask Syed's AI</span>`;
+      fab.setAttribute("aria-label", agentStrings?.fabAria || "Open Syed's AI Portfolio Agent");
+      const dot = document.createElement("span");
+      dot.className = "status-dot";
+      dot.setAttribute("aria-hidden", "true");
+      const lbl = document.createElement("span");
+      lbl.className = "assistant-fab__label";
+      lbl.textContent = agentStrings?.fabLabel || "Ask Syed's AI";
+      fab.append(dot, lbl);
       document.body.appendChild(fab);
     }
+
+    // Keep FAB label & aria-label synced on language change even before agent-ui.js lazy-loads
+    window.addEventListener("portfolio:langchange", () => {
+      const ag = window.PortfolioI18n?.agent?.();
+      const lblEl = fab.querySelector(".assistant-fab__label");
+      if (lblEl) lblEl.textContent = ag?.fabLabel || "Ask Syed's AI";
+      fab.setAttribute("aria-label", ag?.fabAria || "Open Syed's AI Portfolio Agent");
+    });
 
     let scriptRequested = false;
     function loadAgentBundle(openImmediately = false) {

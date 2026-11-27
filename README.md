@@ -9,7 +9,7 @@ A zero-dependency, security-hardened developer portfolio for **Syed Shahabuddin*
 ## Highlights
 
 - **Zero Runtime Dependencies**: Pure semantic HTML5, modern CSS3, vanilla ES modules, and native Node.js (`>=20`) APIs — fast initial load, zero bundler lock-in, and 100% GitHub Pages compatible.
-- **Interactive Case Study Drawer & Multi-Screen Galleries**: Inspect shipped platforms directly on the page, including **Sovos Studio** (interactive 3-screen gallery covering the Report Canvas & Data Editor, USA Choropleth Map with hover tooltips, and Workspace Dashboard), **NovaCut Studio**, **Sovos Multisite Platform**, **Taxapedia**, **eFileMyForm**, **1099pro.com**, and **Eduleem.com**.
+- **Interactive Case Study Drawer & Multi-Screen Galleries**: Inspect shipped platforms directly on the page, including **Sovos Studio** (interactive 3-screen gallery covering the Report Canvas & Data Editor, USA Choropleth Map with hover tooltips, and Workspace Dashboard), **StreamShield** (open-source Chrome Extension MV3 video ad interruption manager in strict TypeScript with 14-state FSM & 9 platform adapters), **NovaCut Studio**, **Sovos Multisite Platform**, **Taxapedia**, **eFileMyForm**, **1099pro.com**, and **Eduleem.com**.
 - **Intelligent AI Portfolio Agent (`Cmd/Ctrl + K`)**:
   - **Works Natively on GitHub Pages**: Automatically detects static `.github.io` hosting and runs a grounded client-side engine powered by `data/portfolio-knowledge.json` with progressive streaming and **zero 404 console errors**.
   - **Optional Server-Side SSE & Google Gemini Integration**: Connect `server/index.mjs` or `api/agent.mjs` (Vercel) with `GEMINI_API_KEY` for live tool-calling and Server-Sent Events streaming.

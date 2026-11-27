@@ -45,7 +45,7 @@
       "items": [
         { "name": "React.js", "aliases": ["react", "reactjs", "react.js", "hooks", "jsx"], "workEvidence": "Sovos (enterprise multisite, reusable component libraries & Sovos Studio report builder), Eduleem (multi-domain web renovations)", "projectEvidence": ["Sovos Studio", "Sovos Multisite Platform", "NovaCut Studio", "eFileMyForm", "Eduleem.com"] },
         { "name": "Next.js", "aliases": ["nextjs", "next.js", "next"], "workEvidence": "Sovos Studio (Next.js API-connected data visualization & report studio workspace)", "projectEvidence": ["Sovos Studio"] },
-        { "name": "TypeScript", "aliases": ["typescript", "ts"], "workEvidence": "Sovos (enterprise multisite platform & typed reusable React UI component libraries)", "projectEvidence": ["Sovos Multisite Platform", "NovaCut Studio"] },
+        { "name": "TypeScript", "aliases": ["typescript", "ts"], "workEvidence": "Sovos (enterprise multisite platform & typed reusable React UI component libraries)", "projectEvidence": ["Sovos Multisite Platform", "StreamShield", "NovaCut Studio"] },
         { "name": "JavaScript (ES6+)", "aliases": ["javascript", "js", "es6", "jquery"], "workEvidence": "Sovos, Eduleem, ARM Infoserve (including jQuery)", "projectEvidence": ["Sovos Multisite Platform", "eFileMyForm", "1099pro.com", "Royaal Mahaadeva Builders"] },
         { "name": "HTML5 & CSS3", "aliases": ["html", "html5", "css", "css3", "responsive", "responsive web design"], "workEvidence": "Sovos, Eduleem, ARM Infoserve (responsive, cross-browser-compatible interfaces)", "projectEvidence": ["All 7 portfolio projects"] },
         { "name": "Tailwind CSS", "aliases": ["tailwind", "tailwindcss"], "workEvidence": "Sovos (reusable UI component libraries & multisite styling)", "projectEvidence": ["Sovos Multisite Platform"] },
@@ -58,7 +58,8 @@
       "category": "Testing & Quality",
       "items": [
         { "name": "Jest", "aliases": ["jest", "unit test", "unit tests", "unit testing"], "workEvidence": "Sovos (unit and component tests for React.js UI libraries)", "projectEvidence": ["Sovos Multisite Platform"] },
-        { "name": "React Testing Library", "aliases": ["rtl", "react testing library", "component testing", "testing"], "workEvidence": "Sovos (component test suites for reusable front-end libraries)", "projectEvidence": ["Sovos Multisite Platform"] }
+        { "name": "React Testing Library", "aliases": ["rtl", "react testing library", "component testing", "testing"], "workEvidence": "Sovos (component test suites for reusable front-end libraries)", "projectEvidence": ["Sovos Multisite Platform"] },
+        { "name": "Vitest & Playwright", "aliases": ["vitest", "playwright", "e2e testing", "browser testing", "chromium"], "workEvidence": "Open-source automated unit, mock integration, and real-Chromium MV3 extension testing", "projectEvidence": ["StreamShield"] }
       ]
     },
     {
@@ -204,6 +205,24 @@
         "Interactive USA Choropleth Map engine with color-coded regulatory grouping, custom legends, and dynamic hover tooltips per state.",
         "Live spreadsheet dataset editor supporting CSV/XLSX upload, inline row/column editing, type conversions, and instant canvas updates.",
         "Complete workspace & governance layer with Draft/Published lifecycle, Version History, Export, Admin Panel, User Management, Audit Log, and Integrations."
+      ]
+    },
+    {
+      "id": "streamshield",
+      "name": "StreamShield",
+      "category": "Open Source · Chrome Extension (Manifest V3)",
+      "role": "Creator & Full-Stack TypeScript Engineer",
+      "timeline": "Open Source · v1.0.0",
+      "github": "https://github.com/Marburg7/StreamShield",
+      "liveUrl": "https://github.com/Marburg7/StreamShield",
+      "summary": "Production-grade, privacy-first Chrome Extension (Manifest V3) built in strict TypeScript that automatically detects video ad interruptions across 9 streaming platforms and activates accessible Skip controls, optional DRM-safe VOD acceleration, or audio mute fallback with guaranteed post-ad restoration.",
+      "architecture": "Modular MV3 TypeScript architecture compiled with esbuild into dev/prod bundles: early document_start PlayerDiscovery & NavigationObserver, a centralized AdEngine driven by a 14-state deterministic FSM, PlayerManager for pre-ad snapshots and restoration, 9 independent StreamingPlatformAdapter modules (YouTube, JioHotstar/JioCinema, Amazon Prime Video, Netflix, Sony LIV, ZEE5, Hulu, Disney+ with Shadow-DOM piercing, and opt-in Generic), an isolated Shadow-DOM status pill, dark-mode popup dashboard & settings page, and an MV3 service worker with scoped host permissions and zero telemetry.",
+      "challengesAndSolutions": "Prevented false skips, broken DRM streams, and stuck audio states by enforcing verified skip accounting, excluding Skip Intro/Recap/Credits controls, keeping live sports & strict Widevine breaks at 1.0x with mute fallback, respecting manual unmutes, and verifying everything with Vitest unit/integration matrices and Playwright Chromium MV3 browser tests.",
+      "technologies": ["Strict TypeScript", "Chrome Extension MV3", "14-State FSM", "Shadow DOM", "esbuild", "Vitest", "Playwright", "Zero Telemetry"],
+      "highlights": [
+        "Supports 8 dedicated streaming platforms (YouTube, JioHotstar/JioCinema, Amazon Prime Video, Netflix, Sony LIV, ZEE5, Hulu, Disney+) plus an opt-in Generic adapter via per-origin optional permissions.",
+        "14-state deterministic FSM with verified skip accounting, DRM step-down & cooldown recovery, live-stream protection, and guaranteed restoration of pre-ad volume, mute state, and playback rate.",
+        "Collects zero browsing history, watch data, or analytics and makes zero external network requests; tested end-to-end with Vitest and Playwright against compiled MV3 Chromium builds."
       ]
     },
     {

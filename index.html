@@ -82,6 +82,21 @@
               <span class="roll-btn__text">Let's Talk</span>
               <svg class="roll-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </a>
+            <div class="lang-switcher" data-lang-switcher>
+              <button class="lang-switcher__btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Choose website language" data-lang-trigger>
+                <svg class="lang-switcher__globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <span class="lang-switcher__code" data-lang-current-code>EN</span>
+                <svg class="lang-switcher__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <ul class="lang-switcher__menu" role="listbox" aria-label="Language selector" data-lang-menu>
+                <li role="none"><button class="lang-switcher__option is-active" type="button" role="option" aria-selected="true" data-lang-option="en"><span class="lang-switcher__names"><span class="lang-switcher__native">English</span><span class="lang-switcher__english">English</span></span><span class="lang-switcher__badge">EN</span></button></li>
+                <li role="none"><button class="lang-switcher__option" type="button" role="option" aria-selected="false" data-lang-option="de"><span class="lang-switcher__names"><span class="lang-switcher__native">Deutsch</span><span class="lang-switcher__english">German</span></span><span class="lang-switcher__badge">DE</span></button></li>
+                <li role="none"><button class="lang-switcher__option" type="button" role="option" aria-selected="false" data-lang-option="it"><span class="lang-switcher__names"><span class="lang-switcher__native">Italiano</span><span class="lang-switcher__english">Italian</span></span><span class="lang-switcher__badge">IT</span></button></li>
+                <li role="none"><button class="lang-switcher__option" type="button" role="option" aria-selected="false" data-lang-option="fr"><span class="lang-switcher__names"><span class="lang-switcher__native">Français</span><span class="lang-switcher__english">French</span></span><span class="lang-switcher__badge">FR</span></button></li>
+                <li role="none"><button class="lang-switcher__option" type="button" role="option" aria-selected="false" data-lang-option="hi"><span class="lang-switcher__names"><span class="lang-switcher__native">हिन्दी</span><span class="lang-switcher__english">Hindi</span></span><span class="lang-switcher__badge">HI</span></button></li>
+                <li role="none"><button class="lang-switcher__option" type="button" role="option" aria-selected="false" data-lang-option="ar" dir="rtl"><span class="lang-switcher__names"><span class="lang-switcher__native">العربية</span><span class="lang-switcher__english">Arabic</span></span><span class="lang-switcher__badge">AR</span></button></li>
+              </ul>
+            </div>
             <button id="menu-trigger" class="menu-trigger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
               <span class="menu-trigger__line menu-trigger__line--top"></span>
               <span class="menu-trigger__line menu-trigger__line--bottom"></span>
@@ -294,7 +309,7 @@
       </section>
 
       <!-- ================================================================
-           02 // KEY PROJECTS SHOWCASE (ALL 7 CV PROJECTS)
+           02 // KEY PROJECTS SHOWCASE (8 FEATURED PROJECTS)
            ================================================================ -->
       <section id="projects" class="section" aria-labelledby="projects-heading">
         <div class="container">
@@ -305,7 +320,7 @@
             </div>
 
             <div class="filter-bar" role="group" aria-label="Filter projects by domain" data-filter-group="projects">
-              <button class="filter-pill is-active" type="button" data-filter="all" aria-pressed="true">All (7)</button>
+              <button class="filter-pill is-active" type="button" data-filter="all" aria-pressed="true">All (8)</button>
               <button class="filter-pill" type="button" data-filter="ai" aria-pressed="false">AI &amp; Open Source</button>
               <button class="filter-pill" type="button" data-filter="enterprise" aria-pressed="false">Enterprise &amp; TaxTech</button>
               <button class="filter-pill" type="button" data-filter="web" aria-pressed="false">EdTech</button>
@@ -351,8 +366,46 @@
               </div>
             </article>
 
-            <!-- Project 2: NovaCut Studio -->
+            <!-- Project 2: StreamShield -->
             <article class="spotlight-card work-card" data-filter-item="projects" data-category="ai" data-reveal>
+              <div class="work-card__media" data-cursor="INSPECT">
+                <div class="work-card__browser-bar" aria-hidden="true">
+                  <div class="browser-dots"><span></span><span></span><span></span></div>
+                  <span class="browser-url">github.com/Marburg7/StreamShield</span>
+                </div>
+                <img src="./assets/svg/project-streamshield.svg" alt="StreamShield Chrome Extension MV3 live dashboard and multi-platform video ad manager preview" loading="lazy" decoding="async" width="800" height="500">
+              </div>
+              <div class="work-card__body">
+                <div>
+                  <div class="work-card__meta">
+                    <span>02 · Open-Source Chrome MV3</span>
+                    <span>9 Platforms · Zero Telemetry</span>
+                  </div>
+                  <h3 class="work-card__title">StreamShield</h3>
+                  <p class="work-card__desc">Privacy-first Universal Video Ad Interruption Manager (Chrome Extension MV3) built in strict TypeScript—featuring a 14-state deterministic FSM, 9 modular platform adapters (YouTube, JioHotstar, Prime Video, Netflix, Sony LIV, ZEE5, Hulu, Disney+, Generic), verified skip activation, DRM-safe VOD acceleration, audio mute fallback with exact state restoration, and Vitest + Playwright Chromium tests.</p>
+                </div>
+                <div class="work-card__tags">
+                  <span class="chip">Strict TypeScript</span>
+                  <span class="chip">Chrome MV3</span>
+                  <span class="chip">14-State FSM</span>
+                  <span class="chip">Shadow DOM</span>
+                  <span class="chip">Vitest &amp; Playwright</span>
+                </div>
+                <div class="work-card__actions">
+                  <button class="text-action" type="button" data-open-case="streamshield">
+                    Inspect Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                  <a class="text-action" href="https://github.com/Marburg7/StreamShield" target="_blank" rel="noopener noreferrer" data-cursor="GITHUB ↗">
+                    View on GitHub
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3: NovaCut Studio -->
+            <article class="spotlight-card work-card" data-filter-item="projects" data-category="ai" data-reveal style="--reveal-delay: 90ms">
               <div class="work-card__media" data-cursor="INSPECT">
                 <div class="work-card__browser-bar" aria-hidden="true">
                   <div class="browser-dots"><span></span><span></span><span></span></div>
@@ -363,7 +416,7 @@
               <div class="work-card__body">
                 <div>
                   <div class="work-card__meta">
-                    <span>02 · Open-Source AI Tool</span>
+                    <span>03 · Open-Source AI Tool</span>
                     <span>Local NLP + LLMs</span>
                   </div>
                   <h3 class="work-card__title">NovaCut Studio</h3>
@@ -389,7 +442,7 @@
               </div>
             </article>
 
-            <!-- Project 2: Sovos Multisite Platform -->
+            <!-- Project 4: Sovos Multisite Platform -->
             <article class="spotlight-card work-card" data-filter-item="projects" data-category="enterprise" data-reveal>
               <div class="work-card__media" data-cursor="INSPECT">
                 <div class="work-card__browser-bar" aria-hidden="true">
@@ -401,7 +454,7 @@
               <div class="work-card__body">
                 <div>
                   <div class="work-card__meta">
-                    <span>03 · Enterprise Multisite</span>
+                    <span>04 · Enterprise Multisite</span>
                     <span>7+ Regions · 10+ eComm</span>
                   </div>
                   <h3 class="work-card__title">Sovos Multisite Platform</h3>
@@ -426,7 +479,7 @@
               </div>
             </article>
 
-            <!-- Project 3: Taxapedia -->
+            <!-- Project 5: Taxapedia -->
             <article class="spotlight-card work-card" data-filter-item="projects" data-category="enterprise ai" data-reveal style="--reveal-delay: 90ms">
               <div class="work-card__media" data-cursor="INSPECT">
                 <div class="work-card__browser-bar" aria-hidden="true">
@@ -438,7 +491,7 @@
               <div class="work-card__body">
                 <div>
                   <div class="work-card__meta">
-                    <span>04 · Knowledge Hub &amp; AI-SEO</span>
+                    <span>05 · Knowledge Hub &amp; AI-SEO</span>
                     <span>ChatGPT &amp; Claude Ready</span>
                   </div>
                   <h3 class="work-card__title">Taxapedia</h3>
@@ -463,7 +516,7 @@
               </div>
             </article>
 
-            <!-- Project 4: eFileMyForm -->
+            <!-- Project 6: eFileMyForm -->
             <article class="spotlight-card work-card" data-filter-item="projects" data-category="enterprise" data-reveal>
               <div class="work-card__media" data-cursor="INSPECT">
                 <div class="work-card__browser-bar" aria-hidden="true">
@@ -475,7 +528,7 @@
               <div class="work-card__body">
                 <div>
                   <div class="work-card__meta">
-                    <span>05 · IRS-Approved eFiling</span>
+                    <span>06 · IRS-Approved eFiling</span>
                     <span>Frontend + Backend/API</span>
                   </div>
                   <h3 class="work-card__title">eFileMyForm</h3>
@@ -499,7 +552,7 @@
               </div>
             </article>
 
-            <!-- Project 5: 1099pro.com -->
+            <!-- Project 7: 1099pro.com -->
             <article class="spotlight-card work-card" data-filter-item="projects" data-category="enterprise" data-reveal style="--reveal-delay: 90ms">
               <div class="work-card__media" data-cursor="INSPECT">
                 <div class="work-card__browser-bar" aria-hidden="true">
@@ -511,7 +564,7 @@
               <div class="work-card__body">
                 <div>
                   <div class="work-card__meta">
-                    <span>06 · IRS-Approved eFiling</span>
+                    <span>07 · IRS-Approved eFiling</span>
                     <span>Cloud SaaS</span>
                   </div>
                   <h3 class="work-card__title">1099pro.com</h3>
@@ -535,7 +588,7 @@
               </div>
             </article>
 
-            <!-- Project 6: Eduleem.com -->
+            <!-- Project 8: Eduleem.com -->
             <article class="spotlight-card work-card" data-filter-item="projects" data-category="web" data-reveal>
               <div class="work-card__media" data-cursor="INSPECT">
                 <div class="work-card__browser-bar" aria-hidden="true">
@@ -547,7 +600,7 @@
               <div class="work-card__body">
                 <div>
                   <div class="work-card__meta">
-                    <span>07 · EdTech Platform</span>
+                    <span>08 · EdTech Platform</span>
                     <span>70K+ Biweekly Visitors</span>
                   </div>
                   <h3 class="work-card__title">Eduleem.com</h3>
@@ -1104,6 +1157,7 @@
     <span class="assistant-fab__label">Ask Syed's AI</span>
   </button>
 
+  <script src="./js/i18n.js" defer></script>
   <script src="./js/script.js" defer></script>
 </body>
 </html>

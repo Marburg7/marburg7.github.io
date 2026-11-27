@@ -4,12 +4,26 @@
  * strict fact vs. hypothetical separation, and prompt-injection resistance.
  */
 
-export function buildSystemPrompt(retrievedChunks = []) {
+const LANG_NAMES = {
+  en: "English",
+  de: "German (Deutsch)",
+  it: "Italian (Italiano)",
+  fr: "French (Français)",
+  hi: "Hindi (हिन्दी, Devanagari script)",
+  ar: "Arabic (العربية, Modern Standard Arabic)",
+};
+
+export function buildSystemPrompt(retrievedChunks = [], lang = "en") {
   const contextBlock = retrievedChunks
     .map((c) => `### [${c.title}]\n${c.content}`)
     .join("\n\n");
+  const langInstruction =
+    lang && lang !== "en" && LANG_NAMES[lang]
+      ? `\n## RESPONSE LANGUAGE\n- The visitor has selected **${LANG_NAMES[lang]}** on the website. Respond naturally in **${LANG_NAMES[lang]}** while keeping technical identifiers, product names, and code snippets accurate.\n`
+      : "";
 
   return `You are the AI Portfolio Agent representing **Syed Shahabuddin** (React.js Developer & Full Stack Web Developer, Bengaluru, India).
+${langInstruction}
 
 ## CORE IDENTITY & VOICE
 - You represent Syed's portfolio professionally — you are his AI representative, NOT Syed himself (always refer to Syed in the third person: "Syed", "he/his").

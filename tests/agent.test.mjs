@@ -1,5 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
 import { retrieveContext } from "../server/agent/knowledge.mjs";
 import { executeTool, analyzeJobDescription } from "../server/agent/tools.mjs";
 import { detectPromptInjection, validateAgentRequest, resetRateLimitsForTest } from "../server/agent/security.mjs";
@@ -65,6 +67,9 @@ test("Prompt injection & input validation guards reject unsafe inputs", () => {
   assert.equal(validateAgentRequest({}).valid, false);
   assert.equal(validateAgentRequest({ message: "a".repeat(7000) }).valid, false);
   assert.equal(validateAgentRequest({ message: "Valid question", history: [{ role: "system", content: "hack" }] }).data.history.length, 0);
+  assert.equal(validateAgentRequest({ message: "Hallo", lang: "de" }).data.lang, "de");
+  assert.equal(validateAgentRequest({ message: "مرحبا", lang: "ar" }).data.lang, "ar");
+  assert.equal(validateAgentRequest({ message: "Invalid lang", lang: "xx" }).data.lang, "en");
 });
 
 test("HTTP Server: /api/health, SSE streaming, multi-turn context, prompt-injection defense, static security & 429 rate limiting", async () => {
@@ -188,4 +193,32 @@ test("HTTP Server: /api/health, SSE streaming, multi-turn context, prompt-inject
     server.close();
   }
 });
+
+test("Multilingual i18n packs (de, it, fr, hi, ar) share complete schema and key parity", () => {
+  const locales = ["de", "it", "fr", "hi", "ar"];
+  const packs = Object.fromEntries(
+    locales.map((loc) => [
+      loc,
+      JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "i18n", `${loc}.json`), "utf-8")),
+    ])
+  );
+
+  const requiredSections = ["titles", "descriptions", "placeholders", "cursors", "rich", "plain", "ui", "agent", "caseStudies"];
+  const ref = packs.de;
+
+  for (const loc of locales) {
+    const pack = packs[loc];
+    for (const sec of requiredSections) {
+      assert.ok(pack[sec] && typeof pack[sec] === "object", `${loc}.json missing section ${sec}`);
+      const refKeys = Object.keys(ref[sec]).sort();
+      const locKeys = Object.keys(pack[sec]).sort();
+      assert.deepEqual(locKeys, refKeys, `${loc}.json section ${sec} keys mismatch`);
+    }
+    assert.equal(Object.keys(pack.caseStudies).length, 9, `${loc}.json must translate all 9 case studies`);
+    assert.equal(pack.caseStudies.sovos_studio.galleryLabels.length, 3, `${loc}.json sovos_studio galleryLabels length`);
+    assert.equal(pack.agent.promptsInitial.length, 3, `${loc}.json agent.promptsInitial length`);
+    assert.equal(pack.agent.promptsHydrated.length, 3, `${loc}.json agent.promptsHydrated length`);
+  }
+});
+
 

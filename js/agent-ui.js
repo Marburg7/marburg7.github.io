@@ -90,6 +90,41 @@
     return out;
   }
 
+  const DEFAULT_AGENT_STRINGS = {
+    fabLabel: "Ask Syed's AI",
+    fabAria: "Open Syed's AI Portfolio Agent",
+    panelTitle: "Syed's Portfolio AI",
+    statusReady: "Grounded CV Agent · Tools Ready",
+    statusLiveStatic: "Grounded CV Agent · Live",
+    statusLiveLlm: "Live AI ({provider}) · Tools Active",
+    statusToolsActive: "Grounded CV Agent · Tools Active",
+    minimizeTitle: "Minimize chat",
+    clearTitle: "Clear conversation",
+    closeTitle: "Close agent",
+    tabChat: "Ask Anything",
+    tabJd: "Paste Job Description",
+    placeholderChat: "Ask about Syed, projects, or stack...",
+    placeholderJd: "Paste a job description here for an honest skill & gap match...",
+    send: "Send",
+    retry: "Retry",
+    thinking: "Thinking & retrieving context...",
+    welcome:
+      "Hi! I'm **Syed Shahabuddin's AI Portfolio Agent**.\n\nAsk me anything about his **3+ years of React.js & Full-Stack experience**, explore projects like **Sovos Studio**, **StreamShield**, or **NovaCut Studio**, ask technical or CTO-level questions, or switch to **Paste Job Description** for an honest, evidence-based fit analysis.",
+    promptsInitial: ["Tell me about Sovos Studio", "Tell me about StreamShield", "Explain his work to a CTO"],
+    promptsHydrated: ["Which of those has he used at work?", "What interview questions should I ask him?", "Get contact details"],
+    rateLimitError: "Too many requests. Please wait a moment and retry.",
+    networkError: "Could not reach the AI agent. Please retry.",
+    emptyError: "Empty response received from agent.",
+  };
+
+  function getAgentStrings() {
+    return { ...DEFAULT_AGENT_STRINGS, ...(window.PortfolioI18n?.agent?.() || {}) };
+  }
+
+  function getUiText(key, fallback) {
+    return window.PortfolioI18n?.ui?.(key, fallback) || fallback;
+  }
+
   function renderSafeMarkdown(markdown) {
     const text = String(markdown || "");
     const segments = [];
@@ -113,7 +148,8 @@
         if (seg.type === "code") {
           const lang = escapeHtml(seg.lang);
           const code = escapeHtml(seg.content);
-          return `<div class="md-code-block"><div class="md-code-head"><span>${lang}</span><button type="button" class="md-copy-code" data-copy-code>Copy code</button></div><pre><code>${code}</code></pre></div>`;
+          const copyCodeLabel = escapeHtml(getUiText("copyCode", "Copy code"));
+          return `<div class="md-code-block"><div class="md-code-head"><span>${lang}</span><button type="button" class="md-copy-code" data-copy-code>${copyCodeLabel}</button></div><pre><code>${code}</code></pre></div>`;
         }
 
         const lines = seg.content.split(/\r?\n/);
@@ -164,6 +200,8 @@
     let fab = document.getElementById("assistant-fab");
     let panel = document.getElementById("assistant-panel");
 
+    const ag = getAgentStrings();
+
     if (!fab) {
       fab = document.createElement("button");
       fab.id = "assistant-fab";
@@ -171,8 +209,8 @@
       fab.type = "button";
       fab.setAttribute("aria-expanded", "false");
       fab.setAttribute("aria-controls", "assistant-panel");
-      fab.setAttribute("aria-label", "Open Syed's AI Portfolio Agent");
-      fab.innerHTML = `<span class="status-dot" aria-hidden="true"></span><span class="assistant-fab__label">Ask Syed's AI</span>`;
+      fab.setAttribute("aria-label", ag.fabAria);
+      fab.innerHTML = `<span class="status-dot" aria-hidden="true"></span><span class="assistant-fab__label">${escapeHtml(ag.fabLabel)}</span>`;
       document.body.appendChild(fab);
     }
 
@@ -182,7 +220,7 @@
       panel.className = "assistant-panel";
       panel.setAttribute("aria-hidden", "true");
       panel.setAttribute("role", "dialog");
-      panel.setAttribute("aria-label", "Syed's AI Portfolio Agent");
+      panel.setAttribute("aria-label", ag.panelTitle);
       document.body.appendChild(panel);
     }
 
@@ -191,32 +229,32 @@
         <div class="assistant-panel__title-wrap">
           <div class="assistant-panel__avatar" aria-hidden="true">AI</div>
           <div class="assistant-panel__title">
-            <span>Syed's Portfolio AI</span>
-            <span class="assistant-panel__status" data-agent-status><span class="status-dot" style="width:6px;height:6px;" aria-hidden="true"></span>Grounded CV Agent · Tools Ready</span>
+            <span data-agent-title>${escapeHtml(ag.panelTitle)}</span>
+            <span class="assistant-panel__status" data-agent-status><span class="status-dot" style="width:6px;height:6px;" aria-hidden="true"></span>${escapeHtml(ag.statusReady)}</span>
           </div>
         </div>
         <div class="assistant-panel__head-actions">
-          <button class="assistant-icon-btn" type="button" data-agent-minimize title="Minimize chat" aria-label="Minimize chat">—</button>
-          <button class="assistant-icon-btn" type="button" data-agent-clear title="Clear conversation" aria-label="Clear conversation">↺</button>
-          <button class="assistant-icon-btn" type="button" data-agent-close title="Close agent" aria-label="Close agent">✕</button>
+          <button class="assistant-icon-btn" type="button" data-agent-minimize title="${escapeHtml(ag.minimizeTitle)}" aria-label="${escapeHtml(ag.minimizeTitle)}">—</button>
+          <button class="assistant-icon-btn" type="button" data-agent-clear title="${escapeHtml(ag.clearTitle)}" aria-label="${escapeHtml(ag.clearTitle)}">↺</button>
+          <button class="assistant-icon-btn" type="button" data-agent-close title="${escapeHtml(ag.closeTitle)}" aria-label="${escapeHtml(ag.closeTitle)}">✕</button>
         </div>
       </div>
 
       <div class="assistant-mode-bar" role="tablist" aria-label="Agent mode">
-        <button type="button" class="mode-tab is-active" role="tab" aria-selected="true" data-mode="chat">Ask Anything</button>
-        <button type="button" class="mode-tab" role="tab" aria-selected="false" data-mode="jd">Paste Job Description</button>
+        <button type="button" class="mode-tab is-active" role="tab" aria-selected="true" data-mode="chat">${escapeHtml(ag.tabChat)}</button>
+        <button type="button" class="mode-tab" role="tab" aria-selected="false" data-mode="jd">${escapeHtml(ag.tabJd)}</button>
       </div>
 
       <div class="assistant-panel__messages" role="log" aria-live="polite" aria-relevant="additions text"></div>
       <div class="assistant-error" role="alert" hidden>
         <span data-error-text></span>
-        <button type="button" class="retry-btn" data-agent-retry>Retry</button>
+        <button type="button" class="retry-btn" data-agent-retry>${escapeHtml(ag.retry)}</button>
       </div>
       <div class="assistant-prompts" aria-label="Suggested questions"></div>
 
       <form class="assistant-form" novalidate>
-        <textarea rows="1" placeholder="Ask about Syed, projects, or stack..." aria-label="Message Syed's AI Portfolio Agent"></textarea>
-        <button type="submit" data-agent-send aria-label="Send message">Send</button>
+        <textarea rows="1" placeholder="${escapeHtml(ag.placeholderChat)}" aria-label="${escapeHtml(ag.panelTitle)}"></textarea>
+        <button type="submit" data-agent-send aria-label="${escapeHtml(ag.send)}">${escapeHtml(ag.send)}</button>
       </form>
     `;
 
@@ -300,8 +338,8 @@
     const copyMsgBtn = document.createElement("button");
     copyMsgBtn.type = "button";
     copyMsgBtn.className = "copy-msg-btn";
-    copyMsgBtn.textContent = "Copy";
-    copyMsgBtn.setAttribute("aria-label", "Copy response text");
+    copyMsgBtn.textContent = getUiText("copy", "Copy");
+    copyMsgBtn.setAttribute("aria-label", getUiText("copy", "Copy"));
     metaFoot.appendChild(copyMsgBtn);
 
     bubble.append(tracesWrap, bodyEl, actionsWrap, metaFoot);
@@ -314,8 +352,8 @@
       if (!btn) return;
       const code = btn.closest(".md-code-block")?.querySelector("code")?.textContent || "";
       navigator.clipboard?.writeText(code).catch(() => {});
-      btn.textContent = "Copied ✓";
-      window.setTimeout(() => (btn.textContent = "Copy code"), 1600);
+      btn.textContent = getUiText("copiedCheck", "Copied ✓");
+      window.setTimeout(() => (btn.textContent = getUiText("copyCode", "Copy code")), 1600);
     });
 
     return { bubble, tracesWrap, bodyEl, actionsWrap, copyMsgBtn };
@@ -539,9 +577,10 @@
       };
     }
 
-    // 5. Specific Project Lookup (including Sovos Studio!)
+    // 5. Specific Project Lookup (including Sovos Studio & StreamShield!)
     const projectMatchers = [
       { id: "sovos_studio", re: /sovos\s*studio|choropleth|report\s*builder|report\s*canvas|data\s*visualization/i },
+      { id: "streamshield", re: /streamshield|chrome\s*extension|mv3|manifest\s*v3|ad\s*interruption|jiohotstar|widevine|14-?state\s*fsm/i },
       { id: "novacut", re: /novacut|clip\s*maker|video|twitch|kick|ollama/i },
       { id: "taxapedia", re: /taxapedia|ai\s*seo|canonical/i },
       { id: "efilemyform", re: /efilemyform|efile|w-?2|aca/i },
@@ -582,16 +621,17 @@
         traces: [`Retrieved ${kb.projects.length} documented projects`],
         text: [
           "### Featured Projects",
-          ...kb.projects.slice(0, 7).map((p) => `- **${p.name}** (${p.category}): ${p.summary}`),
+          ...kb.projects.slice(0, 8).map((p) => `- **${p.name}** (${p.category}): ${p.summary}`),
           "",
           "Click any project button below to open its interactive Case Study drawer.",
         ].join("\n"),
         actions: [
           { label: "Inspect Sovos Studio", type: "open-case", value: "sovos_studio" },
+          { label: "Inspect StreamShield", type: "open-case", value: "streamshield" },
           { label: "Inspect NovaCut Studio", type: "open-case", value: "novacut" },
           { label: "All Projects Page", type: "navigate", value: "projects/" },
         ],
-        followups: ["Tell me about Sovos Studio", "Tell me about NovaCut Studio", "Paste a job description"],
+        followups: ["Tell me about StreamShield", "Tell me about Sovos Studio", "Paste a job description"],
       };
     }
 
@@ -727,7 +767,8 @@
     traces.forEach((t) => addTracePill(ui.tracesWrap, t, false));
 
     if (statusEl) {
-      statusEl.innerHTML = `<span class="status-dot" style="width:6px;height:6px;" aria-hidden="true"></span>Grounded CV Agent · Live`;
+      const ag = getAgentStrings();
+      statusEl.innerHTML = `<span class="status-dot" style="width:6px;height:6px;" aria-hidden="true"></span>${escapeHtml(ag.statusLiveStatic)}`;
     }
 
     // Progressive chunk streaming for responsive UX
@@ -772,8 +813,9 @@
     saveState();
 
     // Assistant placeholder bubble with typing indicator
+    const ag = getAgentStrings();
     const ui = createMessageBubble("assistant", "");
-    ui.bodyEl.innerHTML = `<span class="chat-typing"><span class="chat-typing__dots"><span></span><span></span><span></span></span><span>Thinking & retrieving context...</span></span>`;
+    ui.bodyEl.innerHTML = `<span class="chat-typing"><span class="chat-typing__dots"><span></span><span></span><span></span></span><span>${escapeHtml(ag.thinking)}</span></span>`;
 
     let accumulatedText = "";
     let collectedTools = [];
@@ -787,17 +829,18 @@
         return;
       }
 
+      const activeLang = window.PortfolioI18n?.getLang?.() || "en";
       const response = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
-        body: JSON.stringify({ message: text, history: historySnapshot, mode: activeMode }),
+        body: JSON.stringify({ message: text, history: historySnapshot, mode: activeMode, lang: activeLang }),
       });
 
       if (response.status === 429) {
         const errJson = await response.json().catch(() => ({}));
         ui.bubble.remove();
         state.history.pop();
-        showError(errJson.error || "Too many requests. Please wait a moment and retry.", { text, mode: activeMode });
+        showError(errJson.error || ag.rateLimitError, { text, mode: activeMode });
         return;
       }
 
@@ -839,9 +882,10 @@
           }
 
           if (eventName === "meta" && statusEl) {
+            const agMeta = getAgentStrings();
             const label = payload.mode === "live-llm"
-              ? `Live AI (${payload.provider}) · Tools Active`
-              : "Grounded CV Agent · Tools Active";
+              ? agMeta.statusLiveLlm.replace("{provider}", payload.provider || "AI")
+              : agMeta.statusToolsActive;
             statusEl.innerHTML = `<span class="status-dot" style="width:6px;height:6px;" aria-hidden="true"></span>${escapeHtml(label)}`;
           } else if (eventName === "tool") {
             if (payload.phase === "start") {
@@ -874,13 +918,13 @@
       }
 
       if (!accumulatedText) {
-        throw new Error("Empty response received from agent.");
+        throw new Error(ag.emptyError);
       }
 
       ui.copyMsgBtn.addEventListener("click", () => {
         navigator.clipboard?.writeText(accumulatedText).catch(() => {});
-        ui.copyMsgBtn.textContent = "Copied ✓";
-        window.setTimeout(() => (ui.copyMsgBtn.textContent = "Copy"), 1500);
+        ui.copyMsgBtn.textContent = getUiText("copiedCheck", "Copied ✓");
+        window.setTimeout(() => (ui.copyMsgBtn.textContent = getUiText("copy", "Copy")), 1500);
       });
 
       state.history.push({
@@ -893,7 +937,7 @@
     } catch (err) {
       ui.bubble.remove();
       state.history.pop();
-      showError(err.message || "Could not reach the AI agent. Please retry.", { text, mode: activeMode });
+      showError(err.message || ag.networkError, { text, mode: activeMode });
     } finally {
       state.busy = false;
       sendBtn.disabled = false;
@@ -908,19 +952,49 @@
      Mode Switching, Open / Minimize / Clear & Keyboard Accessibility
      ------------------------------------------------------------------------ */
   function setMode(nextMode) {
+    const ag = getAgentStrings();
     state.mode = nextMode === "jd" ? "jd" : "chat";
     modeTabs.forEach((t) => {
       const active = t.dataset.mode === state.mode;
       t.classList.toggle("is-active", active);
       t.setAttribute("aria-selected", String(active));
     });
-    textarea.placeholder =
-      state.mode === "jd"
-        ? "Paste a job description here for an honest skill & gap match..."
-        : "Ask about Syed, projects, or stack...";
+    textarea.placeholder = state.mode === "jd" ? ag.placeholderJd : ag.placeholderChat;
     textarea.rows = state.mode === "jd" ? 4 : 1;
     textarea.focus();
   }
+
+  function applyAgentLocale() {
+    const ag = getAgentStrings();
+    const titleSpan = panel.querySelector("[data-agent-title]");
+    if (titleSpan) titleSpan.textContent = ag.panelTitle;
+    panel.setAttribute("aria-label", ag.panelTitle);
+    const fabLbl = fab.querySelector(".assistant-fab__label");
+    if (fabLbl) fabLbl.textContent = ag.fabLabel;
+    fab.setAttribute("aria-label", ag.fabAria);
+    if (statusEl) {
+      statusEl.innerHTML = `<span class="status-dot" style="width:6px;height:6px;" aria-hidden="true"></span>${escapeHtml(ag.statusReady)}`;
+    }
+    const minBtn = panel.querySelector("[data-agent-minimize]");
+    const clrBtn = panel.querySelector("[data-agent-clear]");
+    const clsBtn = panel.querySelector("[data-agent-close]");
+    if (minBtn) { minBtn.title = ag.minimizeTitle; minBtn.setAttribute("aria-label", ag.minimizeTitle); }
+    if (clrBtn) { clrBtn.title = ag.clearTitle; clrBtn.setAttribute("aria-label", ag.clearTitle); }
+    if (clsBtn) { clsBtn.title = ag.closeTitle; clsBtn.setAttribute("aria-label", ag.closeTitle); }
+    modeTabs.forEach((t) => {
+      t.textContent = t.dataset.mode === "jd" ? ag.tabJd : ag.tabChat;
+    });
+    textarea.placeholder = state.mode === "jd" ? ag.placeholderJd : ag.placeholderChat;
+    textarea.setAttribute("aria-label", ag.panelTitle);
+    sendBtn.textContent = ag.send;
+    sendBtn.setAttribute("aria-label", ag.send);
+    retryBtn.textContent = ag.retry;
+    if (state.history.length === 0) {
+      clearConversation();
+    }
+  }
+
+  window.addEventListener("portfolio:langchange", applyAgentLocale);
 
   function setOpen(open) {
     panel.classList.toggle("is-open", open);
@@ -943,22 +1017,19 @@
   }
 
   function clearConversation() {
+    const ag = getAgentStrings();
     state.history = [];
     clearError();
     messagesEl.innerHTML = "";
-    const welcomeText =
-      "Hi! I'm **Syed Shahabuddin's AI Portfolio Agent**.\n\nAsk me anything about his **3+ years of React.js & Full-Stack experience**, explore projects like **Sovos Studio** or **NovaCut Studio**, ask technical or CTO-level questions, or switch to **Paste Job Description** for an honest, evidence-based fit analysis.";
+    const welcomeText = ag.welcome;
     const ui = createMessageBubble("assistant", welcomeText);
+    ui.copyMsgBtn.textContent = getUiText("copy", "Copy");
     ui.copyMsgBtn.addEventListener("click", () => {
       navigator.clipboard?.writeText(welcomeText).catch(() => {});
-      ui.copyMsgBtn.textContent = "Copied ✓";
-      window.setTimeout(() => (ui.copyMsgBtn.textContent = "Copy"), 1500);
+      ui.copyMsgBtn.textContent = getUiText("copiedCheck", "Copied ✓");
+      window.setTimeout(() => (ui.copyMsgBtn.textContent = getUiText("copy", "Copy")), 1500);
     });
-    renderPrompts([
-      "Tell me about Sovos Studio",
-      "Explain his work to a CTO",
-      "Tell me about NovaCut Studio",
-    ]);
+    renderPrompts(ag.promptsInitial);
     saveState();
   }
 
@@ -972,16 +1043,12 @@
         renderActions(ui.actionsWrap, m.actions || []);
         ui.copyMsgBtn.addEventListener("click", () => {
           navigator.clipboard?.writeText(m.content).catch(() => {});
-          ui.copyMsgBtn.textContent = "Copied ✓";
-          window.setTimeout(() => (ui.copyMsgBtn.textContent = "Copy"), 1500);
+          ui.copyMsgBtn.textContent = getUiText("copiedCheck", "Copied ✓");
+          window.setTimeout(() => (ui.copyMsgBtn.textContent = getUiText("copy", "Copy")), 1500);
         });
       }
     });
-    renderPrompts([
-      "Which of those has he used at work?",
-      "What interview questions should I ask him?",
-      "Get contact details",
-    ]);
+    renderPrompts(getAgentStrings().promptsHydrated);
   } else {
     clearConversation();
   }

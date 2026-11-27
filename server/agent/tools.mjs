@@ -33,7 +33,7 @@ export const TOOL_DECLARATIONS = [
       properties: {
         query: {
           type: "string",
-          description: "Optional project id, name, or technology keyword (e.g., 'novacut', 'taxapedia', 'sovos', 'ai', 'react', 'wordpress'). Leave empty to list all 7 projects.",
+          description: "Optional project id, name, or technology keyword (e.g., 'streamshield', 'novacut', 'taxapedia', 'sovos', 'ai', 'react', 'wordpress'). Leave empty to list all projects.",
         },
       },
       additionalProperties: false,
@@ -208,6 +208,7 @@ export function analyzeJobDescription(jdText) {
       }
       if (lower.includes("ecommerce") && (p.id === "sovos" || p.id === "eduleem")) score += 3;
       if ((lower.includes("ai") || lower.includes("llm") || lower.includes("python")) && (p.id === "novacut" || p.id === "taxapedia")) score += 3;
+      if ((lower.includes("chrome") || lower.includes("extension") || lower.includes("mv3") || lower.includes("playwright") || lower.includes("vitest")) && p.id === "streamshield") score += 4;
       if (lower.includes("seo") && (p.id === "taxapedia" || p.id === "eduleem")) score += 3;
       if ((lower.includes("wordpress") || lower.includes("cms")) && (p.id === "sovos" || p.id === "taxapedia" || p.id === "eduleem")) score += 2;
       return { project: p, score };

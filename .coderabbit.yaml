@@ -1,0 +1,328 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: "en-US"
+tone_instructions: >-
+  Be concise, direct, and high-signal. Prioritize bugs, security/CSP,
+  accessibility, performance, and data parity across HTML, JSON, js/, and
+  server/. Skip style nitpicks and group repeated patterns.
+early_access: false
+enable_free_tier: true
+
+reviews:
+  profile: "assertive"
+  request_changes_workflow: false
+  high_level_summary: true
+  high_level_summary_instructions: >-
+    Summarize user-facing changes, AI agent or API impacts, security/CSP
+    implications, and any data-parity or merge-readiness risks in under 80 words.
+  high_level_summary_in_walkthrough: false
+  review_status: true
+  review_details: false
+  commit_status: true
+  collapse_walkthrough: true
+  changed_files_summary: true
+  sequence_diagrams: true
+  estimate_code_review_effort: true
+  assess_linked_issues: true
+  related_issues: true
+  related_prs: true
+  suggested_labels: true
+  auto_apply_labels: false
+  suggested_reviewers: false
+  in_progress_fortune: false
+  poem: false
+  enable_prompt_for_ai_agents: true
+  abort_on_close: true
+
+  path_filters:
+    - "!assets/images/**"
+    - "!sitemap.xml"
+    - "!robots.txt"
+    - "!.nojekyll"
+    - "!package-lock.json"
+
+  path_instructions:
+    - path: "server/**/*.mjs"
+      instructions: >-
+        Zero-dependency Node.js >=20 ESM backend. Verify strict request
+        validation, safe path-traversal boundary checks (enforce path.sep
+        prefix boundaries, block dotfiles and private directories), rate-limit
+        integrity (do not blindly trust spoofable X-Forwarded-For headers
+        without proxy configuration), 32 KB request-body caps, prompt-injection
+        defenses, CSP/CORS/security headers, and explicit AbortSignal timeouts
+        on upstream Gemini fetches. Flag swallowed exceptions and any error
+        response that leaks stack traces or environment secrets.
+    - path: "api/**/*.mjs"
+      instructions: >-
+        Vercel serverless adapter for the AI Portfolio Agent. Verify parity with
+        server/index.mjs for CORS, Content-Type enforcement (415), rate
+        limiting (429), 32 KB payload size enforcement across both raw string
+        and pre-parsed JSON object bodies, SSE error handling without leaking
+        internals, and error logging on unexpected failures.
+    - path: "js/**/*.js"
+      instructions: >-
+        Zero-dependency vanilla browser JavaScript subject to strict CSP
+        (script-src 'self'). Flag unsafe innerHTML interpolation of untrusted
+        content, missing isSafeHref protocol checks, missing
+        rel="noopener noreferrer" on external _blank actions, and animation
+        loops (requestAnimationFrame) that fail to pause on document.hidden or
+        ignore prefers-reduced-motion. Verify that js/agent-ui.js static-host
+        intents, JD gap matching (handling symbols like C#, .NET, Next.js,
+        Node.js), and js/script.js CASE_STUDIES remain aligned with
+        data/portfolio-knowledge.json and server/agent/*.
+    - path: "**/*.html"
+      instructions: >-
+        Static GitHub Pages HTML5 pages validated by scripts/validate-build.mjs.
+        Verify every HTML file keeps the Content-Security-Policy meta tag, zero
+        inline on* event handlers, and rel="noopener noreferrer" on all
+        target="_blank" links. Check semantic heading hierarchy, accessible
+        names for buttons/links/form controls, explicit width/height and
+        loading="lazy" decoding="async" on below-the-fold images, valid local
+        asset paths, and accurate project/filter counts.
+    - path: "css/**/*.css"
+      instructions: >-
+        Obsidian Forge & Luminous Amber design system. Check responsive
+        breakpoints, visible keyboard focus styles, WCAG contrast,
+        prefers-reduced-motion fallbacks, and GPU-friendly animations without
+        layout thrashing.
+    - path: "data/portfolio-knowledge.json"
+      instructions: >-
+        Single source of truth for the AI Portfolio Agent (grounded strictly in
+        verified CV/portfolio facts). When projects or skills are added or
+        edited, verify schema integrity and check that project counts,
+        projectEvidence, js/script.js CASE_STUDIES, js/agent-ui.js matchers,
+        server/agent/tools.mjs (including COMMON_EXTERNAL_TECH gap exclusions),
+        and server/agent/orchestrator.mjs stay synchronized with no
+        contradictory claims.
+    - path: "tests/**/*.mjs"
+      instructions: >-
+        Native node:test suite. Ensure tests stay deterministic with zero
+        external network calls (GEMINI_API_KEY=""), clean up servers and rate
+        limiters in finally blocks, and add regression tests for new routes,
+        agent tools, projects, or security fixes.
+    - path: "scripts/**/*.mjs"
+      instructions: >-
+        Build and security gate scripts (npm run build). Verify exit codes are
+        non-zero on failures, secret/local-path scanners avoid false negatives,
+        and new JS/MJS modules are included in syntax verification.
+    - path: "README.md"
+      instructions: >-
+        Keep documented project counts, directory layout, npm scripts,
+        environment variables (.env.example), and security invariants accurate
+        whenever code or portfolio entries change.
+
+  auto_review:
+    enabled: true
+    auto_incremental_review: true
+    auto_pause_after_reviewed_commits: 5
+    ignore_title_keywords:
+      - "WIP"
+      - "DO NOT MERGE"
+      - "DRAFT"
+    drafts: false
+    base_branches:
+      - "main"
+
+  finishing_touches:
+    docstrings:
+      enabled: false
+    unit_tests:
+      enabled: true
+    simplify:
+      enabled: true
+    custom:
+      - name: "Confidence Rating"
+        enabled: true
+        instructions: |
+          Rate the merge confidence of this change using the following scale and
+          include it in your review summary:
+
+          5/5 — Ship it: Trivial or purely additive change with no risk to
+          existing behavior (copy updates, docs, isolated tests, additive data
+          with synchronized references).
+
+          4/5 — Confident: Straightforward change with clear intent, contained
+          scope, and adequate validation/test coverage.
+
+          3/5 — Cautious: Moderate risk. Touches shared agent, UI, or security
+          code, has partial test coverage, or risks parity drift between static
+          GitHub Pages mode and the Node/Vercel server mode.
+
+          2/5 — Concerned: High risk. Broad changes to security headers, CSP,
+          rate limiting, path handling, or agent orchestration without
+          regression tests.
+
+          1/5 — Dangerous: Very high risk of breakage or vulnerability. Weakens
+          CSP/XSS protections, exposes secrets/dotfiles, or breaks static
+          GitHub Pages compatibility.
+
+      - name: "scrub hardcoded secrets"
+        enabled: true
+        instructions: |
+          Detect high-confidence hardcoded secrets introduced or modified in
+          this PR, including API keys (such as GEMINI_API_KEY / AIza...),
+          tokens, signing keys, and passwords. Replace each real secret with
+          process.env.<NAME> in server/ or api/ (never in frontend js/ or
+          HTML), add a placeholder to .env.example, and update README.md if
+          needed. Never preserve or re-emit the real secret value anywhere.
+          Skip obvious placeholders, test fixtures, and regex patterns in
+          scripts/validate-build.mjs. Note in the PR summary that any real
+          committed secret must be revoked and rotated immediately.
+
+      - name: "propagate new env var"
+        enabled: true
+        instructions: |
+          When this PR introduces a new process.env.<VAR> read in server/ or
+          api/, propagate <VAR> to .env.example with a safe placeholder and
+          short comment, and update README.md environment documentation where
+          applicable. Never expose server-only variables in js/ or HTML files.
+
+      - name: "associate form labels"
+        enabled: true
+        instructions: |
+          For newly added or modified form controls in HTML pages or
+          js/agent-ui.js, ensure each visible input, textarea, and select has
+          an accessible name via a properly associated <label>, aria-label, or
+          aria-labelledby matching the repository's existing patterns. Add
+          aria-describedby when nearby help or error text is rendered.
+
+      - name: "sync tests with signature changes"
+        enabled: true
+        instructions: |
+          When an exported function in server/ or api/ changes its parameters
+          or return shape, update directly affected call sites and assertions
+          in tests/agent.test.mjs while preserving each test's original intent
+          and deterministic offline execution (GEMINI_API_KEY="").
+
+  pre_merge_checks:
+    docstrings:
+      mode: "off"
+    title:
+      mode: "warning"
+      requirements: >-
+        Use a concise, imperative PR title under 72 characters describing the
+        change (Conventional Commits prefixes such as feat:, fix:, docs:,
+        refactor:, test:, chore: are preferred).
+    description:
+      mode: "warning"
+    issue_assessment:
+      mode: "warning"
+    custom_checks:
+      - name: "Top Vulnerability and CSP Guard"
+        mode: "warning"
+        instructions: >-
+          Review changed HTML, JS, MJS, and SVG files against OWASP Web/API
+          risks and this repository's security invariants. Flag: missing
+          Content-Security-Policy meta tags or inline on* event handlers in
+          HTML; unsafe innerHTML interpolation without escaping; unsafe href or
+          window.open URLs without isSafeHref validation or
+          rel="noopener noreferrer"; path traversal edge cases in static file
+          serving (e.g., startsWith(ROOT_DIR) without path.sep boundary);
+          missing 32 KB body caps across both string and parsed JSON bodies;
+          hardcoded credentials; or weakened prompt-injection/rate-limit
+          defenses. Report only concrete evidence from changed files with brief
+          remediation.
+
+      - name: "Sensitive Output Leak Prevention"
+        mode: "warning"
+        instructions: >-
+          Review all new or modified log statements (console.log,
+          console.error, console.warn) and HTTP/SSE responses in server/, api/,
+          and js/. Flag any output that could expose GEMINI_API_KEY, .env
+          values, raw upstream API bodies containing keys/tokens, local machine
+          file paths (/Users/...), or raw stack traces to clients. Pass when
+          client errors are sanitized and server logs never print secrets.
+
+      - name: "Portfolio Knowledge and Agent Parity"
+        mode: "warning"
+        instructions: >-
+          When projects, skills, or career details are added or updated in
+          data/portfolio-knowledge.json, index.html, projects/index.html,
+          tools/index.html, experience/index.html, or README.md, verify
+          cross-file consistency: (1) CASE_STUDIES in js/script.js matches the
+          project id and asset path; (2) js/agent-ui.js static-host matchers
+          and overview slices include the new entry; (3) server/agent/tools.mjs
+          COMMON_EXTERNAL_TECH does not flag newly documented skills as gaps;
+          (4) server/agent/orchestrator.mjs hardcoded responses and follow-ups
+          do not contradict data/portfolio-knowledge.json or show stale project
+          counts; and (5) README.md counts/highlights stay up to date. Pass
+          when all touched surfaces agree or no portfolio content changed.
+
+      - name: "Failure Path Robustness Review"
+        mode: "warning"
+        instructions: >-
+          Review error handling in new and modified JS/MJS code. Flag catch
+          blocks in server/ or api/ that swallow unexpected errors without
+          logging context server-side; flag external fetch calls (e.g., Gemini
+          API) lacking an explicit timeout via AbortSignal.timeout; flag
+          unprotected access to error.message on unknown thrown values; and
+          flag build/validation scripts in scripts/ that fail to exit with a
+          non-zero code on errors. Pass when failure paths log context safely,
+          bound external I/O, and degrade gracefully.
+
+      - name: "UI Accessibility Regression Check"
+        mode: "warning"
+        instructions: >-
+          When HTML pages, CSS, or DOM-rendering JS (js/script.js,
+          js/agent-ui.js) are modified, flag clear accessibility regressions:
+          meaningful images missing descriptive alt text or decorative
+          icons/SVGs missing aria-hidden="true"; interactive buttons, links, or
+          form inputs lacking an accessible name; skipped heading levels;
+          duplicate id attributes within a page; or new animations lacking
+          prefers-reduced-motion handling. Do not flag minor copy or purely
+          cosmetic token tweaks.
+
+      - name: "New Logic Test Adequacy"
+        mode: "warning"
+        instructions: >-
+          When behavioral code changes in server/, api/, scripts/, or
+          data/portfolio-knowledge.json (e.g., new routes, security guards,
+          tools, JD matcher rules, or portfolio projects), check whether
+          tests/agent.test.mjs adds or updates proportionate deterministic
+          coverage for happy paths and error/edge cases. Do not flag purely
+          visual HTML/CSS copy edits or documentation-only changes.
+
+  tools:
+    eslint:
+      enabled: true
+    biome:
+      enabled: true
+    oxc:
+      enabled: true
+    htmlhint:
+      enabled: true
+    stylelint:
+      enabled: true
+    markdownlint:
+      enabled: true
+    yamllint:
+      enabled: true
+    gitleaks:
+      enabled: true
+    trufflehog:
+      enabled: true
+    opengrep:
+      enabled: true
+    dotenvLint:
+      enabled: true
+    github-checks:
+      enabled: true
+      timeout_ms: 90000
+    languagetool:
+      enabled: false
+
+chat:
+  art: false
+  auto_reply: true
+
+knowledge_base:
+  opt_out: false
+  web_search:
+    enabled: true
+  code_guidelines:
+    enabled: true
+  learnings:
+    scope: "local"
+  issues:
+    scope: "local"
+  pull_requests:
+    scope: "local"

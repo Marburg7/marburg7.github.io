@@ -25,8 +25,30 @@ try {
   errors.push(`Invalid data/portfolio-knowledge.json: ${err.message}`);
 }
 
+// 1b. Validate multilingual i18n JSON bundles
+const i18nLocales = ["de", "it", "fr", "hi", "ar"];
+for (const locale of i18nLocales) {
+  const rel = `data/i18n/${locale}.json`;
+  const full = path.join(ROOT, rel);
+  if (!fs.existsSync(full)) {
+    errors.push(`Missing i18n language bundle: ${rel}`);
+    continue;
+  }
+  try {
+    const pack = JSON.parse(fs.readFileSync(full, "utf-8"));
+    for (const sec of ["titles", "descriptions", "placeholders", "cursors", "rich", "plain", "ui", "agent", "caseStudies"]) {
+      if (!pack[sec] || typeof pack[sec] !== "object" || Object.keys(pack[sec]).length === 0) {
+        errors.push(`i18n bundle ${rel} missing or empty section: ${sec}`);
+      }
+    }
+  } catch (err) {
+    errors.push(`Invalid JSON in ${rel}: ${err.message}`);
+  }
+}
+
 // 2. Check syntax of every JS/MJS module
 const jsFiles = [
+  "js/i18n.js",
   "js/script.js",
   "js/agent-ui.js",
   "server/index.mjs",
